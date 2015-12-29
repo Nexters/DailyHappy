@@ -20,5 +20,5 @@ DerivedData
 *.ipa
 
 # Cocoapods
-Pods
+Pods/
 
