@@ -5,13 +5,22 @@ use_frameworks!
 
 target 'DailyHappy' do
   pod 'RealmSwift'
+  pod 'RxSwift', '~> 2.0.0-beta'
+  pod 'RxCocoa', '~> 2.0.0-beta'
+  pod 'RxBlocking', '~> 2.0.0-beta'
 end
 
 target 'DailyHappyTests' do
   pod 'RealmSwift'
+  pod 'RxSwift', '~> 2.0.0-beta'
+  pod 'RxCocoa', '~> 2.0.0-beta'
+  pod 'RxBlocking', '~> 2.0.0-beta'
 end
 
 target 'DailyHappyUITests' do
   pod 'RealmSwift'
+  pod 'RxSwift', '~> 2.0.0-beta'
+  pod 'RxCocoa', '~> 2.0.0-beta'
+  pod 'RxBlocking', '~> 2.0.0-beta'
 end
 

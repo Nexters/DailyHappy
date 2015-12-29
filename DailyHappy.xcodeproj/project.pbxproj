@@ -16,6 +16,8 @@
 		036992101C3279B000F73047 /* DailyHappyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369920F1C3279B000F73047 /* DailyHappyUITests.swift */; };
 		0369921F1C327BF200F73047 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369921E1C327BF200F73047 /* Log.swift */; };
 		036992211C3282EF00F73047 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992201C3282EF00F73047 /* Emotion.swift */; };
+		036992241C32BFBA00F73047 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992231C32BFBA00F73047 /* LaunchScreenViewController.swift */; };
+		036992271C32CD6000F73047 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992261C32CD6000F73047 /* Constants.swift */; };
 		1BB30902320B8E2BC5D4903C /* Pods_DailyHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD05F159DDA11EF28E7860C /* Pods_DailyHappy.framework */; };
 		5DA81D0BAE8353E1949E549C /* Pods_DailyHappyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */; };
 		7618772EA19360599281384B /* Pods_DailyHappyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */; };
@@ -54,6 +56,8 @@
 		036992111C3279B000F73047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0369921E1C327BF200F73047 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		036992201C3282EF00F73047 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		036992231C32BFBA00F73047 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		036992261C32CD6000F73047 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0AF1DDBC91E4116A9584A94E /* Pods-DailyHappyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF94BA394388CD554F70D80 /* Pods-DailyHappyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 		036991EE1C3279B000F73047 /* DailyHappy */ = {
 			isa = PBXGroup;
 			children = (
+				036992251C32CD4D00F73047 /* util */,
 				036992221C3285E800F73047 /* viewController */,
 				0369921D1C327B8A00F73047 /* model */,
 				036991EF1C3279B000F73047 /* AppDelegate.swift */,
@@ -160,8 +165,17 @@
 			isa = PBXGroup;
 			children = (
 				036991F11C3279B000F73047 /* MainViewController.swift */,
+				036992231C32BFBA00F73047 /* LaunchScreenViewController.swift */,
 			);
 			name = viewController;
+			sourceTree = "<group>";
+		};
+		036992251C32CD4D00F73047 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				036992261C32CD6000F73047 /* Constants.swift */,
+			);
+			name = util;
 			sourceTree = "<group>";
 		};
 		1EF70886D853E61FBE544FD3 /* Pods */ = {
@@ -452,7 +466,9 @@
 				036991F21C3279B000F73047 /* MainViewController.swift in Sources */,
 				036991F01C3279B000F73047 /* AppDelegate.swift in Sources */,
 				0369921F1C327BF200F73047 /* Log.swift in Sources */,
+				036992241C32BFBA00F73047 /* LaunchScreenViewController.swift in Sources */,
 				036992211C3282EF00F73047 /* Emotion.swift in Sources */,
+				036992271C32CD6000F73047 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
