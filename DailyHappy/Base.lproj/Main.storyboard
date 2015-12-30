@@ -18,42 +18,111 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-fW-UBS" customClass="MainTableView" customModule="DailyHappy" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="280" height="500"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="176" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-fW-UBS" customClass="MainTableView" customModule="DailyHappy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="80" width="600" height="494"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewCell" id="o1M-mY-Mdf" customClass="MainTableViewCell" customModule="DailyHappy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="280" height="120"/>
+                                        <rect key="frame" x="0.0" y="1" width="600" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1M-mY-Mdf" id="HXi-IF-lND">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-ET-XCi" customClass="MainItemView" customModule="DailyHappy" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="10" width="280" height="110"/>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-ET-XCi" customClass="MainItemView" customModule="DailyHappy" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="344" height="150"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="홍은영" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBu-n2-ore">
+                                                            <rect key="frame" x="218" y="-5" width="80" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="텀블러" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td2-07-b8x">
+                                                            <rect key="frame" x="211" y="37" width="80" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="활동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lN1-qU-XQf">
+                                                            <rect key="frame" x="231" y="66" width="80" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1주년" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edL-oH-eDX">
+                                                            <rect key="frame" x="211" y="85" width="80" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="31 SUN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iuj-ei-Q09">
+                                                            <rect key="frame" x="8" y="8" width="80" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="스타벅스다..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hW1-V7-h0L">
+                                                            <rect key="frame" x="199" y="14" width="80" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Td2-07-b8x" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="78" id="GbZ-Kb-e1c"/>
+                                                        <constraint firstItem="GBu-n2-ore" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="10" id="IgQ-ek-CiG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="hW1-V7-h0L" secondAttribute="trailing" constant="20" id="Lc5-Mt-Nv8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="GBu-n2-ore" secondAttribute="trailing" constant="20" id="Lze-un-V09"/>
+                                                        <constraint firstItem="Iuj-ei-Q09" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="30" id="N3j-ip-r8H"/>
+                                                        <constraint firstAttribute="trailing" secondItem="edL-oH-eDX" secondAttribute="trailing" constant="20" id="P13-9R-LJE"/>
+                                                        <constraint firstItem="hW1-V7-h0L" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="54" id="Xfn-Yb-CNh"/>
+                                                        <constraint firstItem="edL-oH-eDX" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="126" id="cZE-Ip-eEZ"/>
+                                                        <constraint firstItem="GBu-n2-ore" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="30" id="f3l-Jz-OrM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Td2-07-b8x" secondAttribute="trailing" constant="20" id="i9z-B1-pnD"/>
+                                                        <constraint firstItem="lN1-qU-XQf" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="102" id="kFm-Dq-iVf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="lN1-qU-XQf" secondAttribute="trailing" constant="20" id="qXS-S6-ctZ"/>
+                                                        <constraint firstItem="Iuj-ei-Q09" firstAttribute="leading" secondItem="r7C-ET-XCi" secondAttribute="leading" constant="30" id="ulp-gh-fEF"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="IgQ-ek-CiG"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="r7C-ET-XCi" secondAttribute="trailing" constant="7" id="0Js-MD-ygr"/>
+                                            <constraint firstItem="r7C-ET-XCi" firstAttribute="top" secondItem="o1M-mY-Mdf" secondAttribute="top" constant="7" id="13L-P8-h2t"/>
+                                            <constraint firstAttribute="bottom" secondItem="r7C-ET-XCi" secondAttribute="bottom" constant="7" id="WNq-mB-iw8"/>
+                                            <constraint firstItem="r7C-ET-XCi" firstAttribute="centerY" secondItem="o1M-mY-Mdf" secondAttribute="centerY" id="pfD-ro-RLB"/>
+                                            <constraint firstItem="r7C-ET-XCi" firstAttribute="leading" secondItem="o1M-mY-Mdf" secondAttribute="leading" constant="7" id="vub-uY-Abg"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="pfD-ro-RLB"/>
+                                            </mask>
+                                        </variation>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="y5b-Qo-LAp" id="bOo-ld-Acv"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtW-24-Pgm" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
-                                <rect key="frame" x="211" y="519" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.31117590809568985" green="1" blue="0.80956099871015552" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                <state key="normal" title="+">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtW-24-Pgm" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
+                                <rect key="frame" x="272" y="504" width="56" height="56"/>
+                                <state key="normal" image="WriteButtonImage">
                                     <color key="titleColor" red="0.94497058109135312" green="0.92972479481266435" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="ShowWriteView:" destination="y5b-Qo-LAp" eventType="touchUpInside" id="mk4-ad-PJU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdD-J5-GY0">
-                                <rect key="frame" x="277" y="285" width="500" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdD-J5-GY0">
+                                <rect key="frame" x="252" y="21" width="96" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="2015. 12">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -62,11 +131,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HtW-24-Pgm" firstAttribute="centerX" secondItem="Omx-aV-aKD" secondAttribute="centerX" id="3Xx-hg-QKY"/>
-                            <constraint firstItem="Cts-fW-UBS" firstAttribute="top" secondItem="ZNw-w0-qut" secondAttribute="bottom" constant="24" id="7wP-Lh-DCz"/>
+                            <constraint firstItem="Cts-fW-UBS" firstAttribute="top" secondItem="ZNw-w0-qut" secondAttribute="bottom" constant="60" id="7wP-Lh-DCz"/>
                             <constraint firstItem="JdD-J5-GY0" firstAttribute="centerX" secondItem="Omx-aV-aKD" secondAttribute="centerX" id="BvV-xX-0X5"/>
-                            <constraint firstItem="Yip-Fy-OUI" firstAttribute="top" secondItem="HtW-24-Pgm" secondAttribute="bottom" constant="20" id="Dfv-I9-KiK"/>
+                            <constraint firstItem="Yip-Fy-OUI" firstAttribute="top" secondItem="HtW-24-Pgm" secondAttribute="bottom" constant="40" id="Dfv-I9-KiK"/>
                             <constraint firstItem="JdD-J5-GY0" firstAttribute="top" secondItem="ZNw-w0-qut" secondAttribute="bottom" constant="1" id="UKQ-gj-Dcb"/>
                             <constraint firstItem="Cts-fW-UBS" firstAttribute="centerX" secondItem="Omx-aV-aKD" secondAttribute="centerX" id="USz-8H-r2a"/>
+                            <constraint firstItem="Cts-fW-UBS" firstAttribute="width" secondItem="Omx-aV-aKD" secondAttribute="width" id="d7e-tb-izl"/>
                             <constraint firstItem="Yip-Fy-OUI" firstAttribute="top" secondItem="Cts-fW-UBS" secondAttribute="bottom" constant="26" id="hG6-TX-y45"/>
                         </constraints>
                     </view>
@@ -184,4 +254,7 @@
             <point key="canvasLocation" x="996" y="148.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="WriteButtonImage" width="56" height="56"/>
+    </resources>
 </document>
