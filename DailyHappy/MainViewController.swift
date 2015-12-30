@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
             let angry = Emotion(value: ["emotionName" : "angry", "emotionColorRed": 188, "emotionColorGreen": 59, "emotionColorBlue": 59])
             let joy = Emotion(value: ["emotionName" : "joy", "emotionColorRed": 255, "emotionColorGreen": 200, "emotionColorBlue": 55])
             let awesome = Emotion(value: ["emotionName" : "awesome", "emotionColorRed": 255, "emotionColorGreen": 128, "emotionColorBlue": 8])
-            let flutter = Emotion(value: ["emotionName" : "fultter", "emotionColorRed": 147, "emotionColorGreen": 249, "emotionColorBlue": 185])
+            let flutter = Emotion(value: ["emotionName" : "flutter", "emotionColorRed": 147, "emotionColorGreen": 249, "emotionColorBlue": 185])
             let happy = Emotion(value: ["emotionName" : "happy", "emotionColorRed": 155, "emotionColorGreen": 274, "emotionColorBlue": 274])
             let loved = Emotion(value: ["emotionName" : "loved", "emotionColorRed": 237, "emotionColorGreen": 90, "emotionColorBlue": 90])
             let sad = Emotion(value: ["emotionName" : "sad", "emotionColorRed": 61, "emotionColorGreen": 114, "emotionColorBlue": 180])
