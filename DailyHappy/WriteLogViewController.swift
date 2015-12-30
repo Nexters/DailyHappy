@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-class LaunchScreenViewController: UIViewController {
+class WriteLogViewController: UIViewController {
     
 }
