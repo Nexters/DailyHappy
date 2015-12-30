@@ -28,6 +28,9 @@
 		CE1C9C051C33C64A00D8B1A2 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFE1C33C64A00D8B1A2 /* MKLayer.swift */; };
 		CE1C9C061C33C64A00D8B1A2 /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFF1C33C64A00D8B1A2 /* MKTableViewCell.swift */; };
 		CE1C9C071C33C64A00D8B1A2 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9C001C33C64A00D8B1A2 /* MKTextField.swift */; };
+		CE1C9C091C33E06400D8B1A2 /* MainItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9C081C33E06400D8B1A2 /* MainItemView.swift */; };
+		CE1C9C0B1C33E0AD00D8B1A2 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9C0A1C33E0AD00D8B1A2 /* MainTableViewCell.swift */; };
+		CE1C9C0D1C33E10500D8B1A2 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9C0C1C33E10500D8B1A2 /* MainTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		CE1C9BFE1C33C64A00D8B1A2 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = MaterialKit/MKLayer.swift; sourceTree = "<group>"; };
 		CE1C9BFF1C33C64A00D8B1A2 /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKTableViewCell.swift; path = MaterialKit/MKTableViewCell.swift; sourceTree = "<group>"; };
 		CE1C9C001C33C64A00D8B1A2 /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKTextField.swift; path = MaterialKit/MKTextField.swift; sourceTree = "<group>"; };
+		CE1C9C081C33E06400D8B1A2 /* MainItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainItemView.swift; sourceTree = "<group>"; };
+		CE1C9C0A1C33E0AD00D8B1A2 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		CE1C9C0C1C33E10500D8B1A2 /* MainTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		E148360D4B76C96AE03C7C02 /* Pods-DailyHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy.debug.xcconfig"; sourceTree = "<group>"; };
 		E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -179,6 +185,7 @@
 		036992221C3285E800F73047 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE1C9C0E1C33E13C00D8B1A2 /* MainView */,
 				036991F11C3279B000F73047 /* MainViewController.swift */,
 				036992231C32BFBA00F73047 /* WriteNoteViewController.swift */,
 			);
@@ -228,6 +235,16 @@
 				CE1C9C001C33C64A00D8B1A2 /* MKTextField.swift */,
 			);
 			name = MaterialKit;
+			sourceTree = "<group>";
+		};
+		CE1C9C0E1C33E13C00D8B1A2 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				CE1C9C0A1C33E0AD00D8B1A2 /* MainTableViewCell.swift */,
+				CE1C9C0C1C33E10500D8B1A2 /* MainTableView.swift */,
+				CE1C9C081C33E06400D8B1A2 /* MainItemView.swift */,
+			);
+			name = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,10 +509,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1C9C091C33E06400D8B1A2 /* MainItemView.swift in Sources */,
 				036991F21C3279B000F73047 /* MainViewController.swift in Sources */,
 				036991F01C3279B000F73047 /* AppDelegate.swift in Sources */,
 				0369921F1C327BF200F73047 /* Note.swift in Sources */,
+				CE1C9C0B1C33E0AD00D8B1A2 /* MainTableViewCell.swift in Sources */,
 				036992241C32BFBA00F73047 /* WriteNoteViewController.swift in Sources */,
+				CE1C9C0D1C33E10500D8B1A2 /* MainTableView.swift in Sources */,
 				CE1C9C051C33C64A00D8B1A2 /* MKLayer.swift in Sources */,
 				CE1C9C041C33C64A00D8B1A2 /* MKLabel.swift in Sources */,
 				036992211C3282EF00F73047 /* Emotion.swift in Sources */,
