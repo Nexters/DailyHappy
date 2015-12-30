@@ -21,6 +21,13 @@
 		1BB30902320B8E2BC5D4903C /* Pods_DailyHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD05F159DDA11EF28E7860C /* Pods_DailyHappy.framework */; };
 		5DA81D0BAE8353E1949E549C /* Pods_DailyHappyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */; };
 		7618772EA19360599281384B /* Pods_DailyHappyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */; };
+		CE1C9C011C33C64A00D8B1A2 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFA1C33C64A00D8B1A2 /* MKButton.swift */; };
+		CE1C9C021C33C64A00D8B1A2 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFB1C33C64A00D8B1A2 /* MKColor.swift */; };
+		CE1C9C031C33C64A00D8B1A2 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFC1C33C64A00D8B1A2 /* MKImageView.swift */; };
+		CE1C9C041C33C64A00D8B1A2 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFD1C33C64A00D8B1A2 /* MKLabel.swift */; };
+		CE1C9C051C33C64A00D8B1A2 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFE1C33C64A00D8B1A2 /* MKLayer.swift */; };
+		CE1C9C061C33C64A00D8B1A2 /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFF1C33C64A00D8B1A2 /* MKTableViewCell.swift */; };
+		CE1C9C071C33C64A00D8B1A2 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9C001C33C64A00D8B1A2 /* MKTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,13 @@
 		8782615530926B8D6BD7C8B9 /* Pods-DailyHappyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyUITests/Pods-DailyHappyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AAD05F159DDA11EF28E7860C /* Pods_DailyHappy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A89EA5BF4068003653E90D /* Pods-DailyHappyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyUITests/Pods-DailyHappyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE1C9BFA1C33C64A00D8B1A2 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKButton.swift; path = MaterialKit/MKButton.swift; sourceTree = "<group>"; };
+		CE1C9BFB1C33C64A00D8B1A2 /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = MaterialKit/MKColor.swift; sourceTree = "<group>"; };
+		CE1C9BFC1C33C64A00D8B1A2 /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKImageView.swift; path = MaterialKit/MKImageView.swift; sourceTree = "<group>"; };
+		CE1C9BFD1C33C64A00D8B1A2 /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKLabel.swift; path = MaterialKit/MKLabel.swift; sourceTree = "<group>"; };
+		CE1C9BFE1C33C64A00D8B1A2 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = MaterialKit/MKLayer.swift; sourceTree = "<group>"; };
+		CE1C9BFF1C33C64A00D8B1A2 /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKTableViewCell.swift; path = MaterialKit/MKTableViewCell.swift; sourceTree = "<group>"; };
+		CE1C9C001C33C64A00D8B1A2 /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKTextField.swift; path = MaterialKit/MKTextField.swift; sourceTree = "<group>"; };
 		E148360D4B76C96AE03C7C02 /* Pods-DailyHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy.debug.xcconfig"; sourceTree = "<group>"; };
 		E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,6 +136,7 @@
 		036991EE1C3279B000F73047 /* DailyHappy */ = {
 			isa = PBXGroup;
 			children = (
+				CE1C9BF91C33C63100D8B1A2 /* MaterialKit */,
 				036992251C32CD4D00F73047 /* util */,
 				036992221C3285E800F73047 /* viewController */,
 				0369921D1C327B8A00F73047 /* model */,
@@ -199,6 +214,20 @@
 				1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE1C9BF91C33C63100D8B1A2 /* MaterialKit */ = {
+			isa = PBXGroup;
+			children = (
+				CE1C9BFA1C33C64A00D8B1A2 /* MKButton.swift */,
+				CE1C9BFB1C33C64A00D8B1A2 /* MKColor.swift */,
+				CE1C9BFC1C33C64A00D8B1A2 /* MKImageView.swift */,
+				CE1C9BFD1C33C64A00D8B1A2 /* MKLabel.swift */,
+				CE1C9BFE1C33C64A00D8B1A2 /* MKLayer.swift */,
+				CE1C9BFF1C33C64A00D8B1A2 /* MKTableViewCell.swift */,
+				CE1C9C001C33C64A00D8B1A2 /* MKTextField.swift */,
+			);
+			name = MaterialKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,8 +496,15 @@
 				036991F01C3279B000F73047 /* AppDelegate.swift in Sources */,
 				0369921F1C327BF200F73047 /* Log.swift in Sources */,
 				036992241C32BFBA00F73047 /* WriteLogViewController.swift in Sources */,
+				CE1C9C051C33C64A00D8B1A2 /* MKLayer.swift in Sources */,
+				CE1C9C041C33C64A00D8B1A2 /* MKLabel.swift in Sources */,
 				036992211C3282EF00F73047 /* Emotion.swift in Sources */,
+				CE1C9C011C33C64A00D8B1A2 /* MKButton.swift in Sources */,
 				036992271C32CD6000F73047 /* Constants.swift in Sources */,
+				CE1C9C021C33C64A00D8B1A2 /* MKColor.swift in Sources */,
+				CE1C9C071C33C64A00D8B1A2 /* MKTextField.swift in Sources */,
+				CE1C9C031C33C64A00D8B1A2 /* MKImageView.swift in Sources */,
+				CE1C9C061C33C64A00D8B1A2 /* MKTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

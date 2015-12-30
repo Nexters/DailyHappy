@@ -25,6 +25,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let backimg = UIImage(named: "BackgroundImage")
+        self.view.backgroundColor = UIColor(patternImage: backimg!)
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -17,18 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvO-1R-PyQ">
-                                <rect key="frame" x="277" y="474" width="46" height="30"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-fW-UBS">
+                                <rect key="frame" x="20" y="44" width="280" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="o1M-mY-Mdf">
+                                        <rect key="frame" x="0.0" y="1" width="280" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1M-mY-Mdf" id="HXi-IF-lND">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="119"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtW-24-Pgm">
+                                <rect key="frame" x="211" y="519" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="Q2e-Vb-JMM" kind="presentation" id="Vjk-dd-vBb"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Yip-Fy-OUI" firstAttribute="top" secondItem="uvO-1R-PyQ" secondAttribute="bottom" constant="96" id="CbC-7F-BTf"/>
-                            <constraint firstItem="uvO-1R-PyQ" firstAttribute="centerX" secondItem="Omx-aV-aKD" secondAttribute="centerX" id="HHS-OC-9Hz"/>
+                            <constraint firstItem="HtW-24-Pgm" firstAttribute="centerX" secondItem="Omx-aV-aKD" secondAttribute="centerX" id="3Xx-hg-QKY"/>
+                            <constraint firstItem="Cts-fW-UBS" firstAttribute="top" secondItem="ZNw-w0-qut" secondAttribute="bottom" constant="24" id="7wP-Lh-DCz"/>
+                            <constraint firstItem="Yip-Fy-OUI" firstAttribute="top" secondItem="HtW-24-Pgm" secondAttribute="bottom" constant="20" id="Dfv-I9-KiK"/>
+                            <constraint firstItem="Cts-fW-UBS" firstAttribute="centerX" secondItem="Omx-aV-aKD" secondAttribute="centerX" id="USz-8H-r2a"/>
+                            <constraint firstItem="Yip-Fy-OUI" firstAttribute="top" secondItem="Cts-fW-UBS" secondAttribute="bottom" constant="26" id="hG6-TX-y45"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rmC-hw-FA0"/>
