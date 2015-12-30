@@ -18,6 +18,7 @@
 		036992211C3282EF00F73047 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992201C3282EF00F73047 /* Emotion.swift */; };
 		036992241C32BFBA00F73047 /* WriteNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992231C32BFBA00F73047 /* WriteNoteViewController.swift */; };
 		036992271C32CD6000F73047 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992261C32CD6000F73047 /* Constants.swift */; };
+		0369922A1C33E24F00F73047 /* EmotionImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992291C33E24F00F73047 /* EmotionImageCell.swift */; };
 		1BB30902320B8E2BC5D4903C /* Pods_DailyHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD05F159DDA11EF28E7860C /* Pods_DailyHappy.framework */; };
 		5DA81D0BAE8353E1949E549C /* Pods_DailyHappyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */; };
 		7618772EA19360599281384B /* Pods_DailyHappyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */; };
@@ -68,6 +69,7 @@
 		036992201C3282EF00F73047 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		036992231C32BFBA00F73047 /* WriteNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteNoteViewController.swift; sourceTree = "<group>"; };
 		036992261C32CD6000F73047 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		036992291C33E24F00F73047 /* EmotionImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionImageCell.swift; sourceTree = "<group>"; };
 		0AF1DDBC91E4116A9584A94E /* Pods-DailyHappyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF94BA394388CD554F70D80 /* Pods-DailyHappyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		036991EE1C3279B000F73047 /* DailyHappy */ = {
 			isa = PBXGroup;
 			children = (
+				036992281C33DF7B00F73047 /* widget */,
 				CE1C9BF91C33C63100D8B1A2 /* MaterialKit */,
 				036992251C32CD4D00F73047 /* util */,
 				036992221C3285E800F73047 /* viewController */,
@@ -198,6 +201,14 @@
 				036992261C32CD6000F73047 /* Constants.swift */,
 			);
 			name = util;
+			sourceTree = "<group>";
+		};
+		036992281C33DF7B00F73047 /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				036992291C33E24F00F73047 /* EmotionImageCell.swift */,
+			);
+			name = widget;
 			sourceTree = "<group>";
 		};
 		1EF70886D853E61FBE544FD3 /* Pods */ = {
@@ -521,6 +532,7 @@
 				036992211C3282EF00F73047 /* Emotion.swift in Sources */,
 				CE1C9C011C33C64A00D8B1A2 /* MKButton.swift in Sources */,
 				036992271C32CD6000F73047 /* Constants.swift in Sources */,
+				0369922A1C33E24F00F73047 /* EmotionImageCell.swift in Sources */,
 				CE1C9C021C33C64A00D8B1A2 /* MKColor.swift in Sources */,
 				CE1C9C071C33C64A00D8B1A2 /* MKTextField.swift in Sources */,
 				CE1C9C031C33C64A00D8B1A2 /* MKImageView.swift in Sources */,

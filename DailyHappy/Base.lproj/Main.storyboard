@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -25,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="1" width="280" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1M-mY-Mdf" id="HXi-IF-lND">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="119"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-ET-XCi" customClass="MainItemView" customModule="DailyHappy" customModuleProvider="target">
@@ -95,28 +96,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Po-ut-iT8">
-                                <rect key="frame" x="0.0" y="156" width="600" height="71"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5hP-X3-mkS">
-                                    <size key="itemSize" width="73" height="67"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MAB-OY-lON">
-                                        <rect key="frame" x="0.0" y="8" width="55" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="0.0" right="16"/>
-                                        <size key="customSize" width="55" height="55"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기분이 어땠나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDC-ng-jKe">
                                 <rect key="frame" x="242" y="96" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -124,7 +103,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRD-KJ-UjQ">
-                                <rect key="frame" x="50" y="235" width="501" height="243"/>
+                                <rect key="frame" x="50" y="261" width="501" height="222"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG2-8t-Yp2">
@@ -134,21 +113,65 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Po-ut-iT8">
+                                <rect key="frame" x="0.0" y="142" width="600" height="87"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="UaJ-rv-GtM">
+                                    <size key="itemSize" width="87" height="87"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="emotionCell" id="MAB-OY-lON" customClass="EmotionImageCell" customModule="DailyHappy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="87"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="87" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXs-g7-8St">
+                                                    <rect key="frame" x="0.0" y="0.0" width="87" height="87"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="gXs-g7-8St" firstAttribute="leading" secondItem="MAB-OY-lON" secondAttribute="leading" id="36h-ET-BE6"/>
+                                            <constraint firstItem="gXs-g7-8St" firstAttribute="top" secondItem="MAB-OY-lON" secondAttribute="top" id="GvF-ox-6v5"/>
+                                            <constraint firstAttribute="trailing" secondItem="gXs-g7-8St" secondAttribute="trailing" id="Hpr-1f-9J6"/>
+                                            <constraint firstAttribute="bottom" secondItem="gXs-g7-8St" secondAttribute="bottom" id="Mzu-wg-gcN"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="0.0" right="16"/>
+                                        <size key="customSize" width="87" height="87"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="gXs-g7-8St" id="Vc1-2a-c0Z"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Q2e-Vb-JMM" id="0fa-5Q-tNS"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="EG2-8t-Yp2" secondAttribute="trailing" id="3Jz-A5-rrB"/>
                             <constraint firstAttribute="trailing" secondItem="EG2-8t-Yp2" secondAttribute="trailing" id="4p5-vE-l5d"/>
                             <constraint firstItem="EDC-ng-jKe" firstAttribute="centerX" secondItem="t6k-lL-Ozq" secondAttribute="centerX" id="DoD-ec-hOq"/>
+                            <constraint firstItem="3Po-ut-iT8" firstAttribute="width" secondItem="t6k-lL-Ozq" secondAttribute="width" id="EhX-TB-FGA"/>
                             <constraint firstItem="kG6-XI-d2S" firstAttribute="centerX" secondItem="t6k-lL-Ozq" secondAttribute="centerX" id="KCR-9L-zuD"/>
                             <constraint firstItem="EDC-ng-jKe" firstAttribute="top" secondItem="kG6-XI-d2S" secondAttribute="bottom" constant="39" id="P1d-RB-6w2"/>
                             <constraint firstItem="kG6-XI-d2S" firstAttribute="top" secondItem="g2P-xX-taD" secondAttribute="bottom" constant="16" id="RSY-rL-qZ6"/>
                             <constraint firstItem="FGl-N6-Qof" firstAttribute="top" secondItem="EG2-8t-Yp2" secondAttribute="bottom" constant="29" id="Vsn-AX-a5w"/>
+                            <constraint firstItem="bRD-KJ-UjQ" firstAttribute="leading" secondItem="t6k-lL-Ozq" secondAttribute="leadingMargin" constant="30" id="W9Y-W1-b3y"/>
                             <constraint firstItem="FGl-N6-Qof" firstAttribute="top" secondItem="EG2-8t-Yp2" secondAttribute="bottom" id="YOf-0u-Vzq"/>
+                            <constraint firstItem="EG2-8t-Yp2" firstAttribute="top" secondItem="bRD-KJ-UjQ" secondAttribute="bottom" constant="8" id="Z9c-5m-wZE"/>
                             <constraint firstItem="EG2-8t-Yp2" firstAttribute="leading" secondItem="t6k-lL-Ozq" secondAttribute="leading" id="ZMy-OC-trV"/>
                             <constraint firstItem="3Po-ut-iT8" firstAttribute="top" secondItem="EDC-ng-jKe" secondAttribute="bottom" constant="39" id="f4H-L5-iBQ"/>
                             <constraint firstItem="EG2-8t-Yp2" firstAttribute="leading" secondItem="t6k-lL-Ozq" secondAttribute="leading" id="iHh-mN-pFa"/>
+                            <constraint firstItem="bRD-KJ-UjQ" firstAttribute="top" secondItem="3Po-ut-iT8" secondAttribute="bottom" constant="32" id="oD5-gC-Nk9"/>
                             <constraint firstItem="EG2-8t-Yp2" firstAttribute="top" secondItem="bRD-KJ-UjQ" secondAttribute="bottom" constant="13" id="rUs-Tq-ny7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bRD-KJ-UjQ" secondAttribute="trailing" constant="29" id="xAR-db-GEP"/>
                             <constraint firstItem="EG2-8t-Yp2" firstAttribute="top" secondItem="bRD-KJ-UjQ" secondAttribute="bottom" constant="42" id="xDu-64-Hf5"/>
                         </constraints>
                     </view>
@@ -158,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFd-wo-1Fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="161"/>
+            <point key="canvasLocation" x="996" y="148.5"/>
         </scene>
     </scenes>
 </document>
