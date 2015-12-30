@@ -27,4 +27,5 @@ class Note: Object {
     dynamic var itemName = ""
     dynamic var activityName = ""
     dynamic var anniversaryName = ""
+    dynamic var memo = ""
 }

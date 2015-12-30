@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -161,25 +160,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="작성하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kG6-XI-d2S">
-                                <rect key="frame" x="265" y="36" width="71" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기분이 어땠나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDC-ng-jKe">
-                                <rect key="frame" x="242" y="96" width="116" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="감정선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDC-ng-jKe">
+                                <rect key="frame" x="20" y="100" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRD-KJ-UjQ">
-                                <rect key="frame" x="50" y="261" width="501" height="222"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG2-8t-Yp2">
                                 <rect key="frame" x="0.0" y="491" width="600" height="80"/>
                                 <color key="backgroundColor" red="0.081606597460319341" green="0.078871231766114117" blue="0.28149541884816753" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="다음">
+                                <state key="normal" title="완료">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -222,6 +212,15 @@
                                     <outlet property="dataSource" destination="Q2e-Vb-JMM" id="0fa-5Q-tNS"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvD-Ho-Ja9">
+                                <rect key="frame" x="20" y="62" width="75" height="30"/>
+                                <state key="normal" title="2015.12.30"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="작성하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kG6-XI-d2S">
+                                <rect key="frame" x="265" y="28" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -233,16 +232,10 @@
                             <constraint firstItem="EDC-ng-jKe" firstAttribute="top" secondItem="kG6-XI-d2S" secondAttribute="bottom" constant="39" id="P1d-RB-6w2"/>
                             <constraint firstItem="kG6-XI-d2S" firstAttribute="top" secondItem="g2P-xX-taD" secondAttribute="bottom" constant="16" id="RSY-rL-qZ6"/>
                             <constraint firstItem="FGl-N6-Qof" firstAttribute="top" secondItem="EG2-8t-Yp2" secondAttribute="bottom" constant="29" id="Vsn-AX-a5w"/>
-                            <constraint firstItem="bRD-KJ-UjQ" firstAttribute="leading" secondItem="t6k-lL-Ozq" secondAttribute="leadingMargin" constant="30" id="W9Y-W1-b3y"/>
                             <constraint firstItem="FGl-N6-Qof" firstAttribute="top" secondItem="EG2-8t-Yp2" secondAttribute="bottom" id="YOf-0u-Vzq"/>
-                            <constraint firstItem="EG2-8t-Yp2" firstAttribute="top" secondItem="bRD-KJ-UjQ" secondAttribute="bottom" constant="8" id="Z9c-5m-wZE"/>
                             <constraint firstItem="EG2-8t-Yp2" firstAttribute="leading" secondItem="t6k-lL-Ozq" secondAttribute="leading" id="ZMy-OC-trV"/>
                             <constraint firstItem="3Po-ut-iT8" firstAttribute="top" secondItem="EDC-ng-jKe" secondAttribute="bottom" constant="39" id="f4H-L5-iBQ"/>
                             <constraint firstItem="EG2-8t-Yp2" firstAttribute="leading" secondItem="t6k-lL-Ozq" secondAttribute="leading" id="iHh-mN-pFa"/>
-                            <constraint firstItem="bRD-KJ-UjQ" firstAttribute="top" secondItem="3Po-ut-iT8" secondAttribute="bottom" constant="32" id="oD5-gC-Nk9"/>
-                            <constraint firstItem="EG2-8t-Yp2" firstAttribute="top" secondItem="bRD-KJ-UjQ" secondAttribute="bottom" constant="13" id="rUs-Tq-ny7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bRD-KJ-UjQ" secondAttribute="trailing" constant="29" id="xAR-db-GEP"/>
-                            <constraint firstItem="EG2-8t-Yp2" firstAttribute="top" secondItem="bRD-KJ-UjQ" secondAttribute="bottom" constant="42" id="xDu-64-Hf5"/>
                         </constraints>
                     </view>
                     <connections>

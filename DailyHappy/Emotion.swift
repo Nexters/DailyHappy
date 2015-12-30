@@ -20,5 +20,5 @@ class Emotion: Object {
     dynamic var emotionColorRed:Float = 0.0
     dynamic var emotionColorGreen:Float = 0.0
     dynamic var emotionColorBlue:Float = 0.0
-    
+    dynamic var emotionColorAlpha:Float = 0.8
 }

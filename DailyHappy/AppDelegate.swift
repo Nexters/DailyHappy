@@ -7,15 +7,52 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func bundlePath(path: String) -> String? {
+        let resourcePath = NSBundle.mainBundle().resourcePath as NSString?
+        return resourcePath?.stringByAppendingPathComponent(path)
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // copy over old data files for migration
+        let defaultPath = Realm.Configuration.defaultConfiguration.path!
+        let defaultParentPath = (defaultPath as NSString).stringByDeletingLastPathComponent
+        
+        if let v0Path = bundlePath("default-v0.realm") {
+            do {
+                try NSFileManager.defaultManager().removeItemAtPath(defaultPath)
+                try NSFileManager.defaultManager().copyItemAtPath(v0Path, toPath: defaultPath)
+            } catch {}
+        }
+        
+        // define a migration block
+        // you can define this inline, but we will reuse this to migrate realm files from multiple versions
+        // to the most current version of our data model
+        let migrationBlock: MigrationBlock = { migration, oldSchemaVersion in
+            if oldSchemaVersion < 1 {
+                migration.enumerate(Note.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 1 {
+                        newObject?["memo"] = ""
+                    }
+                }
+                migration.enumerate(Emotion.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 1 {
+                        newObject?["emotionColorAlpha"] = 0.8
+                    }
+                }
+            }
+            print("Migration complete.")
+        }
+        
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 3, migrationBlock: migrationBlock)
         return true
     }
 
