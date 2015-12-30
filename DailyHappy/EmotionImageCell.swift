@@ -12,4 +12,5 @@ import UIKit
 class EmotionImageCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
+    var emotion:Emotion?
 }

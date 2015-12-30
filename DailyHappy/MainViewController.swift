@@ -146,6 +146,11 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
     }
     
     func createDummyNote() {
+        let notes = self.realm.objects(Note)
+        if notes.count > 0 {
+            self.realm.delete(notes)
+        }
+        
         let now = NSDate()
         
         for i in 0..<5 {
@@ -159,6 +164,7 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
             note.personName = "문규"
             note.hasActivity = true
             note.activityName = "코딩"
+            note.memo = "오늘은 커피빈에서 하루종일 코딩."
             
             try! self.realm.write {
                 self.realm.add(note)
