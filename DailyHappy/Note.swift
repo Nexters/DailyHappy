@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Log: Object {
+class Note: Object {
     
 // Specify properties to ignore (Realm won't persist these)
     

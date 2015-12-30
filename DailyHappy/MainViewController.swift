@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
             //let emotions = self.realm.objects(Emotion)
             //print(emotions)
         }
-        
+        createDummyNote()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +70,27 @@ class MainViewController: UIViewController {
             observer.on(.Next(true))
             observer.on(.Completed)
             return NopDisposable.instance
+        }
+    }
+    
+    func createDummyNote() {
+        let now = NSDate()
+        
+        for i in 0..<5 {
+            let calculatedDate = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: i, toDate: now, options: NSCalendarOptions.init(rawValue: 0))
+            let note = Note()
+            note.createdAt = calculatedDate!
+            note.updatedAt = calculatedDate!
+            let happys = self.realm.objects(Emotion).filter("emotionName = 'happy'")
+            note.emotion = happys.first
+            note.hasPerson = true
+            note.personName = "문규"
+            note.hasActivity = true
+            note.activityName = "코딩"
+            
+            try! self.realm.write {
+                self.realm.add(note)
+            }
         }
     }
 }

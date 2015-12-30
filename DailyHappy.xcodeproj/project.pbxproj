@@ -14,9 +14,9 @@
 		036991FA1C3279B000F73047 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036991F81C3279B000F73047 /* LaunchScreen.storyboard */; };
 		036992051C3279B000F73047 /* DailyHappyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992041C3279B000F73047 /* DailyHappyTests.swift */; };
 		036992101C3279B000F73047 /* DailyHappyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369920F1C3279B000F73047 /* DailyHappyUITests.swift */; };
-		0369921F1C327BF200F73047 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369921E1C327BF200F73047 /* Log.swift */; };
+		0369921F1C327BF200F73047 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369921E1C327BF200F73047 /* Note.swift */; };
 		036992211C3282EF00F73047 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992201C3282EF00F73047 /* Emotion.swift */; };
-		036992241C32BFBA00F73047 /* WriteLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992231C32BFBA00F73047 /* WriteLogViewController.swift */; };
+		036992241C32BFBA00F73047 /* WriteNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992231C32BFBA00F73047 /* WriteNoteViewController.swift */; };
 		036992271C32CD6000F73047 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992261C32CD6000F73047 /* Constants.swift */; };
 		1BB30902320B8E2BC5D4903C /* Pods_DailyHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD05F159DDA11EF28E7860C /* Pods_DailyHappy.framework */; };
 		5DA81D0BAE8353E1949E549C /* Pods_DailyHappyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */; };
@@ -54,9 +54,9 @@
 		0369920B1C3279B000F73047 /* DailyHappyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyHappyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0369920F1C3279B000F73047 /* DailyHappyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHappyUITests.swift; sourceTree = "<group>"; };
 		036992111C3279B000F73047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0369921E1C327BF200F73047 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		0369921E1C327BF200F73047 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		036992201C3282EF00F73047 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
-		036992231C32BFBA00F73047 /* WriteLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteLogViewController.swift; sourceTree = "<group>"; };
+		036992231C32BFBA00F73047 /* WriteNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteNoteViewController.swift; sourceTree = "<group>"; };
 		036992261C32CD6000F73047 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0AF1DDBC91E4116A9584A94E /* Pods-DailyHappyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +155,7 @@
 		0369921D1C327B8A00F73047 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				0369921E1C327BF200F73047 /* Log.swift */,
+				0369921E1C327BF200F73047 /* Note.swift */,
 				036992201C3282EF00F73047 /* Emotion.swift */,
 			);
 			name = model;
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				036991F11C3279B000F73047 /* MainViewController.swift */,
-				036992231C32BFBA00F73047 /* WriteLogViewController.swift */,
+				036992231C32BFBA00F73047 /* WriteNoteViewController.swift */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
@@ -465,8 +465,8 @@
 			files = (
 				036991F21C3279B000F73047 /* MainViewController.swift in Sources */,
 				036991F01C3279B000F73047 /* AppDelegate.swift in Sources */,
-				0369921F1C327BF200F73047 /* Log.swift in Sources */,
-				036992241C32BFBA00F73047 /* WriteLogViewController.swift in Sources */,
+				0369921F1C327BF200F73047 /* Note.swift in Sources */,
+				036992241C32BFBA00F73047 /* WriteNoteViewController.swift in Sources */,
 				036992211C3282EF00F73047 /* Emotion.swift in Sources */,
 				036992271C32CD6000F73047 /* Constants.swift in Sources */,
 			);

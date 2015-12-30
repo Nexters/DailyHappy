@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
-class WriteLogViewController: UIViewController {
+class WriteNoteViewController: UIViewController, UICollectionViewDelegate {
+    @IBOutlet weak var emotionCollectionView: UICollectionView!
     
 }
