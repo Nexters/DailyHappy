@@ -17,8 +17,8 @@ class MainViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         createEmotionTable()
         .subscribeNext { (Bool) -> Void in
-            let emotions = self.realm.objects(Emotion)
-            print(emotions)
+            //let emotions = self.realm.objects(Emotion)
+            //print(emotions)
         }
         
     }
