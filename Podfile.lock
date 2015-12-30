@@ -1,4 +1,5 @@
 PODS:
+  - MaterialKit (HEAD based on 0.3.5)
   - Realm (0.97.0):
     - Realm/Headers (= 0.97.0)
   - Realm/Headers (0.97.0)
@@ -11,12 +12,14 @@ PODS:
   - RxSwift (2.0.0-beta.4)
 
 DEPENDENCIES:
+  - MaterialKit (HEAD)
   - RealmSwift
   - RxBlocking (~> 2.0.0-beta)
   - RxCocoa (~> 2.0.0-beta)
   - RxSwift (~> 2.0.0-beta)
 
 SPEC CHECKSUMS:
+  MaterialKit: 6f1e9382f89593df768bc0c31ded9952a6d8ad46
   Realm: b498a6fb9d288b171ff98d0e2d4384c295be8990
   RealmSwift: d014810dec75c9a3f1a33926d2dabfed855c582c
   RxBlocking: 234b0c161315ff3ade25c11e48d74e9ca83158b5

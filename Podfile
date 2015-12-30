@@ -8,6 +8,7 @@ target 'DailyHappy' do
   pod 'RxSwift', '~> 2.0.0-beta'
   pod 'RxCocoa', '~> 2.0.0-beta'
   pod 'RxBlocking', '~> 2.0.0-beta'
+  pod 'MaterialKit', :head
 end
 
 target 'DailyHappyTests' do
@@ -15,6 +16,7 @@ target 'DailyHappyTests' do
   pod 'RxSwift', '~> 2.0.0-beta'
   pod 'RxCocoa', '~> 2.0.0-beta'
   pod 'RxBlocking', '~> 2.0.0-beta'
+  pod 'MaterialKit', :head
 end
 
 target 'DailyHappyUITests' do
@@ -22,5 +24,6 @@ target 'DailyHappyUITests' do
   pod 'RxSwift', '~> 2.0.0-beta'
   pod 'RxCocoa', '~> 2.0.0-beta'
   pod 'RxBlocking', '~> 2.0.0-beta'
+  pod 'MaterialKit', :head
 end
 

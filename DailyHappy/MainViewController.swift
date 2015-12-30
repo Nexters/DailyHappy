@@ -10,8 +10,9 @@ import UIKit
 import RealmSwift
 import RxSwift
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet var WriteButton: MKButton!
     let realm = try! Realm()
     
     override func viewWillAppear(animated: Bool) {
@@ -22,9 +23,80 @@ class MainViewController: UIViewController {
         }
         createDummyNote()
     }
+    
+    @IBAction func ShowWriteView(sender: AnyObject) {
+        let WriteVC = self.storyboard?.instantiateViewControllerWithIdentifier("WriteVC") as! WriteNoteViewController
+        
+        self.presentViewController(WriteVC, animated: true, completion: nil)
+    }
+    
+    //MARK: - Tableview Delegate & Datasource
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
+    {
+        return 10
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        tableView.allowsSelection = false
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.backgroundColor = UIColor.clearColor()//UIColor(white: 1, alpha:0)
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell") as! MainTableViewCell
+        cell.backgroundColor = UIColor.clearColor()
+        
+        
+        
+        
+        //cell.TestLabel.text = "dsfsdfa"
+        return cell
+        
+        //let cell: TestTableViewCell = TestTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "TestTableVIewCell")
+        //cell.TestLabel.text = "asdasd"
+        //return cell
+        //let cell = tableView.dequeueReusableCellWithIdentifier("TestTableVIewCell", forIndexPath: indexPath) as! TestTableViewCell
+        
+        // 셀의 데이터와 이미지 설정 코드
+        //let row = indexPath.row
+        //cell.TestLabel.text = "asdasd"
+        
+        
+        //return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+    }
+    
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let backimg = UIImage(named: "BackgroundImage")
+        self.view.backgroundColor = UIColor(patternImage: backimg!)
+        
+        
+        WriteButton.cornerRadius = 40.0
+        WriteButton.backgroundLayerCornerRadius = 40.0
+        WriteButton.maskEnabled = false
+        WriteButton.ripplePercent = 1.75
+        WriteButton.rippleLocation = .Center
+        
+        WriteButton.layer.shadowOpacity = 0.75
+        WriteButton.layer.shadowRadius = 3.5
+        WriteButton.layer.shadowColor = UIColor.blackColor().CGColor
+        WriteButton.layer.shadowOffset = CGSize(width: 1.0, height: 5.5)
+
     }
 
     override func didReceiveMemoryWarning() {
