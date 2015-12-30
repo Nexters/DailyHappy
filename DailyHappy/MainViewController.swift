@@ -13,9 +13,11 @@ import RxSwift
 class MainViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet var WriteButton: MKButton!
-    let realm = try! Realm()
+    
+    var realm:Realm?
     
     override func viewWillAppear(animated: Bool) {
+        realm = try! Realm()
         createEmotionTable()
         .subscribeNext { (Bool) -> Void in
             //let emotions = self.realm.objects(Emotion)
@@ -75,10 +77,6 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
         
     }
     
-
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -104,13 +102,17 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
 
+    func getRealm() -> Realm {
+        return self.realm!
+    }
+    
     func createEmotionTable() -> Observable<Bool> {
         return create { observer in
             
-            let emotions = self.realm.objects(Emotion)
+            let emotions = self.realm!.objects(Emotion)
             if emotions.count > 0 {
-                try! self.realm.write {
-                    self.realm.delete(emotions)
+                try! self.realm!.write {
+                    self.realm!.delete(emotions)
                 }
             }
             // Realm Emotion table row 생성.
@@ -126,17 +128,17 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
             let confused = Emotion(value: ["emotionName" : "confused", "emotionColorRed": 42, "emotionColorGreen": 8, "emotionColorBlue": 69])
             let worried = Emotion(value: ["emotionName" : "worried", "emotionColorRed": 175, "emotionColorGreen": 171, "emotionColorBlue": 167])
             
-            try! self.realm.write {
-                self.realm.add(angry)
-                self.realm.add(joy)
-                self.realm.add(awesome)
-                self.realm.add(flutter)
-                self.realm.add(happy)
-                self.realm.add(loved)
-                self.realm.add(sad)
-                self.realm.add(relaxed)
-                self.realm.add(confused)
-                self.realm.add(worried)
+            try! self.realm!.write {
+                self.realm!.add(angry)
+                self.realm!.add(joy)
+                self.realm!.add(awesome)
+                self.realm!.add(flutter)
+                self.realm!.add(happy)
+                self.realm!.add(loved)
+                self.realm!.add(sad)
+                self.realm!.add(relaxed)
+                self.realm!.add(confused)
+                self.realm!.add(worried)
             }
 
             observer.on(.Next(true))
@@ -146,9 +148,9 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
     }
     
     func createDummyNote() {
-        let notes = self.realm.objects(Note)
+        let notes = self.realm!.objects(Note)
         if notes.count > 0 {
-            self.realm.delete(notes)
+            self.realm!.delete(notes)
         }
         
         let now = NSDate()
@@ -158,7 +160,7 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
             let note = Note()
             note.createdAt = calculatedDate!
             note.updatedAt = calculatedDate!
-            let happys = self.realm.objects(Emotion).filter("emotionName = 'happy'")
+            let happys = self.realm!.objects(Emotion).filter("emotionName = 'happy'")
             note.emotion = happys.first
             note.hasPerson = true
             note.personName = "문규"
@@ -166,8 +168,8 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
             note.activityName = "코딩"
             note.memo = "오늘은 커피빈에서 하루종일 코딩."
             
-            try! self.realm.write {
-                self.realm.add(note)
+            try! self.realm!.write {
+                self.realm!.add(note)
             }
         }
     }
