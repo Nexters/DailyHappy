@@ -48,6 +48,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         newObject?["emotionColorAlpha"] = 0.8
                     }
                 }
+            } else if oldSchemaVersion < 2 {
+                migration.enumerate(Note.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 2 {
+                        newObject?["hasMemo"] = false
+                    }
+                }
+            } else if oldSchemaVersion < 3 {
+                migration.enumerate(Note.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 3 {
+                        let hasMemo = oldObject!["hasMemo"] as! Bool
+                        newObject!["hasPlace"] = hasMemo
+                        newObject?["placeName"] = ""
+                    }
+                }
             }
             print("Migration complete.")
         }

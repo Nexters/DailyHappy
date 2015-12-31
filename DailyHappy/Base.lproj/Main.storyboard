@@ -367,41 +367,42 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="T00-ee-N2x">
                                         <rect key="frame" x="20" y="286" width="560" height="47"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activity" translatesAutoresizingMaskIntoConstraints="NO" id="jGa-3B-coh">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-Jb-GqI">
                                                 <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="47" id="06A-L6-bDQ"/>
-                                                    <constraint firstAttribute="height" constant="47" id="L2L-yH-Rbq"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="item" translatesAutoresizingMaskIntoConstraints="NO" id="Yce-1k-sk9">
-                                                <rect key="frame" x="128" y="0.0" width="47" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="47" id="Z0u-rW-BoP"/>
-                                                    <constraint firstAttribute="height" constant="47" id="uYA-5j-9sE"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="place" translatesAutoresizingMaskIntoConstraints="NO" id="XUc-Rx-Eh0">
+                                                <state key="normal" image="activity"/>
+                                                <connections>
+                                                    <action selector="clickActivity:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="Gb2-ht-gzy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qan-hR-PPL">
+                                                <rect key="frame" x="129" y="0.0" width="47" height="47"/>
+                                                <state key="normal" image="item"/>
+                                                <connections>
+                                                    <action selector="clickItem:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="dLs-ND-tWf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr4-P8-mnq">
                                                 <rect key="frame" x="257" y="0.0" width="47" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="47" id="RIE-mX-bXd"/>
-                                                    <constraint firstAttribute="width" constant="47" id="gwu-jH-QIC"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="ByI-sC-85L">
+                                                <state key="normal" image="anniversary"/>
+                                                <connections>
+                                                    <action selector="clickAnniversary:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="CeO-3S-UtR"/>
+                                                    <action selector="clickMemo:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="ZUi-MO-XxY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdZ-uy-WUU">
                                                 <rect key="frame" x="385" y="0.0" width="47" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="47" id="OCS-Ei-74b"/>
-                                                    <constraint firstAttribute="height" constant="47" id="ZzS-Bw-0hW"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="memo" translatesAutoresizingMaskIntoConstraints="NO" id="j93-2f-UCd">
+                                                <state key="normal" image="person"/>
+                                                <connections>
+                                                    <action selector="clickPerson:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="UOF-mn-z6J"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Lh-g4-Q1S">
                                                 <rect key="frame" x="513" y="0.0" width="47" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="47" id="cSA-Cq-9lQ"/>
-                                                    <constraint firstAttribute="width" constant="47" id="pnq-d7-dEk"/>
-                                                </constraints>
-                                            </imageView>
+                                                <state key="normal" image="place"/>
+                                                <connections>
+                                                    <action selector="clickPlace:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="lMb-4Q-pWH"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdG-Is-0U9">
@@ -441,7 +442,7 @@
                                         <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2pf-MV-jtP">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2pf-MV-jtP">
                                         <rect key="frame" x="36" y="478" width="544" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="rhT-CN-cbC"/>
@@ -449,7 +450,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOB-0Z-rtp">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pOB-0Z-rtp">
                                         <rect key="frame" x="22" y="478" width="2" height="24"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -533,6 +534,7 @@
                     <connections>
                         <outlet property="doneButton" destination="EG2-8t-Yp2" id="emc-UO-eLP"/>
                         <outlet property="emotionCollectionView" destination="3Po-ut-iT8" id="7e5-H1-Hoi"/>
+                        <outlet property="keywordTextField" destination="ezn-W5-er5" id="ouo-HH-TwS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFd-wo-1Fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -546,8 +548,8 @@
         <image name="CarditemPersonImage" width="15" height="16"/>
         <image name="WriteButtonImage" width="56" height="56"/>
         <image name="activity" width="47" height="47"/>
+        <image name="anniversary" width="47" height="47"/>
         <image name="item" width="47" height="47"/>
-        <image name="memo" width="47" height="47"/>
         <image name="person" width="47" height="47"/>
         <image name="place" width="47" height="47"/>
     </resources>

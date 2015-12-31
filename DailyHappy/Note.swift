@@ -23,9 +23,11 @@ class Note: Object {
     dynamic var hasItem = false
     dynamic var hasActivity = false
     dynamic var hasAnniversary = false
+    dynamic var hasPlace = false
     dynamic var personName = ""
     dynamic var itemName = ""
     dynamic var activityName = ""
     dynamic var anniversaryName = ""
+    dynamic var placeName = ""
     dynamic var memo = ""
 }
