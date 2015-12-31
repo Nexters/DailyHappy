@@ -27,8 +27,8 @@ class MainItemView: UIView {
     
     func addBehavior (){
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = 10
-        self.backgroundColor = UIColor.yellowColor()
+        self.layer.cornerRadius = 3
+        self.backgroundColor = UIColor(red: 188/255.0, green: 59/255.0, blue: 59/255.0, alpha: 1)
     }
 
 

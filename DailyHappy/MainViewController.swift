@@ -84,8 +84,8 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
         self.view.backgroundColor = UIColor(patternImage: backimg!)
         
         
-        WriteButton.cornerRadius = 40.0
-        WriteButton.backgroundLayerCornerRadius = 40.0
+        WriteButton.cornerRadius = 10.0
+        WriteButton.backgroundLayerCornerRadius = 10.0
         WriteButton.maskEnabled = false
         WriteButton.ripplePercent = 1.75
         WriteButton.rippleLocation = .Center
