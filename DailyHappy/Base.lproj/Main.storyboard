@@ -132,7 +132,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="r7C-ET-XCi" secondAttribute="trailing" constant="7" id="0Js-MD-ygr"/>
+                                            <constraint firstAttribute="trailing" secondItem="r7C-ET-XCi" secondAttribute="trailing" constant="14" id="0Js-MD-ygr"/>
                                             <constraint firstItem="r7C-ET-XCi" firstAttribute="top" secondItem="o1M-mY-Mdf" secondAttribute="top" constant="7" id="13L-P8-h2t"/>
                                             <constraint firstItem="1Wx-56-CvE" firstAttribute="top" secondItem="o1M-mY-Mdf" secondAttribute="top" constant="7" id="9r0-rP-yOh"/>
                                             <constraint firstItem="9tM-Mv-jT4" firstAttribute="leading" secondItem="o1M-mY-Mdf" secondAttribute="leading" constant="30" id="G1N-gT-Ymg"/>
@@ -140,7 +140,7 @@
                                             <constraint firstAttribute="bottom" secondItem="r7C-ET-XCi" secondAttribute="bottom" constant="7" id="WNq-mB-iw8"/>
                                             <constraint firstItem="r7C-ET-XCi" firstAttribute="centerY" secondItem="o1M-mY-Mdf" secondAttribute="centerY" id="pfD-ro-RLB"/>
                                             <constraint firstItem="1Wx-56-CvE" firstAttribute="leading" secondItem="o1M-mY-Mdf" secondAttribute="leading" constant="5" id="rzP-Gd-Gq8"/>
-                                            <constraint firstItem="r7C-ET-XCi" firstAttribute="leading" secondItem="o1M-mY-Mdf" secondAttribute="leading" constant="7" id="vub-uY-Abg"/>
+                                            <constraint firstItem="r7C-ET-XCi" firstAttribute="leading" secondItem="o1M-mY-Mdf" secondAttribute="leading" constant="14" id="vub-uY-Abg"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -149,6 +149,21 @@
                                                 <exclude reference="GTF-6g-d3q"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outlet property="ItemView" destination="r7C-ET-XCi" id="5mX-cv-xd9"/>
+                                            <outlet property="datetimeLabel" destination="Iuj-ei-Q09" id="XbR-eW-CiP"/>
+                                            <outlet property="emoticonImage" destination="9tM-Mv-jT4" id="pF4-Al-LYV"/>
+                                            <outlet property="fifthitemIcon" destination="aPb-Hk-hC1" id="RT1-VU-gn1"/>
+                                            <outlet property="fifthitemLabel" destination="edL-oH-eDX" id="8Pp-nH-68y"/>
+                                            <outlet property="firstitemIcon" destination="MZm-mC-b24" id="Xj5-lo-cVc"/>
+                                            <outlet property="firstitemLabel" destination="GBu-n2-ore" id="s0R-2E-J9x"/>
+                                            <outlet property="fourthitemIcon" destination="Ce5-AF-oa8" id="UGA-Hi-5Hb"/>
+                                            <outlet property="fourthitemLabel" destination="lN1-qU-XQf" id="HAd-IH-inx"/>
+                                            <outlet property="seconditemIcon" destination="JVR-8b-GQO" id="U7u-7K-9TJ"/>
+                                            <outlet property="seconditemLabel" destination="hW1-V7-h0L" id="IWw-SX-1jF"/>
+                                            <outlet property="thirditemIcon" destination="k7B-dp-h8f" id="Nvh-6t-k9b"/>
+                                            <outlet property="thirditemLabel" destination="Td2-07-b8x" id="mlg-BG-lEw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

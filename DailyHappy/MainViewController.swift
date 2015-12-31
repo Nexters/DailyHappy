@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import RxSwift
 
-class MainViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
+class MainViewController: UIViewController {
     
     @IBOutlet var WriteButton: MKButton!
     
@@ -32,50 +32,7 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
         self.presentViewController(WriteVC, animated: true, completion: nil)
     }
     
-    //MARK: - Tableview Delegate & Datasource
-    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
-    {
-        return 10
-    }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        tableView.allowsSelection = false
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        tableView.backgroundColor = UIColor.clearColor()//UIColor(white: 1, alpha:0)
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        
-        var cell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell") as! MainTableViewCell
-        cell.backgroundColor = UIColor.clearColor()
-        
-        
-        
-        
-        //cell.TestLabel.text = "dsfsdfa"
-        return cell
-        
-        //let cell: TestTableViewCell = TestTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "TestTableVIewCell")
-        //cell.TestLabel.text = "asdasd"
-        //return cell
-        //let cell = tableView.dequeueReusableCellWithIdentifier("TestTableVIewCell", forIndexPath: indexPath) as! TestTableViewCell
-        
-        // 셀의 데이터와 이미지 설정 코드
-        //let row = indexPath.row
-        //cell.TestLabel.text = "asdasd"
-        
-        
-        //return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,5 +130,58 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
             }
         }
     }
+}
+
+
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    //MARK: - Tableview Delegate & Datasource
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
+    {
+        return 10
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 1
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        tableView.allowsSelection = false
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.backgroundColor = UIColor.clearColor()
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell") as! MainTableViewCell
+        cell.backgroundColor = UIColor.clearColor()
+        
+        if(indexPath.row % 2 == 0) {
+            cell.ItemView.setBackgorundColor(UIColor(red: 188/255.0, green: 59/255.0, blue: 59/255.0, alpha: 1))
+        } else {
+            cell.ItemView.setBackgorundColor(UIColor(red: 255/255.0, green: 200/255.0, blue: 55/255.0, alpha: 1))
+        }
+        
+        cell.setDatetimeText(String(indexPath.row) + " SUN")
+        cell.setemoticonImage("CardicEnjoyImage")
+        
+        cell.addCarditem(Cardtag(itemType: Cardtag.Tagtype.Person, itemText: "첫번째", itemIndex: 0))
+        cell.addCarditem(Cardtag(itemType: Cardtag.Tagtype.Place, itemText: "두번째", itemIndex: 1))
+        
+        cell.clearCarditem(2)
+        cell.clearCarditem(3)
+        cell.clearCarditem(4)
+        
+        return cell
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+    }
+
+    
 }
 
