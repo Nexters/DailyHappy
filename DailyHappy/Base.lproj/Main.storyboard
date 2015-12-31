@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="1" width="600" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1M-mY-Mdf" id="HXi-IF-lND">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="175"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="175.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-ET-XCi" customClass="MainItemView" customModule="DailyHappy" customModuleProvider="target">
@@ -147,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCb-cf-Efu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346" y="153"/>
+            <point key="canvasLocation" x="228" y="153"/>
         </scene>
         <!--Write Note View Controller-->
         <scene sceneID="id4-ff-cu7">
@@ -301,6 +301,7 @@
                                         </cells>
                                         <connections>
                                             <outlet property="dataSource" destination="Q2e-Vb-JMM" id="0fa-5Q-tNS"/>
+                                            <outlet property="delegate" destination="Q2e-Vb-JMM" id="6Zb-Vs-ACH"/>
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc3-Fz-n61">
@@ -486,54 +487,21 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="EG2-8t-Yp2" id="emc-UO-eLP"/>
                         <outlet property="emotionCollectionView" destination="3Po-ut-iT8" id="7e5-H1-Hoi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFd-wo-1Fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="68"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="HkX-ey-7EV">
-            <objects>
-                <viewController id="a95-Sc-gbx" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hwa-pZ-N11"/>
-                        <viewControllerLayoutGuide type="bottom" id="niB-bd-G9s"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="T7C-H0-ZfZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nX9-b5-O04" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="D92-3P-1sv">
-            <objects>
-                <viewController id="ZCd-WM-CUh" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Akg-Tx-iPe"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cvj-84-JyX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1qU-OA-Bem">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mDj-fm-x5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="1039" y="153"/>
         </scene>
     </scenes>
     <resources>
+        <image name="WriteButtonImage" width="56" height="56"/>
         <image name="activity" width="47" height="47"/>
         <image name="item" width="47" height="47"/>
         <image name="memo" width="47" height="47"/>
         <image name="person" width="47" height="47"/>
         <image name="place" width="47" height="47"/>
-        <image name="WriteButtonImage" width="56" height="56"/>
     </resources>
 </document>

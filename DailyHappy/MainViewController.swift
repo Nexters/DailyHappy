@@ -117,16 +117,16 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
             }
             // Realm Emotion table row 생성.
             
-            let angry = Emotion(value: ["emotionName" : "angry", "emotionColorRed": 188, "emotionColorGreen": 59, "emotionColorBlue": 59])
-            let joy = Emotion(value: ["emotionName" : "joy", "emotionColorRed": 255, "emotionColorGreen": 200, "emotionColorBlue": 55])
-            let awesome = Emotion(value: ["emotionName" : "awesome", "emotionColorRed": 255, "emotionColorGreen": 128, "emotionColorBlue": 8])
-            let flutter = Emotion(value: ["emotionName" : "flutter", "emotionColorRed": 147, "emotionColorGreen": 249, "emotionColorBlue": 185])
-            let happy = Emotion(value: ["emotionName" : "happy", "emotionColorRed": 155, "emotionColorGreen": 274, "emotionColorBlue": 274])
-            let loved = Emotion(value: ["emotionName" : "loved", "emotionColorRed": 237, "emotionColorGreen": 90, "emotionColorBlue": 90])
-            let sad = Emotion(value: ["emotionName" : "sad", "emotionColorRed": 61, "emotionColorGreen": 114, "emotionColorBlue": 180])
-            let relaxed = Emotion(value: ["emotionName" : "relaxed", "emotionColorRed": 118, "emotionColorGreen": 184, "emotionColorBlue": 82])
-            let confused = Emotion(value: ["emotionName" : "confused", "emotionColorRed": 42, "emotionColorGreen": 8, "emotionColorBlue": 69])
-            let worried = Emotion(value: ["emotionName" : "worried", "emotionColorRed": 175, "emotionColorGreen": 171, "emotionColorBlue": 167])
+            let angry = Emotion(value: ["emotionName" : "angry", "emotionColorRed": 188.0/255, "emotionColorGreen": 59.0/255, "emotionColorBlue": 59.0/255])
+            let joy = Emotion(value: ["emotionName" : "joy", "emotionColorRed": 255.0/255, "emotionColorGreen": 200.0/255, "emotionColorBlue": 55.0/255])
+            let awesome = Emotion(value: ["emotionName" : "awesome", "emotionColorRed": 255.0/255, "emotionColorGreen": 128.0/255, "emotionColorBlue": 8.0/255])
+            let flutter = Emotion(value: ["emotionName" : "flutter", "emotionColorRed": 147.0/255, "emotionColorGreen": 249.0/255, "emotionColorBlue": 185.0/255])
+            let happy = Emotion(value: ["emotionName" : "happy", "emotionColorRed": 155.0/255, "emotionColorGreen": 274.0/255, "emotionColorBlue": 274.0/255])
+            let loved = Emotion(value: ["emotionName" : "loved", "emotionColorRed": 237.0/255, "emotionColorGreen": 90.0/255, "emotionColorBlue": 90.0/255])
+            let sad = Emotion(value: ["emotionName" : "sad", "emotionColorRed": 61.0/255, "emotionColorGreen": 114.0/255, "emotionColorBlue": 180.0/255])
+            let relaxed = Emotion(value: ["emotionName" : "relaxed", "emotionColorRed": 118.0/255, "emotionColorGreen": 184.0/255, "emotionColorBlue": 82.0/255])
+            let confused = Emotion(value: ["emotionName" : "confused", "emotionColorRed": 42.0/255, "emotionColorGreen": 8.0/255, "emotionColorBlue": 69.0/255])
+            let worried = Emotion(value: ["emotionName" : "worried", "emotionColorRed": 175.0/255, "emotionColorGreen": 171.0/255, "emotionColorBlue": 167.0/255])
             
             try! self.realm!.write {
                 self.realm!.add(angry)

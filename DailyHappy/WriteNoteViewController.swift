@@ -12,7 +12,7 @@ import RealmSwift
 
 class WriteNoteViewController: UIViewController{
     @IBOutlet weak var emotionCollectionView: UICollectionView!
-    @IBOutlet weak var resultView: UIView!
+    @IBOutlet weak var doneButton: UIButton!
     
     let realm = try! Realm()
     var emotions: Results<Emotion>?
@@ -20,6 +20,9 @@ class WriteNoteViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         emotions = self.realm.objects(Emotion)
+        
+        let emotion = emotions?.first
+        doneButton.backgroundColor = getEmotionColor(emotion!)
     }
 }
 
@@ -35,19 +38,23 @@ extension WriteNoteViewController: UICollectionViewDataSource {
         
         cell.emotion = emotion
         cell.imageView?.image = UIImage(named: (emotion.emotionName))
-        
         return cell
     }
 }
 
 extension WriteNoteViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("emotionCell", forIndexPath: indexPath) as! EmotionImageCell
-        
-        if let emotion = cell.emotion {
-           resultView.backgroundColor = UIColor(red: CGFloat(emotion.emotionColorRed), green: CGFloat(emotion.emotionColorGreen), blue: CGFloat(emotion.emotionColorBlue), alpha: 1.0)
-            
-        }
-        
+        let emotion = self.emotions![indexPath.row]
+        doneButton.backgroundColor = getEmotionColor(emotion)
     }
+}
+
+func getEmotionColor(emotion: Emotion) -> UIColor {
+    let red = CGFloat(emotion.emotionColorRed)
+    let green = CGFloat(emotion.emotionColorGreen)
+    let blue = CGFloat(emotion.emotionColorBlue)
+    
+    let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    
+    return color
 }
