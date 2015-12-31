@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
     enum Emotion: String {
@@ -19,5 +20,17 @@ struct Constants {
         case Sad = "sad"
         case Confused = "confused"
         case Worried = "worried"
+    }
+    
+    enum Keyword {
+        case Activity
+        case Item
+        case Anniversary
+        case Person
+        case Place
+    }
+    
+    struct Color {
+        static let lightGray = UIColor(red: 135.0/255, green: 135.0/255, blue: 135.0/255, alpha: 1.0)
     }
 }
