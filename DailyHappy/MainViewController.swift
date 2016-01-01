@@ -21,6 +21,7 @@ class MainViewController: UIViewController {
     private var noteResults:[Note]=[]
     private var year = 2016
     private var month = 1
+    @IBOutlet weak var selectMonthButton: UIButton!
     
     func setYear(year:Int) {
         self.year = year
@@ -39,6 +40,11 @@ class MainViewController: UIViewController {
         createDummyNote()
         
         setNoteResultsFromRealm()
+    }
+    @IBAction func showSelectMonth(sender: AnyObject) {
+        let SelectMonthVC = self.storyboard?.instantiateViewControllerWithIdentifier("SelectMonthVC") as! SelectMonthViewController
+        
+        self.presentViewController(SelectMonthVC, animated: false, completion: nil)
     }
     
     private func setNoteResultsFromRealm() {

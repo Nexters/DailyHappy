@@ -33,6 +33,8 @@
 		CE1C9C0B1C33E0AD00D8B1A2 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9C0A1C33E0AD00D8B1A2 /* MainTableViewCell.swift */; };
 		CE1C9C0D1C33E10500D8B1A2 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9C0C1C33E10500D8B1A2 /* MainTableView.swift */; };
 		CE378CB11C35F18200C7170D /* EmotionMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE378CB01C35F18200C7170D /* EmotionMaker.swift */; };
+		CE378CB51C3682AD00C7170D /* SelectMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE378CB41C3682AD00C7170D /* SelectMonthViewController.swift */; };
+		CE378CB81C36CDE000C7170D /* SelectMonthStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE378CB71C36CDDF00C7170D /* SelectMonthStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		CE1C9C0A1C33E0AD00D8B1A2 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		CE1C9C0C1C33E10500D8B1A2 /* MainTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		CE378CB01C35F18200C7170D /* EmotionMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionMaker.swift; sourceTree = "<group>"; };
+		CE378CB41C3682AD00C7170D /* SelectMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMonthViewController.swift; sourceTree = "<group>"; };
+		CE378CB71C36CDDF00C7170D /* SelectMonthStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMonthStackView.swift; sourceTree = "<group>"; };
 		E148360D4B76C96AE03C7C02 /* Pods-DailyHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy.debug.xcconfig"; sourceTree = "<group>"; };
 		E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,9 +195,11 @@
 		036992221C3285E800F73047 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE378CB61C36CD7800C7170D /* SelectMonthView */,
 				CE1C9C0E1C33E13C00D8B1A2 /* MainView */,
 				036991F11C3279B000F73047 /* MainViewController.swift */,
 				036992231C32BFBA00F73047 /* WriteNoteViewController.swift */,
+				CE378CB41C3682AD00C7170D /* SelectMonthViewController.swift */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
@@ -259,6 +265,14 @@
 				CE1C9C081C33E06400D8B1A2 /* MainItemView.swift */,
 			);
 			name = MainView;
+			sourceTree = "<group>";
+		};
+		CE378CB61C36CD7800C7170D /* SelectMonthView */ = {
+			isa = PBXGroup;
+			children = (
+				CE378CB71C36CDDF00C7170D /* SelectMonthStackView.swift */,
+			);
+			name = SelectMonthView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,6 +541,8 @@
 				036991F21C3279B000F73047 /* MainViewController.swift in Sources */,
 				036991F01C3279B000F73047 /* AppDelegate.swift in Sources */,
 				CE378CB11C35F18200C7170D /* EmotionMaker.swift in Sources */,
+				CE378CB81C36CDE000C7170D /* SelectMonthStackView.swift in Sources */,
+				CE378CB51C3682AD00C7170D /* SelectMonthViewController.swift in Sources */,
 				0369921F1C327BF200F73047 /* Note.swift in Sources */,
 				CE1C9C0B1C33E0AD00D8B1A2 /* MainTableViewCell.swift in Sources */,
 				036992241C32BFBA00F73047 /* WriteNoteViewController.swift in Sources */,
