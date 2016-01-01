@@ -33,4 +33,8 @@ struct Constants {
     struct Color {
         static let lightGray = UIColor(red: 135.0/255, green: 135.0/255, blue: 135.0/255, alpha: 1.0)
     }
+    
+    struct Placeholder {
+        static let MemoPlaceholder = "메모를 남겨주세요."
+    }
 }

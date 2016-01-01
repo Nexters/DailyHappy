@@ -62,11 +62,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         newObject?["placeName"] = ""
                     }
                 }
+            } else if oldSchemaVersion < 4 {
+                migration.enumerate(Note.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 4 {
+                        newObject?["date"] = NSDate()
+                    }
+                }
             }
             print("Migration complete.")
         }
         
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 3, migrationBlock: migrationBlock)
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 4, migrationBlock: migrationBlock)
         return true
     }
 

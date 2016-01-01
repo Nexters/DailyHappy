@@ -13,10 +13,10 @@ import RxSwift
 class MainViewController: UIViewController {
     
     @IBOutlet var WriteButton: MKButton!
+    @IBOutlet weak var emptyMemoLabel: UILabel!
+    @IBOutlet weak var tableView: MainTableView!
     
     var realm:Realm?
-    @IBOutlet weak var emptyMemoLabel: UILabel!
-    
     let emotionMaker:EmotionMaker = EmotionMaker()
     private var noteResults:[Note]=[]
     private var year = 2016
@@ -31,15 +31,8 @@ class MainViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        realm = try! Realm()
-        createEmotionTable()
-        .subscribeNext { (Bool) -> Void in
-            //let emotions = self.realm.objects(Emotion)
-            //print(emotions)
-        }
-        createDummyNote()
-        
         setNoteResultsFromRealm()
+        tableView.reloadData()
     }
     @IBAction func showSelectMonth(sender: AnyObject) {
         let SelectMonthVC = self.storyboard?.instantiateViewControllerWithIdentifier("SelectMonthVC") as! SelectMonthViewController
@@ -64,6 +57,7 @@ class MainViewController: UIViewController {
         for result in results {
             noteResults.append(result)
         }
+        print(noteResults)
     }
     
     @IBAction func ShowWriteView(sender: AnyObject) {
@@ -72,10 +66,16 @@ class MainViewController: UIViewController {
         self.presentViewController(WriteVC, animated: true, completion: nil)
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        realm = try! Realm()
+        createEmotionTable()
+            .subscribeNext { (Bool) -> Void in
+                //let emotions = self.realm.objects(Emotion)
+                //print(emotions)
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
         initBackground()
         initWriteButton()
@@ -85,6 +85,7 @@ class MainViewController: UIViewController {
         let backimg = UIImage(named: "BackgroundImage")
         self.view.backgroundColor = UIColor(patternImage: backimg!)
     }
+    
     func initWriteButton() {
         WriteButton.cornerRadius = 10.0
         WriteButton.backgroundLayerCornerRadius = 10.0
@@ -219,7 +220,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let emotionType = self.emotionMaker.getEmotionType((note.emotion?.emotionName)!)
         
         cell.setCellStyle(self.emotionMaker.getEmotionColor(emotionType))
-        cell.setDatetimeText(note.createdAt)
+        cell.setDatetimeText(note.date)
         cell.setemoticonImage(self.emotionMaker.getCardicImagename(emotionType))
         cell.setCellItems(note)
       
