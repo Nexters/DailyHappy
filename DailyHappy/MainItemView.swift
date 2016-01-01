@@ -22,13 +22,16 @@ class MainItemView: UIView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         addBehavior()
-        //fatalError("This class does not support NSCoding")
     }
     
     func addBehavior (){
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 3
-        self.backgroundColor = UIColor(red: 188/255.0, green: 59/255.0, blue: 59/255.0, alpha: 1)
+        
+    }
+    
+    func setBackgorundColor(backcolor: UIColor) {
+        self.backgroundColor = backcolor
     }
 
 

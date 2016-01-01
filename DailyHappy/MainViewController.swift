@@ -10,61 +10,52 @@ import UIKit
 import RealmSwift
 import RxSwift
 
-class MainViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
+class MainViewController: UIViewController {
     
     @IBOutlet var WriteButton: MKButton!
     
     var realm:Realm?
+    @IBOutlet weak var emptyMemoLabel: UILabel!
+    
+    let emotionMaker:EmotionMaker = EmotionMaker()
+    private var noteResults:[Note]=[]
+    private var year = 2016
+    private var month = 1
+    
+    func setYear(year:Int) {
+        self.year = year
+    }
+    func setMonth(month:Int) {
+        self.month = month
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        setNoteResultsFromRealm()
+    }
+    
+    private func setNoteResultsFromRealm() {
+        let startDate = String(year) + "-" + String(month)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM"
+        let startNSDate = dateFormatter.dateFromString(startDate)!
+        
+        let components: NSDateComponents = NSDateComponents()
+        components.setValue(1, forComponent: NSCalendarUnit.Month);
+        let endNSDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startNSDate, options: NSCalendarOptions(rawValue: 0))
+        
+        
+        let predicate = NSPredicate(format: "createdAt >= %@ AND createdAt < %@", startNSDate, endNSDate!)
+        let results = realm!.objects(Note).filter(predicate)
+        noteResults.removeAll()
+        for result in results {
+            noteResults.append(result)
+        }
+    }
     
     @IBAction func ShowWriteView(sender: AnyObject) {
         let WriteVC = self.storyboard?.instantiateViewControllerWithIdentifier("WriteVC") as! WriteNoteViewController
         
         self.presentViewController(WriteVC, animated: true, completion: nil)
-    }
-    
-    //MARK: - Tableview Delegate & Datasource
-    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
-    {
-        return 10
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        tableView.allowsSelection = false
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        tableView.backgroundColor = UIColor.clearColor()//UIColor(white: 1, alpha:0)
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        
-        var cell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell") as! MainTableViewCell
-        cell.backgroundColor = UIColor.clearColor()
-        
-        
-        
-        
-        //cell.TestLabel.text = "dsfsdfa"
-        return cell
-        
-        //let cell: TestTableViewCell = TestTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "TestTableVIewCell")
-        //cell.TestLabel.text = "asdasd"
-        //return cell
-        //let cell = tableView.dequeueReusableCellWithIdentifier("TestTableVIewCell", forIndexPath: indexPath) as! TestTableViewCell
-        
-        // 셀의 데이터와 이미지 설정 코드
-        //let row = indexPath.row
-        //cell.TestLabel.text = "asdasd"
-        
-        
-        //return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        
     }
     
     override func viewDidLoad() {
@@ -78,10 +69,17 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
         }
         createDummyNote()
         
+        // Do any additional setup after loading the view, typically from a nib.
+        initBackground()
+        initWriteButton()
+    }
+    
+    func initBackground() {
         let backimg = UIImage(named: "BackgroundImage")
         self.view.backgroundColor = UIColor(patternImage: backimg!)
-        
-        
+    }
+    
+    func initWriteButton() {
         WriteButton.cornerRadius = 10.0
         WriteButton.backgroundLayerCornerRadius = 10.0
         WriteButton.maskEnabled = false
@@ -115,16 +113,16 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
             }
             // Realm Emotion table row 생성.
             
-            let angry = Emotion(value: ["emotionName" : "angry", "emotionColorRed": 188.0/255, "emotionColorGreen": 59.0/255, "emotionColorBlue": 59.0/255])
-            let joy = Emotion(value: ["emotionName" : "joy", "emotionColorRed": 255.0/255, "emotionColorGreen": 200.0/255, "emotionColorBlue": 55.0/255])
-            let awesome = Emotion(value: ["emotionName" : "awesome", "emotionColorRed": 255.0/255, "emotionColorGreen": 128.0/255, "emotionColorBlue": 8.0/255])
-            let flutter = Emotion(value: ["emotionName" : "flutter", "emotionColorRed": 147.0/255, "emotionColorGreen": 249.0/255, "emotionColorBlue": 185.0/255])
-            let happy = Emotion(value: ["emotionName" : "happy", "emotionColorRed": 155.0/255, "emotionColorGreen": 274.0/255, "emotionColorBlue": 274.0/255])
-            let loved = Emotion(value: ["emotionName" : "loved", "emotionColorRed": 237.0/255, "emotionColorGreen": 90.0/255, "emotionColorBlue": 90.0/255])
-            let sad = Emotion(value: ["emotionName" : "sad", "emotionColorRed": 61.0/255, "emotionColorGreen": 114.0/255, "emotionColorBlue": 180.0/255])
-            let relaxed = Emotion(value: ["emotionName" : "relaxed", "emotionColorRed": 118.0/255, "emotionColorGreen": 184.0/255, "emotionColorBlue": 82.0/255])
-            let confused = Emotion(value: ["emotionName" : "confused", "emotionColorRed": 42.0/255, "emotionColorGreen": 8.0/255, "emotionColorBlue": 69.0/255])
-            let worried = Emotion(value: ["emotionName" : "worried", "emotionColorRed": 175.0/255, "emotionColorGreen": 171.0/255, "emotionColorBlue": 167.0/255])
+            let angry = self.emotionMaker.getEmotioninstance(EmotionMaker.Emotiontype.Angry)
+            let joy = self.emotionMaker.getEmotioninstance(EmotionMaker.Emotiontype.Joy)
+            let awesome = self.emotionMaker.getEmotioninstance(EmotionMaker.Emotiontype.Awesome)
+            let flutter = self.emotionMaker.getEmotioninstance(EmotionMaker.Emotiontype.Flutter)
+            let happy = self.emotionMaker.getEmotioninstance(EmotionMaker.Emotiontype.Happy)
+            let loved = self.emotionMaker.getEmotioninstance(EmotionMaker.Emotiontype.Loved)
+            let sad = self.emotionMaker.getEmotioninstance(EmotionMaker.Emotiontype.Sad)
+            let relaxed = self.emotionMaker.getEmotioninstance(EmotionMaker.Emotiontype.Relaxed)
+            let confused = self.emotionMaker.getEmotioninstance(EmotionMaker.Emotiontype.Confused)
+            let worried = self.emotionMaker.getEmotioninstance(EmotionMaker.Emotiontype.Worried)
             
             try! self.realm!.write {
                 self.realm!.add(angry)
@@ -171,5 +169,62 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
             }
         }
     }
+}
+
+
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
+        
+        setTableviewStyle(tableView)
+        setEmptyMemolabel()
+        return noteResults.count
+    }
+    
+    func setTableviewStyle(tableView:UITableView) {
+        tableView.allowsSelection = false
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.backgroundColor = UIColor.clearColor()
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+    }
+    func setEmptyMemolabel() {
+        if(noteResults.count < 1) {
+            emptyMemoLabel.text = "글이 없습니다.\n작성해 주세요."
+            emptyMemoLabel.hidden = false
+        } else {
+            emptyMemoLabel.hidden = true
+        }
+    }
+    
+    
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell") as! MainTableViewCell
+        if(noteResults.count <= indexPath.row) {
+            return cell
+        }
+        let note = noteResults[indexPath.row]
+        let emotionType = self.emotionMaker.getEmotionType((note.emotion?.emotionName)!)
+        
+        cell.setCellStyle(self.emotionMaker.getEmotionColor(emotionType))
+        cell.setDatetimeText(note.createdAt)
+        cell.setemoticonImage(self.emotionMaker.getCardicImagename(emotionType))
+        cell.setCellItems(note)
+      
+        return cell
+    }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    
 }
 

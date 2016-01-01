@@ -33,6 +33,7 @@
 		CE1C9C091C33E06400D8B1A2 /* MainItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9C081C33E06400D8B1A2 /* MainItemView.swift */; };
 		CE1C9C0B1C33E0AD00D8B1A2 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9C0A1C33E0AD00D8B1A2 /* MainTableViewCell.swift */; };
 		CE1C9C0D1C33E10500D8B1A2 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9C0C1C33E10500D8B1A2 /* MainTableView.swift */; };
+		CE378CB11C35F18200C7170D /* EmotionMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE378CB01C35F18200C7170D /* EmotionMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		CE1C9C081C33E06400D8B1A2 /* MainItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainItemView.swift; sourceTree = "<group>"; };
 		CE1C9C0A1C33E0AD00D8B1A2 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		CE1C9C0C1C33E10500D8B1A2 /* MainTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
+		CE378CB01C35F18200C7170D /* EmotionMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionMaker.swift; sourceTree = "<group>"; };
 		E148360D4B76C96AE03C7C02 /* Pods-DailyHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy.debug.xcconfig"; sourceTree = "<group>"; };
 		E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -183,6 +185,7 @@
 			children = (
 				0369921E1C327BF200F73047 /* Note.swift */,
 				036992201C3282EF00F73047 /* Emotion.swift */,
+				CE378CB01C35F18200C7170D /* EmotionMaker.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				036991F21C3279B000F73047 /* MainViewController.swift in Sources */,
 				0341B3A61C369390005C0842 /* DatePickerViewController.swift in Sources */,
 				036991F01C3279B000F73047 /* AppDelegate.swift in Sources */,
+				CE378CB11C35F18200C7170D /* EmotionMaker.swift in Sources */,
 				0369921F1C327BF200F73047 /* Note.swift in Sources */,
 				CE1C9C0B1C33E0AD00D8B1A2 /* MainTableViewCell.swift in Sources */,
 				036992241C32BFBA00F73047 /* WriteNoteViewController.swift in Sources */,
