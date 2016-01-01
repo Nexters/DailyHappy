@@ -30,13 +30,13 @@ struct Cardtag {
         case .Person:
             result = "CarditemPersonImage"
         case .Place:
-            result = "CarditemPersonImage"
+            result = "CarditemPlaceImage"
         case .Item:
-            result = "CarditemPersonImage"
+            result = "CarditemItemImage"
         case .Activity:
-            result = "CarditemPersonImage"
+            result = "CarditemActivityImage"
         case .Anniversary:
-            result = "CarditemPersonImage"
+            result = "CarditemAnniversaryImage"
         }
         return result
     }
@@ -119,11 +119,55 @@ class MainTableViewCell: UITableViewCell {
         }
     }
     
-    func setDatetimeText(text: String ) {
-        datetimeLabel.text = text
+    func setDatetimeText(date: NSDate ) {
+        datetimeLabel.text = getCardDateFormat(date)
     }
     func setemoticonImage(imgName: String ) {
         emoticonImage.image = UIImage(named: imgName)
+    }
+    
+    func setCellStyle(color:UIColor) {
+        backgroundColor = UIColor.clearColor()
+        ItemView.setBackgorundColor(color)
+    }
+    func getCardDateFormat(date:NSDate) ->(String){
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd EEE"
+        let createDate = dateFormatter.stringFromDate(date)
+        return createDate
+    }
+
+    func setCellItems(note:Note) {
+        
+        var cardItemindex = 0
+        if(note.hasPerson) {
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Person, itemText: note.personName, itemIndex: cardItemindex))
+            cardItemindex++
+        }
+        if(note.hasItem) {
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Item, itemText: note.itemName, itemIndex: cardItemindex))
+            cardItemindex++
+        }
+        if(note.hasActivity) {
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Activity, itemText: note.activityName, itemIndex: cardItemindex))
+            cardItemindex++
+        }
+        if(note.hasAnniversary) {
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Anniversary, itemText: note.anniversaryName, itemIndex: cardItemindex))
+            cardItemindex++
+        }
+        if(note.hasPlace) {
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Place, itemText: note.placeName, itemIndex: cardItemindex))
+            cardItemindex++
+        }
+        
+        
+        while cardItemindex < 5 {
+            clearCarditem(cardItemindex)
+            cardItemindex++
+        }
+
+        
     }
    
 }

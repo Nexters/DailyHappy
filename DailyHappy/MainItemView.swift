@@ -22,7 +22,6 @@ class MainItemView: UIView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         addBehavior()
-        //fatalError("This class does not support NSCoding")
     }
     
     func addBehavior (){
