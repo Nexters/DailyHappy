@@ -67,35 +67,35 @@ class WriteNoteViewController: UIViewController{
     }
     
     @IBAction func clickActivity(sender: UIButton) {
-        setPreviouslyFocusedKeywordAlpha()
+        setPreviouslyFocusedKeywordState()
         activityButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Activity
         keywordTextField.text = self.note.activityName
     }
     
     @IBAction func clickItem(sender: UIButton) {
-        setPreviouslyFocusedKeywordAlpha()
+        setPreviouslyFocusedKeywordState()
         itemButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Item
         keywordTextField.text = self.note.itemName
     }
     
     @IBAction func clickAnniversary(sender: UIButton) {
-        setPreviouslyFocusedKeywordAlpha()
+        setPreviouslyFocusedKeywordState()
         anniversaryButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Anniversary
         keywordTextField.text = self.note.anniversaryName
     }
     
     @IBAction func clickPerson(sender: UIButton) {
-        setPreviouslyFocusedKeywordAlpha()
+        setPreviouslyFocusedKeywordState()
         personButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Person
         keywordTextField.text = self.note.personName
     }
     
     @IBAction func clickPlace(sender: UIButton) {
-        setPreviouslyFocusedKeywordAlpha()
+        setPreviouslyFocusedKeywordState()
         placeButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Place
         keywordTextField.text = self.note.placeName
@@ -107,6 +107,8 @@ class WriteNoteViewController: UIViewController{
     
     @IBAction func createNote(sender:UIButton) {
         print(self.note)
+        
+        setPreviouslyFocusedKeywordState()
         note.createdAt = NSDate()
         note.updatedAt = NSDate()
         
@@ -144,7 +146,7 @@ class WriteNoteViewController: UIViewController{
 //        view.addGestureRecognizer(tap)
     }
     
-    func setPreviouslyFocusedKeywordAlpha() {
+    func setPreviouslyFocusedKeywordState() {
         switch self.currentKeyword {
         case Constants.Keyword.Activity:
             if self.note.activityName.isEmpty {

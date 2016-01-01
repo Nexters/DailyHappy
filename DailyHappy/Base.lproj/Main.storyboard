@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="1" width="600" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1M-mY-Mdf" id="HXi-IF-lND">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="175"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="176"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-ET-XCi" customClass="MainItemView" customModule="DailyHappy" customModuleProvider="target">
@@ -211,6 +211,7 @@
                     <connections>
                         <outlet property="WriteButton" destination="HtW-24-Pgm" id="QqT-It-Bfo"/>
                         <outlet property="emptyMemoLabel" destination="M8w-Im-0ab" id="ToQ-lE-gnu"/>
+                        <outlet property="tableView" destination="Cts-fW-UBS" id="7Xw-MY-f3R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCb-cf-Efu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,14 +236,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pO-Me-Dc6">
-                                <rect key="frame" x="20" y="46" width="30" height="30"/>
-                                <state key="normal" title="뒤로"/>
-                                <connections>
-                                    <action selector="clickBackButton:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="GlW-wd-mnD"/>
-                                </connections>
-                            </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="Mm1-kt-Flg">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="Mm1-kt-Flg">
                                 <rect key="frame" x="0.0" y="104" width="600" height="496"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Krx-Nh-dnh">
@@ -279,7 +273,7 @@
                                         <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Po-ut-iT8">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Po-ut-iT8">
                                         <rect key="frame" x="0.0" y="148" width="600" height="47"/>
                                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -362,7 +356,7 @@
                                             <outlet property="delegate" destination="Q2e-Vb-JMM" id="LZe-et-FmY"/>
                                         </connections>
                                     </collectionView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gc3-Fz-n61">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc3-Fz-n61">
                                         <rect key="frame" x="0.0" y="209" width="600" height="2"/>
                                         <color key="backgroundColor" red="0.18431372549019609" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -378,7 +372,7 @@
                                         <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="T00-ee-N2x">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="T00-ee-N2x">
                                         <rect key="frame" x="20" y="285" width="560" height="47"/>
                                         <subviews>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-Jb-GqI">
@@ -404,7 +398,6 @@
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdZ-uy-WUU">
                                                 <rect key="frame" x="396" y="0.0" width="45" height="47"/>
->>>>>>> 27f711d592a96ee87d21631f1afd36774b0c4216
                                                 <state key="normal" image="person"/>
                                                 <connections>
                                                     <action selector="clickPerson:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="UOF-mn-z6J"/>
@@ -419,7 +412,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zdG-Is-0U9">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdG-Is-0U9">
                                         <rect key="frame" x="22" y="356" width="2" height="24"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -433,7 +426,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="키워드를 입력해줘" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ezn-W5-er5">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="키워드를 입력해줘" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ezn-W5-er5">
                                         <rect key="frame" x="36" y="356" width="544" height="24"/>
                                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -446,7 +439,7 @@
                                             <outlet property="delegate" destination="Q2e-Vb-JMM" id="qrK-j8-UzI"/>
                                         </connections>
                                     </textField>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5zL-s8-2G0">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zL-s8-2G0">
                                         <rect key="frame" x="0.0" y="410" width="600" height="2"/>
                                         <color key="backgroundColor" red="0.1843137255" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -471,7 +464,7 @@
                                         <rect key="frame" x="0.0" y="553" width="600" height="60"/>
                                         <color key="backgroundColor" red="0.081606597460319341" green="0.078871231766114117" blue="0.28149541884816753" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                           <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="dn3-8V-Siq"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="dn3-8V-Siq"/>
                                             <constraint firstAttribute="height" constant="60" id="hSa-6s-0cq"/>
                                         </constraints>
                                         <state key="normal" title="완료">
@@ -551,6 +544,13 @@
                                     <outlet property="delegate" destination="Q2e-Vb-JMM" id="gGT-kR-hHa"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pO-Me-Dc6">
+                                <rect key="frame" x="10" y="33" width="48" height="47"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="clickBackButton:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="GlW-wd-mnD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -558,6 +558,7 @@
                             <constraint firstItem="Mm1-kt-Flg" firstAttribute="leading" secondItem="t6k-lL-Ozq" secondAttribute="leading" id="GNc-kT-3bw"/>
                             <constraint firstItem="kG6-XI-d2S" firstAttribute="centerX" secondItem="t6k-lL-Ozq" secondAttribute="centerX" id="KCR-9L-zuD"/>
                             <constraint firstItem="kG6-XI-d2S" firstAttribute="top" secondItem="g2P-xX-taD" secondAttribute="bottom" constant="26" id="RSY-rL-qZ6"/>
+                            <constraint firstItem="1pO-Me-Dc6" firstAttribute="centerY" secondItem="kG6-XI-d2S" secondAttribute="centerY" id="W0I-XW-SCV"/>
                             <constraint firstItem="1pO-Me-Dc6" firstAttribute="leading" secondItem="t6k-lL-Ozq" secondAttribute="leadingMargin" id="Xak-SH-zQU"/>
                             <constraint firstAttribute="trailing" secondItem="Mm1-kt-Flg" secondAttribute="trailing" id="ap4-iW-PqN"/>
                             <constraint firstItem="Mm1-kt-Flg" firstAttribute="width" secondItem="t6k-lL-Ozq" secondAttribute="width" id="nQ1-5p-fuU"/>
@@ -565,10 +566,13 @@
                             <constraint firstItem="FGl-N6-Qof" firstAttribute="top" secondItem="Mm1-kt-Flg" secondAttribute="bottom" id="tX4-gw-sQE"/>
                             <constraint firstItem="Mm1-kt-Flg" firstAttribute="leading" secondItem="t6k-lL-Ozq" secondAttribute="leading" id="tdb-Fp-ayg"/>
                             <constraint firstItem="1pO-Me-Dc6" firstAttribute="top" secondItem="g2P-xX-taD" secondAttribute="bottom" constant="26" id="v9I-3i-l4z"/>
+                            <constraint firstItem="Mm1-kt-Flg" firstAttribute="top" secondItem="1pO-Me-Dc6" secondAttribute="bottom" constant="24" id="wVW-rE-e3o"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="v9I-3i-l4z"/>
                                 <exclude reference="ap4-iW-PqN"/>
+                                <exclude reference="oVi-Z8-PW5"/>
                                 <exclude reference="tdb-Fp-ayg"/>
                             </mask>
                         </variation>
@@ -697,6 +701,7 @@
         <image name="WriteButtonImage" width="56" height="56"/>
         <image name="activity" width="47" height="47"/>
         <image name="anniversary" width="47" height="46"/>
+        <image name="close" width="16" height="16"/>
         <image name="item" width="47" height="47"/>
         <image name="person" width="45" height="47"/>
         <image name="place" width="35" height="47"/>

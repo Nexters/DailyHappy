@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Migration complete.")
         }
         
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 3, migrationBlock: migrationBlock)
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 4, migrationBlock: migrationBlock)
         return true
     }
 

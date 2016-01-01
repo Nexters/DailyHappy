@@ -13,10 +13,10 @@ import RxSwift
 class MainViewController: UIViewController {
     
     @IBOutlet var WriteButton: MKButton!
+    @IBOutlet weak var emptyMemoLabel: UILabel!
+    @IBOutlet weak var tableView: MainTableView!
     
     var realm:Realm?
-    @IBOutlet weak var emptyMemoLabel: UILabel!
-    
     let emotionMaker:EmotionMaker = EmotionMaker()
     private var noteResults:[Note]=[]
     private var year = 2016
@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         setNoteResultsFromRealm()
+        tableView.reloadData()
     }
     
     private func setNoteResultsFromRealm() {
@@ -50,6 +51,7 @@ class MainViewController: UIViewController {
         for result in results {
             noteResults.append(result)
         }
+        print(noteResults)
     }
     
     @IBAction func ShowWriteView(sender: AnyObject) {
@@ -67,7 +69,6 @@ class MainViewController: UIViewController {
                 //let emotions = self.realm.objects(Emotion)
                 //print(emotions)
         }
-        createDummyNote()
         
         // Do any additional setup after loading the view, typically from a nib.
         initBackground()
@@ -213,7 +214,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let emotionType = self.emotionMaker.getEmotionType((note.emotion?.emotionName)!)
         
         cell.setCellStyle(self.emotionMaker.getEmotionColor(emotionType))
-        cell.setDatetimeText(note.createdAt)
+        cell.setDatetimeText(note.date)
         cell.setemoticonImage(self.emotionMaker.getCardicImagename(emotionType))
         cell.setCellItems(note)
       
