@@ -16,16 +16,6 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
     
     var realm:Realm?
     
-    override func viewWillAppear(animated: Bool) {
-        realm = try! Realm()
-        createEmotionTable()
-        .subscribeNext { (Bool) -> Void in
-            //let emotions = self.realm.objects(Emotion)
-            //print(emotions)
-        }
-        createDummyNote()
-    }
-    
     @IBAction func ShowWriteView(sender: AnyObject) {
         let WriteVC = self.storyboard?.instantiateViewControllerWithIdentifier("WriteVC") as! WriteNoteViewController
         
@@ -79,7 +69,15 @@ class MainViewController: UIViewController ,UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        realm = try! Realm()
+        createEmotionTable()
+            .subscribeNext { (Bool) -> Void in
+                //let emotions = self.realm.objects(Emotion)
+                //print(emotions)
+        }
+        createDummyNote()
+        
         let backimg = UIImage(named: "BackgroundImage")
         self.view.backgroundColor = UIColor(patternImage: backimg!)
         

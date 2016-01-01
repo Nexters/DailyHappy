@@ -62,6 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         newObject?["placeName"] = ""
                     }
                 }
+            } else if oldSchemaVersion < 4 {
+                migration.enumerate(Note.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 4 {
+                        newObject?["date"] = NSDate()
+                    }
+                }
             }
             print("Migration complete.")
         }
