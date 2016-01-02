@@ -61,16 +61,16 @@ class EmotionMaker {
         
     }
     func initEmotionDataset() {
-        emotionDataset.append(EmotionData(type: Emotiontype.Angry, name: "angry", red: 188.0/255, green: 59.0/255, blue: 59.0/255, alpha: 1.0, cardicImagename: "CardicAngry", icImagename: "angry"))
-        emotionDataset.append(EmotionData(type: Emotiontype.Awesome, name: "awesome", red: 255.0/255, green: 128.0/255, blue: 8.0/255, alpha: 1.0, cardicImagename: "CardicAwesome", icImagename: "awesome"))
-        emotionDataset.append(EmotionData(type: Emotiontype.Confused, name: "confused", red: 42.0/255, green:  8.0/255, blue: 69.0/255, alpha: 1.0, cardicImagename: "CardicConfused", icImagename: "confused"))
-        emotionDataset.append(EmotionData(type: Emotiontype.Flutter, name: "flutter", red: 147.0/255, green: 249.0/255, blue: 185.0/255, alpha: 1.0, cardicImagename: "CardicFlutter", icImagename: "flutter"))
-        emotionDataset.append(EmotionData(type: Emotiontype.Happy, name: "happy", red: 155.0/255, green: 274.0/255, blue: 274.0/255, alpha: 1.0, cardicImagename: "CardicHappy", icImagename: "happy"))
-        emotionDataset.append(EmotionData(type: Emotiontype.Joy, name: "joy", red: 255.0/255, green: 200.0/255, blue: 55.0/255, alpha: 1.0, cardicImagename: "CardicJoy", icImagename: "joy"))
-        emotionDataset.append(EmotionData(type: Emotiontype.Loved, name: "loved", red: 237.0/255, green: 90.0/255, blue: 90.0/255, alpha: 1.0, cardicImagename: "CardicLoved", icImagename: "loved"))
-        emotionDataset.append(EmotionData(type: Emotiontype.Relaxed, name: "relaxed", red: 118.0/255, green: 184.0/255, blue: 82.0/255, alpha: 1.0, cardicImagename: "CardicRelaxed", icImagename: "relaxed"))
-        emotionDataset.append(EmotionData(type: Emotiontype.Sad, name: "sad", red: 61.0/255, green: 114.0/255, blue: 180.0/255, alpha: 1.0, cardicImagename: "CardicSad", icImagename: "sad"))
-        emotionDataset.append(EmotionData(type: Emotiontype.Worried, name: "worried", red: 175.0/255, green: 171.0/255, blue: 167.0/255, alpha: 1.0, cardicImagename: "CardicWorried", icImagename: "worried"))
+        emotionDataset.append(EmotionData(type: Emotiontype.Angry, name: "angry", red: 151.0/255, green: 48.0/255, blue: 55.0/255, alpha: 1.0, cardicImagename: "CardicAngry", icImagename: "angry"))
+        emotionDataset.append(EmotionData(type: Emotiontype.Awesome, name: "awesome", red: 255.0/255, green: 202.0/255, blue: 10.0/255, alpha: 1.0, cardicImagename: "CardicAwesome", icImagename: "awesome"))
+        emotionDataset.append(EmotionData(type: Emotiontype.Confused, name: "confused", red: 90.0/255, green:  42.0/255, blue: 108.0/255, alpha: 1.0, cardicImagename: "CardicConfused", icImagename: "confused"))
+        emotionDataset.append(EmotionData(type: Emotiontype.Flutter, name: "flutter", red: 114.0/255, green: 197.0/255, blue: 163.0/255, alpha: 1.0, cardicImagename: "CardicFlutter", icImagename: "flutter"))
+        emotionDataset.append(EmotionData(type: Emotiontype.Happy, name: "happy", red: 244.0/255, green: 135.0/255, blue: 137.0/255, alpha: 1.0, cardicImagename: "CardicHappy", icImagename: "happy"))
+        emotionDataset.append(EmotionData(type: Emotiontype.Joy, name: "joy", red: 255.0/255, green: 118.0/255, blue: 0.0/255, alpha: 1.0, cardicImagename: "CardicJoy", icImagename: "joy"))
+        emotionDataset.append(EmotionData(type: Emotiontype.Loved, name: "loved", red: 255.0/255, green: 65.0/255, blue: 75.0/255, alpha: 1.0, cardicImagename: "CardicLoved", icImagename: "loved"))
+        emotionDataset.append(EmotionData(type: Emotiontype.Relaxed, name: "relaxed", red: 98.0/255, green: 143.0/255, blue: 33.0/255, alpha: 1.0, cardicImagename: "CardicRelaxed", icImagename: "relaxed"))
+        emotionDataset.append(EmotionData(type: Emotiontype.Sad, name: "sad", red: 53.0/255, green: 109.0/255, blue: 183.0/255, alpha: 1.0, cardicImagename: "CardicSad", icImagename: "sad"))
+        emotionDataset.append(EmotionData(type: Emotiontype.Worried, name: "worried", red: 176.0/255, green: 171.0/255, blue: 167.0/255, alpha: 1.0, cardicImagename: "CardicWorried", icImagename: "worried"))
     }
     
     func getEmotioninstance(type:Emotiontype) ->(Emotion) {

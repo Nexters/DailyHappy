@@ -138,27 +138,37 @@ class MainTableViewCell: UITableViewCell {
         return createDate
     }
 
+    
+    func getItemString(data:String) ->(String){
+        let endIndex = data.characters.count
+        if(endIndex <= 5) {
+            return data
+        }
+        return data.substringWithRange(Range<String.Index>(start: data.startIndex.advancedBy(0), end: data.endIndex.advancedBy(5-endIndex))) + "..."
+
+    }
     func setCellItems(note:Note) {
         
         var cardItemindex = 0
         if(note.hasPerson) {
-            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Person, itemText: note.personName, itemIndex: cardItemindex))
+            
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Person, itemText: getItemString(note.personName), itemIndex: cardItemindex))
             cardItemindex++
         }
         if(note.hasItem) {
-            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Item, itemText: note.itemName, itemIndex: cardItemindex))
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Item, itemText: getItemString(note.itemName), itemIndex: cardItemindex))
             cardItemindex++
         }
         if(note.hasActivity) {
-            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Activity, itemText: note.activityName, itemIndex: cardItemindex))
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Activity, itemText: getItemString(note.activityName), itemIndex: cardItemindex))
             cardItemindex++
         }
         if(note.hasAnniversary) {
-            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Anniversary, itemText: note.anniversaryName, itemIndex: cardItemindex))
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Anniversary, itemText: getItemString(note.anniversaryName), itemIndex: cardItemindex))
             cardItemindex++
         }
         if(note.hasPlace) {
-            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Place, itemText: note.placeName, itemIndex: cardItemindex))
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Place, itemText: getItemString(note.placeName), itemIndex: cardItemindex))
             cardItemindex++
         }
         
