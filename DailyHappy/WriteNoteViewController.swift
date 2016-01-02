@@ -36,6 +36,9 @@ class WriteNoteViewController: UIViewController{
     var isShowKeyboard = false
     var isFocusKeywordTexField = false
     
+    let selectedText = "_selected"
+    var selectedIndex = 0
+    
     override func viewWillAppear(animated: Bool) {
         subscribeToKeyboardWillShowNotifications()
     }
@@ -47,11 +50,7 @@ class WriteNoteViewController: UIViewController{
         
         setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
         memoTextView.text = Constants.Placeholder.MemoPlaceholder
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR")
-        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
-        dateButton.setTitle(dateFormatter.stringFromDate(note.date), forState: UIControlState.Normal)
+        setDateButtonTitle(note.date)
         
         activityButton.alpha = 1.0
         
@@ -134,16 +133,10 @@ class WriteNoteViewController: UIViewController{
         
     }
     
-    func datePickerValueChanged(sender:UIDatePicker) {
-        
-//        let dateFormatter = NSDateFormatter()
-//        
-//        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
-//
-//        dateButton.setTitle(dateFormatter.stringFromDate(sender.date), forState: UIControlState.Normal)
-        
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
-    
+  
     func setScrollViewKeyboardDismiss() {
         scrollView.keyboardDismissMode = .OnDrag
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
@@ -290,6 +283,13 @@ class WriteNoteViewController: UIViewController{
     func setKeywordTextFieldPlaceholder(placeholer: String) {
         keywordTextField.attributedPlaceholder = NSAttributedString(string: placeholer, attributes: [NSForegroundColorAttributeName: Constants.Color.lightGray])
     }
+    
+    func setDateButtonTitle(date: NSDate) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR")
+        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+        dateButton.setTitle(dateFormatter.stringFromDate(date), forState: UIControlState.Normal)
+    }
 }
 
 extension WriteNoteViewController: UICollectionViewDataSource {
@@ -301,15 +301,19 @@ extension WriteNoteViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("emotionCell", forIndexPath: indexPath) as! EmotionImageCell
         let imageName = emotionMaker.getIcImagename(indexPath.row)
-        cell.imageView?.image = UIImage(named: (imageName))
+        
+        cell.bind(selectedIndex == indexPath.row, imageName: imageName)
         return cell
     }
 }
 
 extension WriteNoteViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        note.emotion = emotionMaker.getEmotionName(indexPath.row)
-        doneButton.backgroundColor = emotionMaker.getEmotionColor(indexPath.row)
+        selectedIndex = indexPath.row
+        note.emotion = emotionMaker.getEmotionName(selectedIndex)
+        doneButton.backgroundColor = emotionMaker.getEmotionColor(selectedIndex)
+        
+        collectionView.reloadData()
     }
 }
 

@@ -42,4 +42,5 @@ struct Constants {
         static let Person = "누가 떠오르나요?"
         static let Place = "어디에 있었나요?"
     }
+    
 }

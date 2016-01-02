@@ -15,7 +15,7 @@ class DatePickerViewController: UIViewController {
     var date:NSDate?
     weak var previousViewController: WriteNoteViewController?
     
-    override func viewDidLoad() {
+    override func viewDidAppear(animated: Bool) {
         datePicker.backgroundColor = UIColor.darkGrayColor()
         datePicker.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
         datePicker.setValue(0.8, forKey: "alpha")
@@ -26,6 +26,10 @@ class DatePickerViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         datePicker.date = self.date! 
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     @IBAction func goBack(sender:UIButton) {
