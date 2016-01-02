@@ -324,28 +324,42 @@
                                 </variation>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2015. 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TD7-i7-4RI">
-                                <rect key="frame" x="152" y="21" width="97" height="30"/>
+                                <rect key="frame" x="153" y="21" width="96" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcO-lY-Wk5">
-                                <rect key="frame" x="40" y="21" width="30" height="30"/>
-                                <state key="normal" title="&lt;"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcO-lY-Wk5">
+                                <rect key="frame" x="40" y="21" width="96" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="OnBackYearButton:" destination="zPd-hH-FJ8" eventType="touchUpInside" id="cBd-Ec-Jfi"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKT-GO-N9r">
-                                <rect key="frame" x="330" y="21" width="30" height="30"/>
-                                <state key="normal" title="&gt;"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKT-GO-N9r">
+                                <rect key="frame" x="264" y="21" width="96" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="&gt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="OnForwardYearButton:" destination="zPd-hH-FJ8" eventType="touchUpInside" id="HZP-NN-6nh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="OKT-GO-N9r" firstAttribute="width" secondItem="TD7-i7-4RI" secondAttribute="width" id="22y-XY-ehu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OKT-GO-N9r" secondAttribute="trailing" constant="20" id="EKe-yK-JcU"/>
                             <constraint firstItem="mML-jy-oHF" firstAttribute="top" secondItem="CIs-od-F9S" secondAttribute="bottom" constant="50" id="ItG-wx-9DB"/>
                             <constraint firstItem="gcO-lY-Wk5" firstAttribute="leading" secondItem="Bcx-Fz-QrJ" secondAttribute="leadingMargin" constant="20" id="SgU-94-kFH"/>
                             <constraint firstItem="gcO-lY-Wk5" firstAttribute="top" secondItem="CIs-od-F9S" secondAttribute="bottom" constant="1" id="WLS-QI-1RO"/>
                             <constraint firstItem="mML-jy-oHF" firstAttribute="leading" secondItem="Bcx-Fz-QrJ" secondAttribute="leadingMargin" constant="10" id="WPt-YQ-9uJ"/>
                             <constraint firstItem="mML-jy-oHF" firstAttribute="centerX" secondItem="Bcx-Fz-QrJ" secondAttribute="centerX" id="bqW-bO-dfW"/>
+                            <constraint firstItem="gcO-lY-Wk5" firstAttribute="width" secondItem="TD7-i7-4RI" secondAttribute="width" id="gnn-xv-2Tj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mML-jy-oHF" secondAttribute="trailing" constant="10" id="i3a-je-SCs"/>
                             <constraint firstItem="OKT-GO-N9r" firstAttribute="top" secondItem="CIs-od-F9S" secondAttribute="bottom" constant="1" id="nmQ-tH-FJR"/>
                             <constraint firstItem="TD7-i7-4RI" firstAttribute="top" secondItem="CIs-od-F9S" secondAttribute="bottom" constant="1" id="rO2-sp-oFK"/>
@@ -372,6 +386,7 @@
                         <outlet property="leftView" destination="DPy-la-TpY" id="lyn-EZ-0M0"/>
                         <outlet property="rightView" destination="LU4-Jl-qum" id="xJd-xM-Kf1"/>
                         <outlet property="selectMonthStackView" destination="mML-jy-oHF" id="7uC-JY-P3G"/>
+                        <outlet property="yearLabel" destination="TD7-i7-4RI" id="57I-hD-D4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUp-EG-66L" userLabel="First Responder" sceneMemberID="firstResponder"/>

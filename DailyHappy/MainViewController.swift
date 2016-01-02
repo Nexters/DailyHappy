@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
     private var month = 1
     @IBOutlet weak var selectMonthButton: UIButton!
     
+
     func setYear(year:Int) {
         self.year = year
     }
@@ -40,8 +41,14 @@ class MainViewController: UIViewController {
         selectMonthButton.setTitle(String(year) + ". " + String(month), forState: .Normal)
     }
     
+
+
+    
     func setMonthUsingString(data: String) {
         setMonth(Int(data)!)
+    }
+    func setYearUsingString(data: String) {
+        setYear(Int(data)!)
     }
     
 
@@ -49,11 +56,12 @@ class MainViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let SelectVC = segue.destinationViewController as? SelectMonthViewController {
-            SelectVC.onDataAvailable = {[weak self](data) in
+            SelectVC.setSelectYear(year)
+            SelectVC.onDataAvailable = {[weak self](year, month) in
                 if let weakSelf = self {
-                    weakSelf.setMonthUsingString(data)
-                   // weakSelf.setSelectMonthButtonText()
-                    
+                    weakSelf.setYearUsingString(year)
+                    weakSelf.setMonthUsingString(month)
+                    weakSelf.setSelectMonthButtonText()
                 }
             }
         }
