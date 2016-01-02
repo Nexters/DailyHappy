@@ -46,7 +46,7 @@ class WriteNoteViewController: UIViewController{
         let emotion = emotions?.first
         doneButton.backgroundColor = getEmotionColor(emotion!)
         
-        keywordTextField.attributedPlaceholder = NSAttributedString(string:keywordTextField.placeholder!,attributes: [NSForegroundColorAttributeName: Constants.Color.lightGray])
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
         memoTextView.text = Constants.Placeholder.MemoPlaceholder
         
         let dateFormatter = NSDateFormatter()
@@ -70,6 +70,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         activityButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Activity
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
         keywordTextField.text = self.note.activityName
     }
     
@@ -77,6 +78,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         itemButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Item
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Item)
         keywordTextField.text = self.note.itemName
     }
     
@@ -84,6 +86,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         anniversaryButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Anniversary
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Anniversary)
         keywordTextField.text = self.note.anniversaryName
     }
     
@@ -91,6 +94,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         personButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Person
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Person)
         keywordTextField.text = self.note.personName
     }
     
@@ -98,6 +102,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         placeButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Place
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Place)
         keywordTextField.text = self.note.placeName
     }
     
@@ -274,6 +279,10 @@ class WriteNoteViewController: UIViewController{
     func DismissKeyboard(){
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    func setKeywordTextFieldPlaceholder(placeholer: String) {
+        keywordTextField.attributedPlaceholder = NSAttributedString(string: placeholer, attributes: [NSForegroundColorAttributeName: Constants.Color.lightGray])
     }
 }
 
