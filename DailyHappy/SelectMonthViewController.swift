@@ -31,7 +31,10 @@ class SelectMonthViewController: UIViewController {
     @IBOutlet var SepButton: MKButton!
     @IBOutlet var DecButton: MKButton!
     
-    
+    var onDataAvailable : ((data:String)->())?
+    func sendData(data:String) {
+        self.onDataAvailable?(data:data)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         initBackground()
@@ -54,11 +57,15 @@ class SelectMonthViewController: UIViewController {
     }
     
     
-    @IBAction func OnJanButton(sender: AnyObject) {
+    @IBAction func OnJanButton(sender: AnyObject) {        
         
+        dismissViewControllerAnimated(true, completion: nil)
         
     }
     @IBAction func OnAprButton(sender: AnyObject) {
+       
+        sendData("4")
+         dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func OnJulButton(sender: AnyObject) {
     }
