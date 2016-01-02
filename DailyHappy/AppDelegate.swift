@@ -24,10 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // copy over old data files for migration
         let defaultPath = Realm.Configuration.defaultConfiguration.path!
-        let defaultParentPath = (defaultPath as NSString).stringByDeletingLastPathComponent
         
         if let v0Path = bundlePath("default-v0.realm") {
             do {
+                try NSFileManager.defaultManager().copyItemAtPath(defaultPath, toPath: v0Path)
                 try NSFileManager.defaultManager().removeItemAtPath(defaultPath)
                 try NSFileManager.defaultManager().copyItemAtPath(v0Path, toPath: defaultPath)
             } catch {}
@@ -68,11 +68,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         newObject?["date"] = NSDate()
                     }
                 }
+            } else if oldSchemaVersion < 5 {
+                migration.enumerate(Note.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 4 {
+                        let emotion = oldObject!["emotion"] as! Emotion
+                        newObject!["emotion"] = emotion.emotionName
+                    }
+                }
             }
             print("Migration complete.")
         }
         
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 4, migrationBlock: migrationBlock)
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 5, migrationBlock: migrationBlock)
         return true
     }
 

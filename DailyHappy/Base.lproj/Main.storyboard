@@ -22,7 +22,7 @@
                                 <rect key="frame" x="30" y="70" width="340" height="460"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-la-TpY">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="460"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="460"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuS-TW-2Rn" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="30" width="93" height="80"/>
@@ -121,9 +121,9 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjs-kz-KfW">
-                                        <rect key="frame" x="113" y="0.0" width="114" height="460"/>
+                                        <rect key="frame" x="114" y="0.0" width="113" height="460"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1z-aM-0Wd" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1z-aM-0Wd" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="30" width="94" height="80"/>
                                                 <color key="backgroundColor" red="0.94497058109999998" green="0.92972479480000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="2월">
@@ -138,7 +138,7 @@
                                                     <action selector="OnFebButton:" destination="zPd-hH-FJ8" eventType="touchUpInside" id="yok-Iq-YjW"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULo-PI-NC3" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULo-PI-NC3" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="130" width="94" height="80"/>
                                                 <color key="backgroundColor" red="0.94497058109999998" green="0.92972479480000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="5월">
@@ -153,7 +153,7 @@
                                                     <action selector="OnMayButton:" destination="zPd-hH-FJ8" eventType="touchUpInside" id="bGc-pZ-C2A"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCw-Vp-45W" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCw-Vp-45W" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="230" width="94" height="80"/>
                                                 <color key="backgroundColor" red="0.94497058109999998" green="0.92972479480000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="8월">
@@ -168,7 +168,7 @@
                                                     <action selector="OnAugButton:" destination="zPd-hH-FJ8" eventType="touchUpInside" id="0jL-F9-4ce"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyT-3D-f8e" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyT-3D-f8e" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="330" width="94" height="80"/>
                                                 <color key="backgroundColor" red="0.94497058109999998" green="0.92972479480000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="11월">
@@ -215,7 +215,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LU4-Jl-qum">
-                                        <rect key="frame" x="227" y="0.0" width="113" height="460"/>
+                                        <rect key="frame" x="227" y="0.0" width="114" height="460"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwa-mq-fmt" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="30" width="93" height="80"/>
@@ -398,7 +398,7 @@
                                         <rect key="frame" x="0.0" y="1" width="600" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1M-mY-Mdf" id="HXi-IF-lND">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="175"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="175.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-ET-XCi" customClass="MainItemView" customModule="DailyHappy" customModuleProvider="target">
@@ -607,7 +607,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kG6-XI-d2S">
-                                <rect key="frame" x="271" y="46" width="59" height="21"/>
+                                <rect key="frame" x="271" y="46" width="59" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -644,13 +644,13 @@
                                         </variation>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감정선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDC-ng-jKe">
-                                        <rect key="frame" x="20" y="104" width="59" height="21"/>
+                                        <rect key="frame" x="20" y="104" width="59" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Po-ut-iT8">
-                                        <rect key="frame" x="0.0" y="148" width="600" height="47"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Po-ut-iT8">
+                                        <rect key="frame" x="0.0" y="148.5" width="600" height="47"/>
                                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="hNC-iW-hqG"/>
@@ -732,15 +732,15 @@
                                             <outlet property="delegate" destination="Q2e-Vb-JMM" id="LZe-et-FmY"/>
                                         </connections>
                                     </collectionView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gc3-Fz-n61">
-                                        <rect key="frame" x="0.0" y="209" width="600" height="2"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc3-Fz-n61">
+                                        <rect key="frame" x="0.0" y="209.5" width="600" height="2"/>
                                         <color key="backgroundColor" red="0.18431372549019609" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="DfG-cf-9qi"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="키워드 입력" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wE-9l-AK8">
-                                        <rect key="frame" x="20" y="241" width="78" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키워드 입력" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wE-9l-AK8">
+                                        <rect key="frame" x="20" y="241.5" width="78" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Sel-Do-byB"/>
                                         </constraints>
@@ -748,8 +748,8 @@
                                         <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="T00-ee-N2x">
-                                        <rect key="frame" x="20" y="285" width="560" height="47"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="T00-ee-N2x">
+                                        <rect key="frame" x="20" y="286" width="560" height="47"/>
                                         <subviews>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-Jb-GqI">
                                                 <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
@@ -773,7 +773,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdZ-uy-WUU">
-                                                <rect key="frame" x="395" y="0.0" width="45" height="47"/>
+                                                <rect key="frame" x="396" y="0.0" width="45" height="47"/>
                                                 <state key="normal" image="person"/>
                                                 <connections>
                                                     <action selector="clickPerson:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="UOF-mn-z6J"/>
@@ -788,8 +788,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zdG-Is-0U9">
-                                        <rect key="frame" x="22" y="356" width="2" height="24"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdG-Is-0U9">
+                                        <rect key="frame" x="22" y="356.5" width="2" height="24"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="C80-oL-plY"/>
@@ -802,8 +802,8 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="키워드를 입력해줘" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ezn-W5-er5">
-                                        <rect key="frame" x="36" y="356" width="544" height="24"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="키워드를 입력해줘" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ezn-W5-er5">
+                                        <rect key="frame" x="36" y="356.5" width="544" height="24"/>
                                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="0q2-ce-xlZ"/>
@@ -815,20 +815,20 @@
                                             <outlet property="delegate" destination="Q2e-Vb-JMM" id="qrK-j8-UzI"/>
                                         </connections>
                                     </textField>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5zL-s8-2G0">
-                                        <rect key="frame" x="0.0" y="410" width="600" height="2"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zL-s8-2G0">
+                                        <rect key="frame" x="0.0" y="410.5" width="600" height="2"/>
                                         <color key="backgroundColor" red="0.1843137255" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="iTh-FV-fbn"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLd-Ct-zCZ">
-                                        <rect key="frame" x="20" y="432" width="30" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLd-Ct-zCZ">
+                                        <rect key="frame" x="20" y="432.5" width="29.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pOB-0Z-rtp">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOB-0Z-rtp">
                                         <rect key="frame" x="22" y="477" width="2" height="24"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -836,8 +836,8 @@
                                             <constraint firstAttribute="width" constant="2" id="Bc0-sC-aLi"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG2-8t-Yp2">
-                                        <rect key="frame" x="0.0" y="553" width="600" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG2-8t-Yp2">
+                                        <rect key="frame" x="0.0" y="613" width="600" height="60"/>
                                         <color key="backgroundColor" red="0.081606597460319341" green="0.078871231766114117" blue="0.28149541884816753" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="dn3-8V-Siq"/>
@@ -855,11 +855,11 @@
                                             <action selector="createNote:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="gmE-QN-ZJ2"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" text="메모를 남겨주세요. " translatesAutoresizingMaskIntoConstraints="NO" id="hcb-aq-oxr">
-                                        <rect key="frame" x="33" y="473" width="547" height="70"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="메모를 남겨주세요. " translatesAutoresizingMaskIntoConstraints="NO" id="hcb-aq-oxr">
+                                        <rect key="frame" x="33" y="473" width="547" height="140"/>
                                         <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="kfC-eM-CJ1"/>
+                                            <constraint firstAttribute="height" constant="140" id="kfC-eM-CJ1"/>
                                         </constraints>
                                         <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -881,7 +881,7 @@
                                     <constraint firstItem="Krx-Nh-dnh" firstAttribute="top" secondItem="Mm1-kt-Flg" secondAttribute="top" id="BxS-cJ-hfE"/>
                                     <constraint firstItem="3Po-ut-iT8" firstAttribute="leading" secondItem="Mm1-kt-Flg" secondAttribute="leading" id="Byu-wL-hiO"/>
                                     <constraint firstItem="ezn-W5-er5" firstAttribute="top" secondItem="T00-ee-N2x" secondAttribute="bottom" constant="24" id="Clu-CV-OCx"/>
-                                    <constraint firstItem="EG2-8t-Yp2" firstAttribute="top" secondItem="hcb-aq-oxr" secondAttribute="bottom" constant="10" id="EKf-Cq-3cc"/>
+                                    <constraint firstItem="EG2-8t-Yp2" firstAttribute="top" secondItem="hcb-aq-oxr" secondAttribute="bottom" id="EKf-Cq-3cc"/>
                                     <constraint firstItem="EDC-ng-jKe" firstAttribute="top" secondItem="Krx-Nh-dnh" secondAttribute="bottom" constant="20" id="EMJ-aF-lDs"/>
                                     <constraint firstItem="3Po-ut-iT8" firstAttribute="width" secondItem="Mm1-kt-Flg" secondAttribute="width" id="GYc-uH-zU8"/>
                                     <constraint firstAttribute="trailing" secondItem="hcb-aq-oxr" secondAttribute="trailing" constant="20" id="GlP-mG-zcH"/>
