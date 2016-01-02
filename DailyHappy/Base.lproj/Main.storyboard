@@ -323,7 +323,7 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2015. 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TD7-i7-4RI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015. 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TD7-i7-4RI">
                                 <rect key="frame" x="153" y="21" width="96" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -763,39 +763,39 @@
                                         <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="T00-ee-N2x">
-                                        <rect key="frame" x="20" y="302" width="560" height="47"/>
+                                    <stackView opaque="NO" contentMode="center" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="T00-ee-N2x">
+                                        <rect key="frame" x="20" y="302" width="580" height="47"/>
                                         <subviews>
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-Jb-GqI">
+                                            <button opaque="NO" alpha="0.5" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-Jb-GqI">
                                                 <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
                                                 <state key="normal" image="activity"/>
                                                 <connections>
                                                     <action selector="clickActivity:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="Gb2-ht-gzy"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH7-U5-Zvy">
-                                                <rect key="frame" x="132" y="0.0" width="47" height="47"/>
+                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH7-U5-Zvy">
+                                                <rect key="frame" x="134" y="0.0" width="47" height="47"/>
                                                 <state key="normal" image="item"/>
                                                 <connections>
                                                     <action selector="clickItem:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="S7A-Zh-3NE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr4-P8-mnq">
-                                                <rect key="frame" x="264" y="0.0" width="47" height="47"/>
+                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr4-P8-mnq">
+                                                <rect key="frame" x="267" y="0.0" width="47" height="47"/>
                                                 <state key="normal" image="anniversary"/>
                                                 <connections>
                                                     <action selector="clickAnniversary:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="CeO-3S-UtR"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdZ-uy-WUU">
-                                                <rect key="frame" x="396" y="0.0" width="45" height="47"/>
+                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdZ-uy-WUU">
+                                                <rect key="frame" x="400" y="0.0" width="47" height="47"/>
                                                 <state key="normal" image="person"/>
                                                 <connections>
                                                     <action selector="clickPerson:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="UOF-mn-z6J"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGP-NY-9Y4">
-                                                <rect key="frame" x="525" y="0.0" width="35" height="47"/>
+                                                <rect key="frame" x="533" y="0.0" width="47" height="47"/>
                                                 <state key="normal" image="place"/>
                                                 <connections>
                                                     <action selector="clickPlace:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="0aP-Ox-0hJ"/>
@@ -914,11 +914,11 @@
                                     <constraint firstItem="pOB-0Z-rtp" firstAttribute="leading" secondItem="Mm1-kt-Flg" secondAttribute="leading" constant="22" id="UDb-gc-OyT"/>
                                     <constraint firstItem="4wE-9l-AK8" firstAttribute="leading" secondItem="Mm1-kt-Flg" secondAttribute="leading" constant="20" id="Xr2-ox-9yw"/>
                                     <constraint firstItem="hcb-aq-oxr" firstAttribute="top" secondItem="nLd-Ct-zCZ" secondAttribute="bottom" constant="10" id="YGr-zw-3py"/>
-                                    <constraint firstItem="T00-ee-N2x" firstAttribute="leading" secondItem="Mm1-kt-Flg" secondAttribute="leading" constant="20" id="Yjr-Bo-Tsf"/>
+                                    <constraint firstItem="T00-ee-N2x" firstAttribute="leading" secondItem="Mm1-kt-Flg" secondAttribute="leading" constant="10" id="Yjr-Bo-Tsf"/>
                                     <constraint firstItem="nLd-Ct-zCZ" firstAttribute="leading" secondItem="Mm1-kt-Flg" secondAttribute="leading" constant="20" id="ZVy-5V-rSv"/>
                                     <constraint firstItem="5zL-s8-2G0" firstAttribute="top" secondItem="zdG-Is-0U9" secondAttribute="bottom" constant="30" id="bQu-3a-mhr"/>
                                     <constraint firstItem="EG2-8t-Yp2" firstAttribute="leading" secondItem="Mm1-kt-Flg" secondAttribute="leading" id="cWd-EN-bV8"/>
-                                    <constraint firstAttribute="trailing" secondItem="T00-ee-N2x" secondAttribute="trailing" constant="20" id="dHZ-Q6-UWB"/>
+                                    <constraint firstAttribute="trailing" secondItem="T00-ee-N2x" secondAttribute="trailing" constant="10" id="dHZ-Q6-UWB"/>
                                     <constraint firstItem="zdG-Is-0U9" firstAttribute="leading" secondItem="Mm1-kt-Flg" secondAttribute="leading" constant="22" id="eCa-1e-UE8"/>
                                     <constraint firstAttribute="trailing" secondItem="gc3-Fz-n61" secondAttribute="trailing" id="mxn-Mx-chC"/>
                                     <constraint firstAttribute="trailing" secondItem="ezn-W5-er5" secondAttribute="trailing" constant="20" id="oPb-8A-7wC"/>
@@ -1091,10 +1091,10 @@
         <image name="CarditemPersonImage" width="15" height="15"/>
         <image name="WriteButtonImage" width="56" height="56"/>
         <image name="activity" width="47" height="47"/>
-        <image name="anniversary" width="47" height="46"/>
+        <image name="anniversary" width="47" height="47"/>
         <image name="close" width="16" height="16"/>
         <image name="item" width="47" height="47"/>
-        <image name="person" width="45" height="47"/>
-        <image name="place" width="35" height="47"/>
+        <image name="person" width="47" height="47"/>
+        <image name="place" width="47" height="47"/>
     </resources>
 </document>
