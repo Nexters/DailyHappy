@@ -28,6 +28,10 @@ class DatePickerViewController: UIViewController {
         datePicker.date = self.date! 
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     @IBAction func goBack(sender:UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }

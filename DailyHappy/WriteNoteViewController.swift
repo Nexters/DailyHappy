@@ -132,6 +132,10 @@ class WriteNoteViewController: UIViewController{
         }
         
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
   
     func setScrollViewKeyboardDismiss() {
         scrollView.keyboardDismissMode = .OnDrag
