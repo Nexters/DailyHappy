@@ -82,6 +82,24 @@ class EmotionMaker {
         return Emotion(value: ["emotionName" : "happy", "emotionColorRed": 155.0/255, "emotionColorGreen": 274.0/255, "emotionColorBlue": 274.0/255])
     }
     
+    func getEmotionColor(name: String) ->(UIColor) {
+        for data in emotionDataset {
+            if(data.type == getEmotionType(name)) {
+                return UIColor(colorLiteralRed: data.red, green: data.green, blue: data.blue, alpha: data.alpha)
+            }
+        }
+        return UIColor(colorLiteralRed: 155.0/255, green: 274.0/255, blue: 274.0/255, alpha: 1.0)
+    }
+    
+    func getEmotionColor(index: Int) ->(UIColor) {
+        for data in emotionDataset {
+            if(data.type == getEmotionType(index)) {
+                return UIColor(colorLiteralRed: data.red, green: data.green, blue: data.blue, alpha: data.alpha)
+            }
+        }
+        return UIColor(colorLiteralRed: 155.0/255, green: 274.0/255, blue: 274.0/255, alpha: 1.0)
+    }
+    
     func getEmotionColor(type:Emotiontype) ->(UIColor) {
         for data in emotionDataset {
             if(data.type == type) {
@@ -109,6 +127,15 @@ class EmotionMaker {
         return "happy"
     }
     
+    func getIcImagename(index: Int) ->(String) {
+        for data in emotionDataset {
+            if(data.type == getEmotionType(index)) {
+                return data.icImagename
+            }
+        }
+        return "happy"
+    }
+    
     func getEmotionType(emotionName:String) ->(Emotiontype){
         
         for data in emotionDataset {
@@ -119,5 +146,21 @@ class EmotionMaker {
         return Emotiontype.Happy
     }
     
+    func getEmotionType(index:Int) ->(Emotiontype){
+        return emotionDataset[index].type
+    }
+    
+    func getEmotionName(index: Int) ->(String) {
+        for data in emotionDataset {
+            if(data.type == getEmotionType(index)) {
+                return data.name
+            }
+        }
+        return "happy"
+    }
+    
+    func getEmotionCount() -> Int {
+        return emotionDataset.count
+    }
     
 }

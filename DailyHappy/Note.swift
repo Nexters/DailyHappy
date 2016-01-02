@@ -19,7 +19,7 @@ class Note: Object {
     dynamic var createdAt = NSDate()
     dynamic var updatedAt = NSDate()
     dynamic var date = NSDate()
-    dynamic var emotion:Emotion?
+    dynamic var emotion = ""
     dynamic var hasPerson = false
     dynamic var hasItem = false
     dynamic var hasActivity = false

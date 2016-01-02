@@ -30,10 +30,11 @@ class WriteNoteViewController: UIViewController{
     let realm = try! Realm()
     let disposeBag = DisposeBag()
     
-    var emotions: Results<Emotion>?
+    let emotionMaker = EmotionMaker()
     let note = Note()
     var currentKeyword = Constants.Keyword.Activity
     var isShowKeyboard = false
+    var isFocusKeywordTexField = false
     
     override func viewWillAppear(animated: Bool) {
         subscribeToKeyboardWillShowNotifications()
@@ -41,12 +42,10 @@ class WriteNoteViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emotions = self.realm.objects(Emotion)
         
-        let emotion = emotions?.first
-        doneButton.backgroundColor = getEmotionColor(emotion!)
+        doneButton.backgroundColor = emotionMaker.getEmotionColor("angry")
         
-        keywordTextField.attributedPlaceholder = NSAttributedString(string:keywordTextField.placeholder!,attributes: [NSForegroundColorAttributeName: Constants.Color.lightGray])
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
         memoTextView.text = Constants.Placeholder.MemoPlaceholder
         
         let dateFormatter = NSDateFormatter()
@@ -70,6 +69,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         activityButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Activity
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
         keywordTextField.text = self.note.activityName
     }
     
@@ -77,6 +77,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         itemButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Item
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Item)
         keywordTextField.text = self.note.itemName
     }
     
@@ -84,6 +85,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         anniversaryButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Anniversary
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Anniversary)
         keywordTextField.text = self.note.anniversaryName
     }
     
@@ -91,6 +93,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         personButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Person
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Person)
         keywordTextField.text = self.note.personName
     }
     
@@ -98,6 +101,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         placeButton.alpha = 1.0
         currentKeyword = Constants.Keyword.Place
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Place)
         keywordTextField.text = self.note.placeName
     }
     
@@ -253,7 +257,14 @@ class WriteNoteViewController: UIViewController{
         scrollView.scrollIndicatorInsets = contentInsets;
         
         scrollView.contentSize = CGSizeMake(scrollView.contentSize.width, scrollView.contentSize.height)
-        scrollView.scrollRectToVisible((memoTextView.superview?.frame)!, animated: true)
+        
+        if isFocusKeywordTexField {
+            scrollView.scrollRectToVisible((memoTextView.superview?.frame)!, animated: true)
+        } else {
+            
+            scrollView.scrollRectToVisible(CGRect(x: scrollView.contentSize.width - 1, y: scrollView.contentSize.height - 1, width: 1, height: 1), animated: true)
+        }
+
 
         subscribeToKeyboardWillHideNotifications()
     }
@@ -275,29 +286,30 @@ class WriteNoteViewController: UIViewController{
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    func setKeywordTextFieldPlaceholder(placeholer: String) {
+        keywordTextField.attributedPlaceholder = NSAttributedString(string: placeholer, attributes: [NSForegroundColorAttributeName: Constants.Color.lightGray])
+    }
 }
 
 extension WriteNoteViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.emotions!.count
+        return emotionMaker.getEmotionCount()
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("emotionCell", forIndexPath: indexPath) as! EmotionImageCell
-        let emotion = self.emotions![indexPath.row]
-        
-        cell.emotion = emotion
-        cell.imageView?.image = UIImage(named: (emotion.emotionName))
+        let imageName = emotionMaker.getIcImagename(indexPath.row)
+        cell.imageView?.image = UIImage(named: (imageName))
         return cell
     }
 }
 
 extension WriteNoteViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let emotion = self.emotions![indexPath.row]
-        note.emotion = emotion
-        doneButton.backgroundColor = getEmotionColor(emotion)
+        note.emotion = emotionMaker.getEmotionName(indexPath.row)
+        doneButton.backgroundColor = emotionMaker.getEmotionColor(indexPath.row)
     }
 }
 
@@ -309,8 +321,16 @@ extension WriteNoteViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
+        isFocusKeywordTexField = false
         return true
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        isFocusKeywordTexField = true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        isFocusKeywordTexField = false
     }
 }
 
@@ -333,12 +353,3 @@ extension WriteNoteViewController: UITextViewDelegate {
 }
 
 
-func getEmotionColor(emotion: Emotion) -> UIColor {
-    let red = CGFloat(emotion.emotionColorRed)
-    let green = CGFloat(emotion.emotionColorGreen)
-    let blue = CGFloat(emotion.emotionColorBlue)
-    
-    let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-    
-    return color
-}
