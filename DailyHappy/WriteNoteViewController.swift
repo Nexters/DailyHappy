@@ -50,11 +50,7 @@ class WriteNoteViewController: UIViewController{
         
         setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
         memoTextView.text = Constants.Placeholder.MemoPlaceholder
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR")
-        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
-        dateButton.setTitle(dateFormatter.stringFromDate(note.date), forState: UIControlState.Normal)
+        setDateButtonTitle(note.date)
         
         activityButton.alpha = 1.0
         
@@ -283,6 +279,13 @@ class WriteNoteViewController: UIViewController{
     func setKeywordTextFieldPlaceholder(placeholer: String) {
         keywordTextField.attributedPlaceholder = NSAttributedString(string: placeholer, attributes: [NSForegroundColorAttributeName: Constants.Color.lightGray])
     }
+    
+    func setDateButtonTitle(date: NSDate) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR")
+        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+        dateButton.setTitle(dateFormatter.stringFromDate(date), forState: UIControlState.Normal)
+    }
 }
 
 extension WriteNoteViewController: UICollectionViewDataSource {
@@ -294,11 +297,8 @@ extension WriteNoteViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("emotionCell", forIndexPath: indexPath) as! EmotionImageCell
         let imageName = emotionMaker.getIcImagename(indexPath.row)
-        if selectedIndex == indexPath.row {
-            cell.imageView?.image = UIImage(named: (imageName + "_selected"))
-        } else {
-            cell.imageView?.image = UIImage(named: (imageName))
-        }
+        
+        cell.bind(selectedIndex == indexPath.row, imageName: imageName)
         return cell
     }
 }
@@ -306,11 +306,10 @@ extension WriteNoteViewController: UICollectionViewDataSource {
 extension WriteNoteViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedIndex = indexPath.row
-        let emotionName = emotionMaker.getEmotionName(selectedIndex)
-        collectionView.reloadData()
-        
-        note.emotion = emotionName
+        note.emotion = emotionMaker.getEmotionName(selectedIndex)
         doneButton.backgroundColor = emotionMaker.getEmotionColor(selectedIndex)
+        
+        collectionView.reloadData()
     }
 }
 
