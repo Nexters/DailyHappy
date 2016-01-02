@@ -53,6 +53,9 @@ class SelectMonthViewController: UIViewController {
     let emotionMaker:EmotionMaker = EmotionMaker()
     private var monthButtons:[MKButton]=[]
     private var monthLabels:[UILabel]=[]
+    private var allNoteResults:[Note]=[]
+    private var numPostOfMonth: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0]
+    private var numEmotionOfMonth = [[Int]](count: 12, repeatedValue:[Int](count:10, repeatedValue:0))
     
     @IBOutlet weak var yearLabel: UILabel!
     
@@ -68,6 +71,13 @@ class SelectMonthViewController: UIViewController {
         self.selectMonth = month
     }
     
+    func setAllNotes(dataArray:[Note]) {
+        allNoteResults.removeAll()
+        for data in dataArray {
+            allNoteResults.append(data)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,12 +88,15 @@ class SelectMonthViewController: UIViewController {
         centerView.backgroundColor = UIColor.clearColor()
         rightView.backgroundColor = UIColor.clearColor()
         yearLabel.text  = String(selectYear)
+        
+        setPostCount()
+        
+        initMonthLabels()
+        initMonthButtons()
         setMonthButtons()
         setMonthLabels()
-        initMonthButtons()
-        initMonthLabels()
     }
-    func setMonthLabels() {
+    func initMonthLabels() {
         monthLabels.append(JanLabel)
         monthLabels.append(FebLabel)
         monthLabels.append(MarLabel)
@@ -99,7 +112,7 @@ class SelectMonthViewController: UIViewController {
         
     }
     
-    func setMonthButtons() {
+    func initMonthButtons() {
         monthButtons.append(JanButton)
         monthButtons.append(FebButton)
         monthButtons.append(MarButton)
@@ -117,18 +130,50 @@ class SelectMonthViewController: UIViewController {
 
     
     
-    func initMonthButtons() {
+    func setMonthButtons() {
+        var count = 0
         for mkbutton in monthButtons {
-            let color = emotionMaker.getEmotionColor(EmotionMaker.Emotiontype.Happy).colorWithAlphaComponent(0.2)
-            mkbutton.backgroundColor = color
+            
+            var max = 0
+            var maxIndex = 0
+            for i in 0...9 {
+                if max <= numEmotionOfMonth[count][i] {
+                    max = numEmotionOfMonth[count][i]
+                    maxIndex = i
+                }
+            }
+            if max == 0 {
+                 mkbutton.backgroundColor = UIColor.clearColor().colorWithAlphaComponent(0.2)
+            } else {
+                let color = emotionMaker.getEmotionColor(EmotionMaker.Emotiontype(rawValue: maxIndex)!).colorWithAlphaComponent(0.2)
+                mkbutton.backgroundColor = color
+            }
+            count++
         }
     }
     
-    func initMonthLabels() {
+    func setMonthLabels() {
         var count = 0
         for label in monthLabels {
+            label.text = String(numPostOfMonth[count])+"개의 카드"
             count++
-        label.text = String(count)+"개의 카드"
+        }
+    }
+    
+    func setPostCount() {
+        for i in 0...11 {
+            numPostOfMonth[i] = 0
+            for j in 0...9 {
+                numEmotionOfMonth[i][j] = 0
+            }
+        }
+        
+        for note in allNoteResults {
+           let comp = NSCalendar.currentCalendar().components([.Month, .Year], fromDate: note.date)
+           if(selectYear == Int(comp.year)) {
+                numPostOfMonth[comp.month-1]++
+                numEmotionOfMonth[comp.month-1][emotionMaker.getEmotionType(note.emotion).rawValue]++
+            }
         }
     }
 
@@ -215,11 +260,17 @@ class SelectMonthViewController: UIViewController {
     @IBAction func OnBackYearButton(sender: AnyObject) {
         setSelectYear(selectYear-1)
         yearLabel.text  = String(selectYear)
+        setPostCount()
+        setMonthLabels()
+        setMonthButtons()
         
     }
     @IBAction func OnForwardYearButton(sender: AnyObject) {
         setSelectYear(selectYear+1)
         yearLabel.text  = String(selectYear)
+        setPostCount()
+        setMonthLabels()
+        setMonthButtons()
     }
 
     

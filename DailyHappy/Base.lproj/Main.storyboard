@@ -592,6 +592,9 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="CarditemPersonImage" translatesAutoresizingMaskIntoConstraints="NO" id="aPb-Hk-hC1">
                                                             <rect key="frame" x="52" y="11" width="240" height="128"/>
                                                         </imageView>
+                                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Cardmemo" translatesAutoresizingMaskIntoConstraints="NO" id="lMz-d9-ecI">
+                                                            <rect key="frame" x="52" y="11" width="240" height="128"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -610,10 +613,13 @@
                                                         <constraint firstAttribute="trailing" secondItem="JVR-8b-GQO" secondAttribute="trailing" constant="90" id="WGQ-VV-GRx"/>
                                                         <constraint firstItem="MZm-mC-b24" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="17" id="WSh-08-21c"/>
                                                         <constraint firstItem="hW1-V7-h0L" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="41" id="Xfn-Yb-CNh"/>
+                                                        <constraint firstAttribute="bottom" secondItem="lMz-d9-ecI" secondAttribute="bottom" constant="51" id="at1-o9-nCc"/>
+                                                        <constraint firstItem="lMz-d9-ecI" firstAttribute="leading" secondItem="9tM-Mv-jT4" secondAttribute="leading" constant="6" id="cTC-RF-MjL"/>
                                                         <constraint firstItem="edL-oH-eDX" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="113" id="cZE-Ip-eEZ"/>
                                                         <constraint firstItem="GBu-n2-ore" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="17" id="f3l-Jz-OrM"/>
                                                         <constraint firstAttribute="trailing" secondItem="Ce5-AF-oa8" secondAttribute="trailing" constant="90" id="fQW-iD-joR"/>
                                                         <constraint firstAttribute="trailing" secondItem="Td2-07-b8x" secondAttribute="trailing" constant="1" id="i9z-B1-pnD"/>
+                                                        <constraint firstItem="lMz-d9-ecI" firstAttribute="leading" secondItem="9tM-Mv-jT4" secondAttribute="trailing" constant="-240" id="iU9-Xq-qoB"/>
                                                         <constraint firstItem="aPb-Hk-hC1" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="113" id="irT-wc-A2G"/>
                                                         <constraint firstAttribute="bottom" secondItem="9tM-Mv-jT4" secondAttribute="bottom" constant="17" id="jWU-ve-4a5"/>
                                                         <constraint firstItem="lN1-qU-XQf" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="89" id="kFm-Dq-iVf"/>
@@ -622,12 +628,15 @@
                                                         <constraint firstAttribute="trailing" secondItem="k7B-dp-h8f" secondAttribute="trailing" constant="90" id="spt-V5-6SE"/>
                                                         <constraint firstItem="hW1-V7-h0L" firstAttribute="leading" secondItem="JVR-8b-GQO" secondAttribute="leading" constant="25" id="tK7-LZ-VO2"/>
                                                         <constraint firstItem="JVR-8b-GQO" firstAttribute="top" secondItem="r7C-ET-XCi" secondAttribute="top" constant="41" id="tQU-ag-Xp6"/>
+                                                        <constraint firstItem="lMz-d9-ecI" firstAttribute="leading" secondItem="9tM-Mv-jT4" secondAttribute="trailing" constant="6" id="tcc-ux-6j0"/>
                                                         <constraint firstItem="Td2-07-b8x" firstAttribute="leading" secondItem="k7B-dp-h8f" secondAttribute="leading" constant="25" id="ucV-Rx-owb"/>
                                                         <constraint firstItem="9tM-Mv-jT4" firstAttribute="leading" secondItem="r7C-ET-XCi" secondAttribute="leading" constant="17" id="ugD-bB-E1s"/>
                                                         <constraint firstItem="Iuj-ei-Q09" firstAttribute="leading" secondItem="r7C-ET-XCi" secondAttribute="leading" constant="17" id="ulp-gh-fEF"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
+                                                            <exclude reference="cTC-RF-MjL"/>
+                                                            <exclude reference="iU9-Xq-qoB"/>
                                                             <exclude reference="IgQ-ek-CiG"/>
                                                         </mask>
                                                     </variation>
@@ -654,6 +663,7 @@
                                         </variation>
                                         <connections>
                                             <outlet property="ItemView" destination="r7C-ET-XCi" id="5mX-cv-xd9"/>
+                                            <outlet property="cardMemoImage" destination="lMz-d9-ecI" id="s55-2U-Wa2"/>
                                             <outlet property="datetimeLabel" destination="Iuj-ei-Q09" id="XbR-eW-CiP"/>
                                             <outlet property="emoticonImage" destination="9tM-Mv-jT4" id="pF4-Al-LYV"/>
                                             <outlet property="fifthitemIcon" destination="aPb-Hk-hC1" id="RT1-VU-gn1"/>
@@ -1313,6 +1323,7 @@
         <image name="CarddecoImage" width="28" height="27"/>
         <image name="CardicHappy" width="47" height="47"/>
         <image name="CarditemPersonImage" width="15" height="15"/>
+        <image name="Cardmemo" width="20" height="20"/>
         <image name="WriteButtonImage" width="56" height="56"/>
         <image name="activity" width="47" height="47"/>
         <image name="anniversary" width="47" height="47"/>

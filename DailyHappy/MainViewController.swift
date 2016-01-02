@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     var realm:Realm?
     let emotionMaker:EmotionMaker = EmotionMaker()
     private var noteResults:[Note]=[]
+    private var allNoteResults:[Note]=[]
     private var year = 1100
     private var month = 1
     @IBOutlet weak var selectMonthButton: UIButton!
@@ -34,7 +35,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setSelectMonthButtonText()
-        setNoteResultsFromRealm()
+        updateDataFromRealm()
         tableView.reloadData()
     }
     func setSelectMonthButtonText() {
@@ -54,6 +55,7 @@ class MainViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let SelectVC = segue.destinationViewController as? SelectMonthViewController {
             SelectVC.setSelectYear(year)
+            SelectVC.setAllNotes(allNoteResults)
             SelectVC.onDataAvailable = {[weak self](year, month) in
                 if let weakSelf = self {
                     weakSelf.setYearUsingString(year)
@@ -64,6 +66,11 @@ class MainViewController: UIViewController {
         }
     }
     
+    
+    private func updateDataFromRealm() {
+        setNoteResultsFromRealm()
+        setAllNoteResultsFromRealm()
+    }
     
     
     private func setNoteResultsFromRealm() {
@@ -77,12 +84,21 @@ class MainViewController: UIViewController {
         let endNSDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startNSDate, options: NSCalendarOptions(rawValue: 0))
         
         
-        let predicate = NSPredicate(format: "createdAt >= %@ AND createdAt < %@", startNSDate, endNSDate!)
+        let predicate = NSPredicate(format: "date >= %@ AND date < %@", startNSDate, endNSDate!)
         let results = realm!.objects(Note).filter(predicate)
         noteResults.removeAll()
         for result in results {
             noteResults.append(result)
         }
+    }
+    
+    private func setAllNoteResultsFromRealm() {
+        let results = realm!.objects(Note)
+        allNoteResults.removeAll()
+        for result in results {
+            allNoteResults.append(result)
+        }
+
     }
     
     @IBAction func ShowWriteView(sender: AnyObject) {
@@ -169,7 +185,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
+       
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -188,7 +204,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setDatetimeText(note.date)
         cell.setemoticonImage(self.emotionMaker.getCardicImagename(emotionType))
         cell.setCellItems(note)
-      
+        cell.setNoteMemoImage(note.memo)
+        
         return cell
     }
     

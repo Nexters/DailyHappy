@@ -12,17 +12,17 @@ import UIKit
 
 class EmotionMaker {
     
-    enum Emotiontype {
-        case Angry
-        case Awesome
-        case Confused
-        case Flutter
-        case Happy
-        case Joy
-        case Loved
-        case Relaxed
-        case Sad
-        case Worried
+    enum Emotiontype: Int{
+        case Angry = 0
+        case Awesome = 1
+        case Confused = 2
+        case Flutter = 3
+        case Happy = 4
+        case Joy = 5
+        case Loved = 6
+        case Relaxed = 7
+        case Sad = 8
+        case Worried = 9
         
         init() {
             self = .Angry

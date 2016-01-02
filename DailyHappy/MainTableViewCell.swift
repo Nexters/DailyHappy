@@ -65,6 +65,7 @@ class MainTableViewCell: UITableViewCell {
 
     @IBOutlet weak var datetimeLabel: UILabel!
     @IBOutlet weak var emoticonImage: UIImageView!
+    @IBOutlet weak var cardMemoImage: UIImageView!
 
     private var itemLabels:[UILabel]=[]
     private var itemIcons:[UIImageView]=[]
@@ -180,5 +181,13 @@ class MainTableViewCell: UITableViewCell {
 
         
     }
+    func setNoteMemoImage(data:String) {
+        if(data != "") {
+            cardMemoImage.hidden = false
+        } else {
+            cardMemoImage.hidden = true
+        }
+    }
+
    
 }
