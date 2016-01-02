@@ -83,7 +83,6 @@ class MainViewController: UIViewController {
         for result in results {
             noteResults.append(result)
         }
-        print(noteResults)
     }
     
     @IBAction func ShowWriteView(sender: AnyObject) {

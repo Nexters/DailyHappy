@@ -31,8 +31,28 @@ class SelectMonthViewController: UIViewController {
     @IBOutlet var SepButton: MKButton!
     @IBOutlet var DecButton: MKButton!
     
+    
+    @IBOutlet weak var JanLabel: UILabel!
+    @IBOutlet weak var AprLabel: UILabel!
+    @IBOutlet weak var JulLabel: UILabel!
+    @IBOutlet weak var OctLabel: UILabel!
+    
+    @IBOutlet weak var FebLabel: UILabel!
+    @IBOutlet weak var MayLabel: UILabel!
+    @IBOutlet weak var AugLabel: UILabel!
+    @IBOutlet weak var NovLabel: UILabel!
+    
+    @IBOutlet weak var MarLabel: UILabel!
+    @IBOutlet weak var JubLabel: UILabel!
+    @IBOutlet weak var SepLabel: UILabel!
+    @IBOutlet weak var DecLabel: UILabel!
+    
     private var selectYear = 2015
     private var selectMonth = 1
+    
+    let emotionMaker:EmotionMaker = EmotionMaker()
+    private var monthButtons:[MKButton]=[]
+    private var monthLabels:[UILabel]=[]
     
     @IBOutlet weak var yearLabel: UILabel!
     
@@ -58,9 +78,62 @@ class SelectMonthViewController: UIViewController {
         centerView.backgroundColor = UIColor.clearColor()
         rightView.backgroundColor = UIColor.clearColor()
         yearLabel.text  = String(selectYear)
-        
+        setMonthButtons()
+        setMonthLabels()
+        initMonthButtons()
+        initMonthLabels()
+    }
+    func setMonthLabels() {
+        monthLabels.append(JanLabel)
+        monthLabels.append(FebLabel)
+        monthLabels.append(MarLabel)
+        monthLabels.append(AprLabel)
+        monthLabels.append(MayLabel)
+        monthLabels.append(JubLabel)
+        monthLabels.append(JulLabel)
+        monthLabels.append(AugLabel)
+        monthLabels.append(SepLabel)
+        monthLabels.append(OctLabel)
+        monthLabels.append(NovLabel)
+        monthLabels.append(DecLabel)
         
     }
+    
+    func setMonthButtons() {
+        monthButtons.append(JanButton)
+        monthButtons.append(FebButton)
+        monthButtons.append(MarButton)
+        monthButtons.append(AprButton)
+        monthButtons.append(MayButton)
+        monthButtons.append(JunButton)
+        monthButtons.append(JulButton)
+        monthButtons.append(AugButton)
+        monthButtons.append(SepButton)
+        monthButtons.append(OctButton)
+        monthButtons.append(NovButton)
+        monthButtons.append(DecButton)
+        
+    }
+
+    
+    
+    func initMonthButtons() {
+        for mkbutton in monthButtons {
+            let color = emotionMaker.getEmotionColor(EmotionMaker.Emotiontype.Happy).colorWithAlphaComponent(0.2)
+            mkbutton.backgroundColor = color
+        }
+    }
+    
+    func initMonthLabels() {
+        var count = 0
+        for label in monthLabels {
+            count++
+        label.text = String(count)+"개의 카드"
+        }
+    }
+
+    
+    
     func initBackground() {
         let backimg = UIImage(named: "BackgroundImage")
         self.view.backgroundColor = UIColor(patternImage: backimg!)
