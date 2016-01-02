@@ -19,8 +19,9 @@ class MainViewController: UIViewController {
     var realm:Realm?
     let emotionMaker:EmotionMaker = EmotionMaker()
     private var noteResults:[Note]=[]
-    private var year = 2016
+    private var year = 1100
     private var month = 1
+    @IBOutlet weak var selectMonthButton: UIButton!
     
     func setYear(year:Int) {
         self.year = year
@@ -30,9 +31,35 @@ class MainViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setSelectMonthButtonText()
         setNoteResultsFromRealm()
         tableView.reloadData()
     }
+    func setSelectMonthButtonText() {
+        selectMonthButton.setTitle(String(year) + ". " + String(month), forState: .Normal)
+    }
+    
+    func setMonthUsingString(data: String) {
+        setMonth(Int(data)!)
+    }
+    
+
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let SelectVC = segue.destinationViewController as? SelectMonthViewController {
+            SelectVC.onDataAvailable = {[weak self](data) in
+                if let weakSelf = self {
+                    weakSelf.setMonthUsingString(data)
+                   // weakSelf.setSelectMonthButtonText()
+                    
+                }
+            }
+        }
+    }
+    
+    
     
     private func setNoteResultsFromRealm() {
         let startDate = String(year) + "-" + String(month)
@@ -69,10 +96,29 @@ class MainViewController: UIViewController {
                 //let emotions = self.realm.objects(Emotion)
                 //print(emotions)
         }
-        
+                
         // Do any additional setup after loading the view, typically from a nib.
+        if( year == 1100) {
+            setCurrentDate()
+        }
         initBackground()
-        initWriteButton()
+        initButtons()
+
+    
+    }
+    
+    func setCurrentDate() {
+        let date = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM"
+        dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR")
+        let monthStr = dateFormatter.stringFromDate(date)
+        dateFormatter.dateFormat = "yyyy"
+        let yearStr = dateFormatter.stringFromDate(date)
+        
+        setMonth(Int(monthStr)!)
+        setYear(Int(yearStr)!)
+
     }
     
     func initBackground() {
@@ -80,7 +126,7 @@ class MainViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: backimg!)
     }
     
-    func initWriteButton() {
+    func initButtons() {
         WriteButton.cornerRadius = 10.0
         WriteButton.backgroundLayerCornerRadius = 10.0
         WriteButton.maskEnabled = false
@@ -91,6 +137,8 @@ class MainViewController: UIViewController {
         WriteButton.layer.shadowRadius = 3.5
         WriteButton.layer.shadowColor = UIColor.blackColor().CGColor
         WriteButton.layer.shadowOffset = CGSize(width: 1.0, height: 5.5)
+        
+        
 
     }
 
