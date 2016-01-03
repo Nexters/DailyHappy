@@ -509,6 +509,37 @@
             </objects>
             <point key="canvasLocation" x="233" y="-699"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="xsD-CB-7Hc">
+            <objects>
+                <viewController storyboardIdentifier="DetailVC" id="o9B-vC-jAz" customClass="DetailViewController" customModule="DailyHappy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7eN-oJ-plB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Apj-IH-2Es"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="unb-du-hsv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boN-FW-pqU">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="OnCloseButton:" destination="o9B-vC-jAz" eventType="touchUpInside" id="CZp-xi-7LI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="boN-FW-pqU" firstAttribute="centerY" secondItem="unb-du-hsv" secondAttribute="centerY" id="SD5-1Y-bb7"/>
+                            <constraint firstItem="boN-FW-pqU" firstAttribute="centerX" secondItem="unb-du-hsv" secondAttribute="centerX" id="dsg-xk-ldh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dzM-Dq-zdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="-702"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="FCG-hm-uPM">
             <objects>

@@ -107,6 +107,7 @@ class MainViewController: UIViewController {
         self.presentViewController(WriteVC, animated: true, completion: nil)
     }
     
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -118,7 +119,7 @@ class MainViewController: UIViewController {
         initBackground()
         initButtons()
 
-    
+            
     }
     
     func setCurrentDate() {
@@ -157,6 +158,11 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func OnShowDetailView() {
+        
+        let DetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as! DetailViewController
+        self.presentViewController(DetailVC, animated: false, completion: nil)
+    }
 }
 
 
@@ -171,10 +177,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func setTableviewStyle(tableView:UITableView) {
-        tableView.allowsSelection = false
+        tableView.allowsSelection = true
+        
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.backgroundColor = UIColor.clearColor()
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        
     }
     func setEmptyMemolabel() {
         if(noteResults.count < 1) {
@@ -185,7 +193,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-       
+    
+    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -205,15 +214,22 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setemoticonImage(self.emotionMaker.getCardicImagename(emotionType))
         cell.setCellItems(note)
         cell.setNoteMemoImage(note.memo)
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         
+        
+        cell.onButtonSelected = {
+            self.OnShowDetailView()
+        }
+        
+
         return cell
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+       
     }
-    
+
     
 }
 

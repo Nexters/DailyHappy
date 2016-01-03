@@ -70,6 +70,8 @@ class MainTableViewCell: UITableViewCell {
     private var itemLabels:[UILabel]=[]
     private var itemIcons:[UIImageView]=[]
     
+    var onButtonSelected: (() -> Void)? = nil
+    
     @IBOutlet weak var ItemView: MainItemView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -95,10 +97,15 @@ class MainTableViewCell: UITableViewCell {
    
  
 
+
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+        if(selected) {
+            if let onButtonSelected = self.onButtonSelected {
+                onButtonSelected()
+            }
+        }
     }
     
     
