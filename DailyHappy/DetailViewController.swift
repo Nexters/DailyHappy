@@ -10,8 +10,18 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var id = 0
+    
+    func setPostId(id:Int) {
+        self.id = id
+    }
+    func getPostId() ->(Int) {
+        return id
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(id)
 
         // Do any additional setup after loading the view.
         

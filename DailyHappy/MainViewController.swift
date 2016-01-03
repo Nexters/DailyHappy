@@ -160,7 +160,7 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func OnShowDetailView() {
+    func OnShowDetailView(id:Int) {
         
         let DetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as! DetailViewController
         /*
@@ -170,6 +170,7 @@ class MainViewController: UIViewController {
         transition.type = kCATransitionFromRight
         self.view.window!.layer.addAnimation( transition, forKey: nil)
         */
+        DetailVC.setPostId(id)
   
         
         self.presentViewController(DetailVC, animated: false, completion: nil)
@@ -229,7 +230,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         cell.onButtonSelected = {
-            self.OnShowDetailView()
+            self.OnShowDetailView(note.id)
         }
         
 
