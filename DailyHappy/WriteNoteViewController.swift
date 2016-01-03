@@ -70,6 +70,7 @@ class WriteNoteViewController: UIViewController{
         currentKeyword = Constants.Keyword.Activity
         setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
         keywordTextField.text = self.note.activityName
+        keywordTextField.resignFirstResponder()
     }
     
     @IBAction func clickItem(sender: UIButton) {
@@ -78,6 +79,7 @@ class WriteNoteViewController: UIViewController{
         currentKeyword = Constants.Keyword.Item
         setKeywordTextFieldPlaceholder(Constants.Placeholder.Item)
         keywordTextField.text = self.note.itemName
+        keywordTextField.resignFirstResponder()
     }
     
     @IBAction func clickAnniversary(sender: UIButton) {
@@ -86,6 +88,7 @@ class WriteNoteViewController: UIViewController{
         currentKeyword = Constants.Keyword.Anniversary
         setKeywordTextFieldPlaceholder(Constants.Placeholder.Anniversary)
         keywordTextField.text = self.note.anniversaryName
+        keywordTextField.resignFirstResponder()
     }
     
     @IBAction func clickPerson(sender: UIButton) {
@@ -94,6 +97,7 @@ class WriteNoteViewController: UIViewController{
         currentKeyword = Constants.Keyword.Person
         setKeywordTextFieldPlaceholder(Constants.Placeholder.Person)
         keywordTextField.text = self.note.personName
+        keywordTextField.resignFirstResponder()
     }
     
     @IBAction func clickPlace(sender: UIButton) {
@@ -102,6 +106,7 @@ class WriteNoteViewController: UIViewController{
         currentKeyword = Constants.Keyword.Place
         setKeywordTextFieldPlaceholder(Constants.Placeholder.Place)
         keywordTextField.text = self.note.placeName
+        keywordTextField.resignFirstResponder()
     }
     
     @IBAction func clickBackButton(sender: UIButton) {
@@ -251,10 +256,10 @@ class WriteNoteViewController: UIViewController{
         
         scrollView.contentSize = CGSizeMake(scrollView.contentSize.width, scrollView.contentSize.height)
         
+        let keywordTextFieldFrame = keywordTextField.superview?.frame
         if isFocusKeywordTexField {
-            scrollView.scrollRectToVisible((memoTextView.superview?.frame)!, animated: true)
+            scrollView.scrollRectToVisible(keywordTextFieldFrame!, animated: false)
         } else {
-            
             scrollView.scrollRectToVisible(CGRect(x: scrollView.contentSize.width - 1, y: scrollView.contentSize.height - 1, width: 1, height: 1), animated: true)
         }
 
@@ -270,6 +275,12 @@ class WriteNoteViewController: UIViewController{
         let contentInsets = UIEdgeInsetsZero;
         self.scrollView.contentInset = contentInsets;
         self.scrollView.scrollIndicatorInsets = contentInsets;
+        
+        scrollView.contentSize = CGSizeMake(scrollView.contentSize.width, scrollView.contentSize.height)
+        if isFocusKeywordTexField {
+            scrollView.scrollRectToVisible(CGRect(x: scrollView.contentSize.width - 1, y: 0, width: 1, height: 1), animated: false)
+        }
+
         
         subscribeToKeyboardWillShowNotifications()
     }
@@ -331,10 +342,24 @@ extension WriteNoteViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         isFocusKeywordTexField = true
+        textField.placeholder = ""
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         isFocusKeywordTexField = false
+        switch currentKeyword {
+        case .Activity:
+        setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
+        case .Item:
+            setKeywordTextFieldPlaceholder(Constants.Placeholder.Item)
+        case .Anniversary:
+            setKeywordTextFieldPlaceholder(Constants.Placeholder.Anniversary)
+        case .Person:
+            setKeywordTextFieldPlaceholder(Constants.Placeholder.Person)
+        case .Place:
+            setKeywordTextFieldPlaceholder(Constants.Placeholder.Place)
+ 
+        }
     }
 }
 
