@@ -18,14 +18,16 @@ class DetailViewController: UIViewController {
     func getPostId() ->(Int) {
         return id
     }
-    
+
+
+    @IBOutlet var scrollView: UIScrollView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(id)
 
         // Do any additional setup after loading the view.
-        
-      
+        scrollView.contentSize.height = 1200
+
     }
 
     override func didReceiveMemoryWarning() {

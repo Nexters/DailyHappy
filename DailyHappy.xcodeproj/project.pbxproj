@@ -199,6 +199,7 @@
 		036992221C3285E800F73047 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE0917211C392048002E3DAF /* DetailView */,
 				CE378CB61C36CD7800C7170D /* SelectMonthView */,
 				CE1C9C0E1C33E13C00D8B1A2 /* MainView */,
 				036991F11C3279B000F73047 /* MainViewController.swift */,
@@ -247,6 +248,13 @@
 				1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE0917211C392048002E3DAF /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DetailView;
 			sourceTree = "<group>";
 		};
 		CE1C9BF91C33C63100D8B1A2 /* MaterialKit */ = {
