@@ -119,6 +119,7 @@ class WriteNoteViewController: UIViewController{
         setPreviouslyFocusedKeywordState()
         note.createdAt = NSDate()
         note.updatedAt = NSDate()
+        note.id = Note.incrementeID()
         
         try! self.realm.write { () -> Void in
             realm.add(note)
@@ -144,8 +145,6 @@ class WriteNoteViewController: UIViewController{
   
     func setScrollViewKeyboardDismiss() {
         scrollView.keyboardDismissMode = .OnDrag
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
-//        view.addGestureRecognizer(tap)
     }
     
     func setPreviouslyFocusedKeywordState() {

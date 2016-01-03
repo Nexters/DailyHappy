@@ -70,16 +70,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             } else if oldSchemaVersion < 5 {
                 migration.enumerate(Note.className()) { oldObject, newObject in
-                    if oldSchemaVersion < 4 {
+                    if oldSchemaVersion < 5 {
                         let emotion = oldObject!["emotion"] as! Emotion
                         newObject!["emotion"] = emotion.emotionName
+                    }
+                }
+            } else if oldSchemaVersion < 6 {
+                migration.enumerate(Note.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 6 {
+                        newObject?["id"] = 0
+                    }
+                }
+            } else if oldSchemaVersion < 7 {
+                migration.enumerate(Note.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 7 {
+                        let id = oldObject!["id"] as! Int
+                        newObject!["id"] = id
                     }
                 }
             }
             print("Migration complete.")
         }
         
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 5, migrationBlock: migrationBlock)
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 7, migrationBlock: migrationBlock)
         return true
     }
 
