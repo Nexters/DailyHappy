@@ -12,10 +12,11 @@ class DetailViewController: UIViewController {
 
     var id = 0
     
-    func setPostId(id:Int) {
+    func setNoteId(id:Int) {
         self.id = id
     }
-    func getPostId() ->(Int) {
+    
+    func getNoteId() ->(Int) {
         return id
     }
     
@@ -37,6 +38,14 @@ class DetailViewController: UIViewController {
          dismissViewControllerAnimated(false, completion: nil)
     }
 
+    @IBAction func deleteNotr(sender: UIButton) {
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let writeNote = segue.destinationViewController as? WriteNoteViewController {
+            writeNote.updateNoteId = getNoteId()
+        }
+    }
     /*
     // MARK: - Navigation
 

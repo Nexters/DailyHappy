@@ -31,13 +31,16 @@ class WriteNoteViewController: UIViewController{
     let disposeBag = DisposeBag()
     
     let emotionMaker = EmotionMaker()
-    let note = Note()
+    var note = Note()
+    
     var currentKeyword = Constants.Keyword.Activity
     var isShowKeyboard = false
     var isFocusKeywordTexField = false
     
     let selectedText = "_selected"
     var selectedIndex = 0
+    
+    var updateNoteId = 0
     
     var onDataAvailable : ((year:String, month:String)->())?
     
@@ -48,14 +51,20 @@ class WriteNoteViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        note.emotion = "angry"
-        doneButton.backgroundColor = emotionMaker.getEmotionColor("angry")
-        
-        setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
-        memoTextView.text = Constants.Placeholder.MemoPlaceholder
-        setDateButtonTitle(note.date)
-        
-        activityButton.alpha = 1.0
+        if updateNoteId > 0 {
+            if let updateNote = realm.objectForPrimaryKey(Note.self, key: updateNoteId) {
+                note.copy(updateNote)
+                bindNoteData(note)
+            }
+        } else {
+            note.emotion = "angry"
+            selectedIndex = 0
+            doneButton.backgroundColor = emotionMaker.getEmotionColor("angry")
+            setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
+            memoTextView.text = Constants.Placeholder.MemoPlaceholder
+            activityButton.alpha = 1.0
+            setDateButtonTitle(note.date)
+        }
         
         subscribeKeywordTextField()
         subscribeMemoTextView()
@@ -120,12 +129,15 @@ class WriteNoteViewController: UIViewController{
         print(self.note)
         
         setPreviouslyFocusedKeywordState()
-        note.createdAt = NSDate()
-        note.updatedAt = NSDate()
-        note.id = Note.incrementeID()
+        
+        if updateNoteId == 0 {
+            note.createdAt = NSDate()
+            note.updatedAt = NSDate()
+            note.id = Note.incrementeID()
+        }
         
         try! self.realm.write { () -> Void in
-            realm.add(note)
+            realm.add(note, update: true) // id가 에이터베이스에 없으면 create
             sendData(note.date)
             dismissViewControllerAnimated(true, completion: nil)
         }
@@ -310,6 +322,33 @@ class WriteNoteViewController: UIViewController{
         dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR")
         dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
         dateButton.setTitle(dateFormatter.stringFromDate(date), forState: UIControlState.Normal)
+    }
+    
+    func bindNoteData(note: Note) {
+        setDateButtonTitle(note.date)
+        
+        selectedIndex = emotionMaker.getEmotionIndex(note.emotion)
+        doneButton.backgroundColor = emotionMaker.getEmotionColor(selectedIndex)
+        
+        activityButton.alpha = note.hasActivity ? 1.0 : 0.5
+        itemButton.alpha = note.hasItem ? 1.0 : 0.5
+        anniversaryButton.alpha = note.hasAnniversary ? 1.0 : 0.5
+        personButton.alpha = note.hasPerson ? 1.0 : 0.5
+        placeButton.alpha = note.hasPlace ? 1.0 : 0.5
+        
+        if note.hasActivity {
+            keywordTextField.text = note.activityName
+        } else if note.hasItem {
+            keywordTextField.text = note.itemName
+        } else if note.hasAnniversary {
+            keywordTextField.text = note.anniversaryName
+        } else if note.hasPerson {
+            keywordTextField.text = note.personName
+        } else if note.hasPlace {
+            keywordTextField.text = note.placeName
+        }
+        
+        memoTextView.text = note.memo
     }
 }
 

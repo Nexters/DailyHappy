@@ -42,9 +42,6 @@ class MainViewController: UIViewController {
         selectMonthButton.setTitle(String(year) + ". " + String(month), forState: .Normal)
     }
     
-
-
-    
     func setMonthUsingString(data: String) {
         setMonth(Int(data)!)
     }
@@ -170,7 +167,7 @@ class MainViewController: UIViewController {
         transition.type = kCATransitionFromRight
         self.view.window!.layer.addAnimation( transition, forKey: nil)
         */
-        DetailVC.setPostId(id)
+        DetailVC.setNoteId(id)
   
         
         self.presentViewController(DetailVC, animated: false, completion: nil)
