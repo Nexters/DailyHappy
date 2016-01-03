@@ -48,6 +48,7 @@ class WriteNoteViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        note.emotion = "angry"
         doneButton.backgroundColor = emotionMaker.getEmotionColor("angry")
         
         setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
