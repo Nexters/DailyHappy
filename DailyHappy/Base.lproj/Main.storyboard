@@ -541,7 +541,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="삭제"/>
                                 <connections>
-                                    <action selector="deleteNotr:" destination="o9B-vC-jAz" eventType="touchUpInside" id="uEL-Us-uAh"/>
+                                    <action selector="deleteNote:" destination="o9B-vC-jAz" eventType="touchUpInside" id="hpw-a2-kdh"/>
                                 </connections>
                             </button>
                         </subviews>

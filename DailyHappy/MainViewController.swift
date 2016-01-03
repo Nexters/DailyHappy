@@ -24,29 +24,30 @@ class MainViewController: UIViewController {
     private var month = 1
     @IBOutlet weak var selectMonthButton: UIButton!
     
-
-    func setYear(year:Int) {
-        self.year = year
-    }
-    func setMonth(month:Int) {
-        self.month = month
-    }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         setSelectMonthButtonText()
         updateDataFromRealm()
         tableView.reloadData()
     }
-    func setSelectMonthButtonText() {
-        selectMonthButton.setTitle(String(year) + ". " + String(month), forState: .Normal)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        realm = try! Realm()
+        print(realm!.path)
+        
+        if( year == 1100) {
+            setCurrentDate()
+        }
+        initBackground()
+        initButtons()
     }
     
-    func setMonthUsingString(data: String) {
-        setMonth(Int(data)!)
-    }
-    func setYearUsingString(data: String) {
-        setYear(Int(data)!)
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -70,13 +71,30 @@ class MainViewController: UIViewController {
             }
         }
     }
+
+    func setYear(year:Int) {
+        self.year = year
+    }
+    func setMonth(month:Int) {
+        self.month = month
+    }
+
     
+    func setSelectMonthButtonText() {
+        selectMonthButton.setTitle(String(year) + ". " + String(month), forState: .Normal)
+    }
+    
+    func setMonthUsingString(data: String) {
+        setMonth(Int(data)!)
+    }
+    func setYearUsingString(data: String) {
+        setYear(Int(data)!)
+    }
     
     private func updateDataFromRealm() {
         setNoteResultsFromRealm()
         setAllNoteResultsFromRealm()
     }
-    
     
     private func setNoteResultsFromRealm() {
         let startDate = String(year) + "-" + String(month)
@@ -104,21 +122,6 @@ class MainViewController: UIViewController {
             allNoteResults.append(result)
         }
 
-    }
-       
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        realm = try! Realm()
-        print(realm!.path)
-
-        if( year == 1100) {
-            setCurrentDate()
-        }
-        initBackground()
-        initButtons()
-
-            
     }
     
     func setCurrentDate() {
@@ -153,12 +156,7 @@ class MainViewController: UIViewController {
         WriteButton.layer.shadowOffset = CGSize(width: 1.0, height: 5.5)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     func OnShowDetailView(id:Int) {
-        
         let DetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as! DetailViewController
         /*
         let transition = CATransition()
@@ -168,18 +166,13 @@ class MainViewController: UIViewController {
         self.view.window!.layer.addAnimation( transition, forKey: nil)
         */
         DetailVC.setNoteId(id)
-  
-        
         self.presentViewController(DetailVC, animated: false, completion: nil)
     }
 }
 
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
-        
         setTableviewStyle(tableView)
         setEmptyMemolabel()
         return noteResults.count
@@ -187,7 +180,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func setTableviewStyle(tableView:UITableView) {
         tableView.allowsSelection = true
-        
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.backgroundColor = UIColor.clearColor()
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -201,9 +193,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             emptyMemoLabel.hidden = true
         }
     }
-    
-    
-    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -230,15 +219,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             self.OnShowDetailView(note.id)
         }
         
-
         return cell
     }
-    
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-       
-    }
-
-    
 }
 

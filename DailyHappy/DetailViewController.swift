@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
 
+    let realm = try! Realm()
     var id = 0
+    var note: Note?
     
     func setNoteId(id:Int) {
         self.id = id
@@ -22,23 +25,26 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(id)
+        note = realm.objectForPrimaryKey(Note.self, key: getNoteId())
 
         // Do any additional setup after loading the view.
-        
-      
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     @IBAction func OnCloseButton(sender: AnyObject) {
          dismissViewControllerAnimated(false, completion: nil)
     }
 
-    @IBAction func deleteNotr(sender: UIButton) {
+    @IBAction func deleteNote(sender: UIButton) {
+        if let object = note {
+            try! realm.write {
+                realm.delete(object)
+                dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
