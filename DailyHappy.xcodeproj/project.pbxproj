@@ -36,6 +36,7 @@
 		CE378CB11C35F18200C7170D /* EmotionMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE378CB01C35F18200C7170D /* EmotionMaker.swift */; };
 		CE378CB51C3682AD00C7170D /* SelectMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE378CB41C3682AD00C7170D /* SelectMonthViewController.swift */; };
 		CE378CB81C36CDE000C7170D /* SelectMonthStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE378CB71C36CDDF00C7170D /* SelectMonthStackView.swift */; };
+		CEC458481C38C56600DD89D1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC458471C38C56600DD89D1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		CE378CB01C35F18200C7170D /* EmotionMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionMaker.swift; sourceTree = "<group>"; };
 		CE378CB41C3682AD00C7170D /* SelectMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMonthViewController.swift; sourceTree = "<group>"; };
 		CE378CB71C36CDDF00C7170D /* SelectMonthStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMonthStackView.swift; sourceTree = "<group>"; };
+		CEC458471C38C56600DD89D1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E148360D4B76C96AE03C7C02 /* Pods-DailyHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy.debug.xcconfig"; sourceTree = "<group>"; };
 		E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -203,6 +205,7 @@
 				036992231C32BFBA00F73047 /* WriteNoteViewController.swift */,
 				CE378CB41C3682AD00C7170D /* SelectMonthViewController.swift */,
 				0341B3A51C369390005C0842 /* DatePickerViewController.swift */,
+				CEC458471C38C56600DD89D1 /* DetailViewController.swift */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				CE1C9C0B1C33E0AD00D8B1A2 /* MainTableViewCell.swift in Sources */,
 				036992241C32BFBA00F73047 /* WriteNoteViewController.swift in Sources */,
 				CE1C9C0D1C33E10500D8B1A2 /* MainTableView.swift in Sources */,
+				CEC458481C38C56600DD89D1 /* DetailViewController.swift in Sources */,
 				CE1C9C051C33C64A00D8B1A2 /* MKLayer.swift in Sources */,
 				CE1C9C041C33C64A00D8B1A2 /* MKLabel.swift in Sources */,
 				036992211C3282EF00F73047 /* Emotion.swift in Sources */,

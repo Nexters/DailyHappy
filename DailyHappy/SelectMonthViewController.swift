@@ -31,8 +31,31 @@ class SelectMonthViewController: UIViewController {
     @IBOutlet var SepButton: MKButton!
     @IBOutlet var DecButton: MKButton!
     
+    
+    @IBOutlet weak var JanLabel: UILabel!
+    @IBOutlet weak var AprLabel: UILabel!
+    @IBOutlet weak var JulLabel: UILabel!
+    @IBOutlet weak var OctLabel: UILabel!
+    
+    @IBOutlet weak var FebLabel: UILabel!
+    @IBOutlet weak var MayLabel: UILabel!
+    @IBOutlet weak var AugLabel: UILabel!
+    @IBOutlet weak var NovLabel: UILabel!
+    
+    @IBOutlet weak var MarLabel: UILabel!
+    @IBOutlet weak var JubLabel: UILabel!
+    @IBOutlet weak var SepLabel: UILabel!
+    @IBOutlet weak var DecLabel: UILabel!
+    
     private var selectYear = 2015
     private var selectMonth = 1
+    
+    let emotionMaker:EmotionMaker = EmotionMaker()
+    private var monthButtons:[MKButton]=[]
+    private var monthLabels:[UILabel]=[]
+    private var allNoteResults:[Note]=[]
+    private var numPostOfMonth: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0]
+    private var numEmotionOfMonth = [[Int]](count: 12, repeatedValue:[Int](count:10, repeatedValue:0))
     
     @IBOutlet weak var yearLabel: UILabel!
     
@@ -48,6 +71,13 @@ class SelectMonthViewController: UIViewController {
         self.selectMonth = month
     }
     
+    func setAllNotes(dataArray:[Note]) {
+        allNoteResults.removeAll()
+        for data in dataArray {
+            allNoteResults.append(data)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +89,96 @@ class SelectMonthViewController: UIViewController {
         rightView.backgroundColor = UIColor.clearColor()
         yearLabel.text  = String(selectYear)
         
+        setPostCount()
+        
+        initMonthLabels()
+        initMonthButtons()
+        setMonthButtons()
+        setMonthLabels()
+    }
+    func initMonthLabels() {
+        monthLabels.append(JanLabel)
+        monthLabels.append(FebLabel)
+        monthLabels.append(MarLabel)
+        monthLabels.append(AprLabel)
+        monthLabels.append(MayLabel)
+        monthLabels.append(JubLabel)
+        monthLabels.append(JulLabel)
+        monthLabels.append(AugLabel)
+        monthLabels.append(SepLabel)
+        monthLabels.append(OctLabel)
+        monthLabels.append(NovLabel)
+        monthLabels.append(DecLabel)
         
     }
+    
+    func initMonthButtons() {
+        monthButtons.append(JanButton)
+        monthButtons.append(FebButton)
+        monthButtons.append(MarButton)
+        monthButtons.append(AprButton)
+        monthButtons.append(MayButton)
+        monthButtons.append(JunButton)
+        monthButtons.append(JulButton)
+        monthButtons.append(AugButton)
+        monthButtons.append(SepButton)
+        monthButtons.append(OctButton)
+        monthButtons.append(NovButton)
+        monthButtons.append(DecButton)
+        
+    }
+
+    
+    
+    func setMonthButtons() {
+        var count = 0
+        for mkbutton in monthButtons {
+            
+            var max = 0
+            var maxIndex = 0
+            for i in 0...9 {
+                if max <= numEmotionOfMonth[count][i] {
+                    max = numEmotionOfMonth[count][i]
+                    maxIndex = i
+                }
+            }
+            if max == 0 {
+                 mkbutton.backgroundColor = UIColor.clearColor().colorWithAlphaComponent(0.2)
+            } else {
+                let color = emotionMaker.getEmotionColor(EmotionMaker.Emotiontype(rawValue: maxIndex)!).colorWithAlphaComponent(0.2)
+                mkbutton.backgroundColor = color
+            }
+            count++
+        }
+    }
+    
+    func setMonthLabels() {
+        var count = 0
+        for label in monthLabels {
+            label.text = String(numPostOfMonth[count])+"개의 카드"
+            count++
+        }
+    }
+    
+    func setPostCount() {
+        for i in 0...11 {
+            numPostOfMonth[i] = 0
+            for j in 0...9 {
+                numEmotionOfMonth[i][j] = 0
+            }
+        }
+        
+        for note in allNoteResults {
+           let comp = NSCalendar.currentCalendar().components([.Month, .Year], fromDate: note.date)
+           if(selectYear == Int(comp.year)) {
+                numPostOfMonth[comp.month-1]++
+                numEmotionOfMonth[comp.month-1][emotionMaker.getEmotionType(note.emotion).rawValue]++
+            }
+        }
+    }
+
+    
+    
     func initBackground() {
         let backimg = UIImage(named: "BackgroundImage")
         self.view.backgroundColor = UIColor(patternImage: backimg!)
@@ -142,11 +260,17 @@ class SelectMonthViewController: UIViewController {
     @IBAction func OnBackYearButton(sender: AnyObject) {
         setSelectYear(selectYear-1)
         yearLabel.text  = String(selectYear)
+        setPostCount()
+        setMonthLabels()
+        setMonthButtons()
         
     }
     @IBAction func OnForwardYearButton(sender: AnyObject) {
         setSelectYear(selectYear+1)
         yearLabel.text  = String(selectYear)
+        setPostCount()
+        setMonthLabels()
+        setMonthButtons()
     }
 
     

@@ -65,9 +65,12 @@ class MainTableViewCell: UITableViewCell {
 
     @IBOutlet weak var datetimeLabel: UILabel!
     @IBOutlet weak var emoticonImage: UIImageView!
+    @IBOutlet weak var cardMemoImage: UIImageView!
 
     private var itemLabels:[UILabel]=[]
     private var itemIcons:[UIImageView]=[]
+    
+    var onButtonSelected: (() -> Void)? = nil
     
     @IBOutlet weak var ItemView: MainItemView!
     override func awakeFromNib() {
@@ -94,10 +97,15 @@ class MainTableViewCell: UITableViewCell {
    
  
 
+
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+        if(selected) {
+            if let onButtonSelected = self.onButtonSelected {
+                onButtonSelected()
+            }
+        }
     }
     
     
@@ -180,5 +188,13 @@ class MainTableViewCell: UITableViewCell {
 
         
     }
+    func setNoteMemoImage(data:String) {
+        if(data != "") {
+            cardMemoImage.hidden = false
+        } else {
+            cardMemoImage.hidden = true
+        }
+    }
+
    
 }
