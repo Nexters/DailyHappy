@@ -507,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUp-EG-66L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="233" y="-699"/>
+            <point key="canvasLocation" x="236" y="909"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="xsD-CB-7Hc">
@@ -607,19 +607,21 @@
                                     <action selector="OnCloseButton:" destination="o9B-vC-jAz" eventType="touchUpInside" id="CZp-xi-7LI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-vt-Gn6">
-                                <rect key="frame" x="20" y="544" width="280" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="수정">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-vt-Gn6">
+                                <rect key="frame" x="30" y="538" width="265" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="수정"/>
+                                <connections>
+                                    <segue destination="Q2e-Vb-JMM" kind="presentation" id="Pai-iU-tzP"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIV-x7-4Hi">
-                                <rect key="frame" x="300" y="544" width="280" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="삭제">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIV-x7-4Hi">
+                                <rect key="frame" x="305" y="538" width="265" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="삭제"/>
+                                <connections>
+                                    <action selector="deleteNote:" destination="o9B-vC-jAz" eventType="touchUpInside" id="hpw-a2-kdh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdY-Ce-BuJ">
                                 <rect key="frame" x="298" y="545" width="5" height="24"/>
@@ -691,7 +693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzM-Dq-zdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="-702"/>
+            <point key="canvasLocation" x="1028" y="153"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="FCG-hm-uPM">
@@ -1022,7 +1024,7 @@
                                                     <constraint firstAttribute="height" constant="1" id="DfG-cf-9qi"/>
                                                 </constraints>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Po-ut-iT8">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Po-ut-iT8">
                                                 <rect key="frame" x="152" y="17" width="0.0" height="47"/>
                                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1153,7 +1155,7 @@
                                                             <action selector="clickActivity:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="Gb2-ht-gzy"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH7-U5-Zvy">
+                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH7-U5-Zvy">
                                                         <rect key="frame" x="147" y="16" width="47" height="47"/>
                                                         <state key="normal" image="item"/>
                                                         <connections>
@@ -1402,7 +1404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFd-wo-1Fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="189"/>
+            <point key="canvasLocation" x="1000" y="909"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="niJ-TU-KNz">
@@ -1500,7 +1502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="reS-iL-jkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="158"/>
+            <point key="canvasLocation" x="1791" y="897"/>
         </scene>
     </scenes>
     <resources>
@@ -1516,4 +1518,7 @@
         <image name="person" width="47" height="47"/>
         <image name="place" width="47" height="47"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pai-iU-tzP"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
 
+    let realm = try! Realm()
     var id = 0
+    var note: Note?
     
-    func setPostId(id:Int) {
+    func setNoteId(id:Int) {
         self.id = id
     }
-    func getPostId() ->(Int) {
+    
+    func getNoteId() ->(Int) {
         return id
     }
 
@@ -24,21 +28,34 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         scrollView.contentSize.height = 1200
+        note = realm.objectForPrimaryKey(Note.self, key: getNoteId())
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     @IBAction func OnCloseButton(sender: AnyObject) {
          dismissViewControllerAnimated(false, completion: nil)
     }
 
+    @IBAction func deleteNote(sender: UIButton) {
+        if let object = note {
+            try! realm.write {
+                realm.delete(object)
+                dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let writeNote = segue.destinationViewController as? WriteNoteViewController {
+            writeNote.updateNoteId = getNoteId()
+        }
+    }
     /*
     // MARK: - Navigation
 

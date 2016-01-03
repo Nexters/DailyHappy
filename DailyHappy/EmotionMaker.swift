@@ -163,4 +163,9 @@ class EmotionMaker {
         return emotionDataset.count
     }
     
+    func getEmotionIndex(emotionName: String) -> Int {
+        return emotionDataset.indexOf({ (emotionData) -> Bool in
+            return emotionData.name == emotionName
+        })!
+    }
 }

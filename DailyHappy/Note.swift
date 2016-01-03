@@ -49,4 +49,24 @@ class Note: Object {
             return 1
         }
     }
+    
+    override func copy(sender: AnyObject?) {
+        let note = sender as! Note
+        id = note.id
+        createdAt = note.createdAt
+        updatedAt = note.updatedAt
+        date = note.date
+        emotion = note.emotion
+        hasActivity = note.hasActivity
+        hasAnniversary = note.hasAnniversary
+        hasItem = note.hasItem
+        hasPerson = note.hasPerson
+        hasPlace = note.hasPlace
+        activityName = note.activityName
+        anniversaryName = note.anniversaryName
+        itemName = note.itemName
+        personName = note.personName
+        placeName = note.placeName
+        memo = note.memo
+    }
 }

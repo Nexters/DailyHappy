@@ -61,25 +61,6 @@ class SelectMonthViewController: UIViewController {
     
     var onDataAvailable : ((year:String, month:String)->())?
     
-    func sendData(year:String, month:String) {
-        self.onDataAvailable?(year: year, month: month)
-    }
-    
-    func setSelectYear(year:Int) {
-        self.selectYear = year
-    }
-    func setSelectMonth(month:Int) {
-        self.selectMonth = month
-    }
-    
-    func setAllNotes(dataArray:[Note]) {
-        allNoteResults.removeAll()
-        for data in dataArray {
-            allNoteResults.append(data)
-        }
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initBackground()
@@ -98,6 +79,28 @@ class SelectMonthViewController: UIViewController {
         setMonthLabels()
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
+    func sendData(year:String, month:String) {
+        self.onDataAvailable?(year: year, month: month)
+    }
+    
+    func setSelectYear(year:Int) {
+        self.selectYear = year
+    }
+    func setSelectMonth(month:Int) {
+        self.selectMonth = month
+    }
+    
+    func setAllNotes(dataArray:[Note]) {
+        allNoteResults.removeAll()
+        for data in dataArray {
+            allNoteResults.append(data)
+        }
+    }
+
     func initMonthLabels() {
         monthLabels.append(JanLabel)
         monthLabels.append(FebLabel)
@@ -111,7 +114,6 @@ class SelectMonthViewController: UIViewController {
         monthLabels.append(OctLabel)
         monthLabels.append(NovLabel)
         monthLabels.append(DecLabel)
-        
     }
     
     func initMonthButtons() {
@@ -127,7 +129,6 @@ class SelectMonthViewController: UIViewController {
         monthButtons.append(OctButton)
         monthButtons.append(NovButton)
         monthButtons.append(DecButton)
-        
     }
 
     func setMonthButtons() {
@@ -177,22 +178,11 @@ class SelectMonthViewController: UIViewController {
         }
     }
 
-    
-    
     func initBackground() {
         let backimg = UIImage(named: "BackgroundImage")
         self.view.backgroundColor = UIColor(patternImage: backimg!)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
- 
-    
-    
-    
+   
     @IBAction func OnJanButton(sender: AnyObject) {        
         setSelectMonth(1)
         sendData(String(selectYear), month: String(selectMonth))
@@ -272,18 +262,4 @@ class SelectMonthViewController: UIViewController {
         setMonthLabels()
         setMonthButtons()
     }
-
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
