@@ -16,6 +16,7 @@ class Note: Object {
 //  override static func ignoredProperties() -> [String] {
 //    return []
 //  }
+    dynamic var id = 0
     dynamic var createdAt = NSDate()
     dynamic var updatedAt = NSDate()
     dynamic var date = NSDate()
@@ -31,4 +32,21 @@ class Note: Object {
     dynamic var anniversaryName = ""
     dynamic var placeName = ""
     dynamic var memo = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    //Incremente ID
+    static func incrementeID() -> Int{
+        let realm = try! Realm()
+        let notes = realm.objects(Note)
+        let lastNote = notes.last
+        if notes.count > 0 {
+            let lastId = lastNote?.id
+            return lastId! + 1
+        } else {
+            return 1
+        }
+    }
 }

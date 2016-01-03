@@ -112,7 +112,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         realm = try! Realm()
-        
+        print(realm!.path)
+
         if( year == 1100) {
             setCurrentDate()
         }
