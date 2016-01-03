@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,7 +24,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func OnCloseButton(sender: AnyObject) {
-         dismissViewControllerAnimated(true, completion: nil)
+         dismissViewControllerAnimated(false, completion: nil)
     }
 
     /*

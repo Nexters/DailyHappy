@@ -161,6 +161,15 @@ class MainViewController: UIViewController {
     func OnShowDetailView() {
         
         let DetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as! DetailViewController
+        /*
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionFromRight
+        self.view.window!.layer.addAnimation( transition, forKey: nil)
+        */
+  
+        
         self.presentViewController(DetailVC, animated: false, completion: nil)
     }
 }

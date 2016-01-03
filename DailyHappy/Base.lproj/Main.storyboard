@@ -528,12 +528,42 @@
                                     <action selector="OnCloseButton:" destination="o9B-vC-jAz" eventType="touchUpInside" id="CZp-xi-7LI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-vt-Gn6">
+                                <rect key="frame" x="30" y="538" width="265" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="수정"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIV-x7-4Hi">
+                                <rect key="frame" x="305" y="538" width="265" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="삭제"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gIt-vt-Gn6" firstAttribute="width" secondItem="cIV-x7-4Hi" secondAttribute="width" id="2cv-16-zab"/>
+                            <constraint firstItem="gIt-vt-Gn6" firstAttribute="width" secondItem="unb-du-hsv" secondAttribute="width" id="ASX-Iq-jPO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gIt-vt-Gn6" secondAttribute="trailing" constant="200" id="DQ4-mC-ctm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gIt-vt-Gn6" secondAttribute="trailing" constant="300" id="GHT-Vo-Lat"/>
+                            <constraint firstItem="cIV-x7-4Hi" firstAttribute="leading" secondItem="gIt-vt-Gn6" secondAttribute="trailing" constant="10" id="IXh-Bs-mKO"/>
                             <constraint firstItem="boN-FW-pqU" firstAttribute="centerY" secondItem="unb-du-hsv" secondAttribute="centerY" id="SD5-1Y-bb7"/>
+                            <constraint firstItem="gIt-vt-Gn6" firstAttribute="leading" secondItem="unb-du-hsv" secondAttribute="leadingMargin" constant="10" id="TK1-ZZ-KQY"/>
+                            <constraint firstItem="gIt-vt-Gn6" firstAttribute="top" secondItem="cIV-x7-4Hi" secondAttribute="bottom" constant="-42" id="d6c-I2-wYf"/>
                             <constraint firstItem="boN-FW-pqU" firstAttribute="centerX" secondItem="unb-du-hsv" secondAttribute="centerX" id="dsg-xk-ldh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cIV-x7-4Hi" secondAttribute="trailing" constant="10" id="e3A-9b-xXY"/>
+                            <constraint firstItem="cIV-x7-4Hi" firstAttribute="top" secondItem="7eN-oJ-plB" secondAttribute="bottom" id="fgX-QI-FMy"/>
+                            <constraint firstItem="Apj-IH-2Es" firstAttribute="top" secondItem="gIt-vt-Gn6" secondAttribute="bottom" constant="20" id="rNl-Hq-9L2"/>
+                            <constraint firstItem="Apj-IH-2Es" firstAttribute="top" secondItem="cIV-x7-4Hi" secondAttribute="bottom" constant="20" id="s8F-rC-uWX"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ASX-Iq-jPO"/>
+                                <exclude reference="DQ4-mC-ctm"/>
+                                <exclude reference="GHT-Vo-Lat"/>
+                                <exclude reference="d6c-I2-wYf"/>
+                                <exclude reference="fgX-QI-FMy"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzM-Dq-zdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
