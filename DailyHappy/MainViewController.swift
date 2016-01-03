@@ -63,6 +63,14 @@ class MainViewController: UIViewController {
                     weakSelf.setSelectMonthButtonText()
                 }
             }
+        } else if let writeNote = segue.destinationViewController as? WriteNoteViewController {
+            writeNote.onDataAvailable = {[weak self](year, month) in
+                if let weakSelf = self {
+                    weakSelf.setYearUsingString(year)
+                    weakSelf.setMonthUsingString(month)
+                    weakSelf.setSelectMonthButtonText()
+                }
+            }
         }
     }
     
@@ -100,13 +108,6 @@ class MainViewController: UIViewController {
         }
 
     }
-    
-    @IBAction func ShowWriteView(sender: AnyObject) {
-        let WriteVC = self.storyboard?.instantiateViewControllerWithIdentifier("WriteVC") as! WriteNoteViewController
-        
-        self.presentViewController(WriteVC, animated: true, completion: nil)
-    }
-    
        
     override func viewDidLoad() {
         super.viewDidLoad()

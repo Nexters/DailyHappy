@@ -39,6 +39,8 @@ class WriteNoteViewController: UIViewController{
     let selectedText = "_selected"
     var selectedIndex = 0
     
+    var onDataAvailable : ((year:String, month:String)->())?
+    
     override func viewWillAppear(animated: Bool) {
         subscribeToKeyboardWillShowNotifications()
     }
@@ -123,6 +125,7 @@ class WriteNoteViewController: UIViewController{
         
         try! self.realm.write { () -> Void in
             realm.add(note)
+            sendData(note.date)
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
@@ -143,6 +146,13 @@ class WriteNoteViewController: UIViewController{
         return true
     }
   
+    func sendData(date: NSDate) {
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponents = calendar.components([NSCalendarUnit.Month, NSCalendarUnit.Year], fromDate: date)
+        
+        self.onDataAvailable?(year: String(dateComponents.year), month: String(dateComponents.month))
+    }
+    
     func setScrollViewKeyboardDismiss() {
         scrollView.keyboardDismissMode = .OnDrag
     }

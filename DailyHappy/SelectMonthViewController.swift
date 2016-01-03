@@ -60,6 +60,7 @@ class SelectMonthViewController: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     
     var onDataAvailable : ((year:String, month:String)->())?
+    
     func sendData(year:String, month:String) {
         self.onDataAvailable?(year: year, month: month)
     }
@@ -96,6 +97,7 @@ class SelectMonthViewController: UIViewController {
         setMonthButtons()
         setMonthLabels()
     }
+    
     func initMonthLabels() {
         monthLabels.append(JanLabel)
         monthLabels.append(FebLabel)
@@ -128,8 +130,6 @@ class SelectMonthViewController: UIViewController {
         
     }
 
-    
-    
     func setMonthButtons() {
         var count = 0
         for mkbutton in monthButtons {
