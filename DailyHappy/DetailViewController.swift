@@ -78,6 +78,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var fourthitemLabel: UILabel!
     @IBOutlet weak var fifthitemLabel: UILabel!
     
+    @IBOutlet weak var titleLabel: UILabel!
     
     private var itemLabels:[UILabel]=[]
     private var itemIcons:[UIImageView]=[]
@@ -128,9 +129,18 @@ class DetailViewController: UIViewController {
     
     func updateAllViews() {
         note = realm.objectForPrimaryKey(Note.self, key: getNoteId())
+        
+        
+        setTitleLabel()
         setTopView()
         setMiddleView()
         setBottomView()
+    }
+    func setTitleLabel() {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM월 dd일"
+        let dateString = dateFormatter.stringFromDate(note!.date)
+        titleLabel.text = dateString
     }
     
     func setTopView() {
