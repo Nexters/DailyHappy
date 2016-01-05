@@ -22,7 +22,7 @@
                                 <rect key="frame" x="30" y="70" width="340" height="460"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-la-TpY">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="460"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="460"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuS-TW-2Rn" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="9" y="16" width="94" height="94"/>
@@ -160,9 +160,9 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjs-kz-KfW">
-                                        <rect key="frame" x="113" y="0.0" width="114" height="460"/>
+                                        <rect key="frame" x="114" y="0.0" width="113" height="460"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1z-aM-0Wd" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1z-aM-0Wd" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="16" width="94" height="94"/>
                                                 <color key="backgroundColor" red="0.94497058109999998" green="0.92972479480000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="2월">
@@ -183,7 +183,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULo-PI-NC3" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULo-PI-NC3" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="130" width="94" height="94"/>
                                                 <color key="backgroundColor" red="0.94497058109999998" green="0.92972479480000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="5월">
@@ -204,7 +204,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCw-Vp-45W" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCw-Vp-45W" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="244" width="94" height="94"/>
                                                 <color key="backgroundColor" red="0.94497058109999998" green="0.92972479480000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="8월">
@@ -225,7 +225,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyT-3D-f8e" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyT-3D-f8e" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="358" width="94" height="94"/>
                                                 <color key="backgroundColor" red="0.94497058109999998" green="0.92972479480000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="11월">
@@ -286,7 +286,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LU4-Jl-qum">
-                                        <rect key="frame" x="227" y="0.0" width="113" height="460"/>
+                                        <rect key="frame" x="227" y="0.0" width="114" height="460"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwa-mq-fmt" customClass="MKButton" customModule="DailyHappy" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="16" width="94" height="94"/>
@@ -985,7 +985,7 @@
                                         <rect key="frame" x="0.0" y="1" width="600" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1M-mY-Mdf" id="HXi-IF-lND">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="175"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="176"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-ET-XCi" customClass="MainItemView" customModule="DailyHappy" customModuleProvider="target">
@@ -1426,7 +1426,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH7-U5-Zvy">
-                                                        <rect key="frame" x="147" y="16" width="47" height="47"/>
+                                                        <rect key="frame" x="148" y="16" width="47" height="47"/>
                                                         <state key="normal" image="item"/>
                                                         <connections>
                                                             <action selector="clickItem:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="S7A-Zh-3NE"/>

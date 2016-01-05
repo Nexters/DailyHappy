@@ -175,6 +175,7 @@ class WriteNoteViewController: UIViewController{
         case Constants.Keyword.Activity:
             if self.note.activityName.isEmpty {
                 activityButton.alpha = CGFloat(0.5)
+                note.hasActivity = false
             } else {
                 activityButton.alpha = CGFloat(1.0)
                 note.hasActivity = true
@@ -182,6 +183,7 @@ class WriteNoteViewController: UIViewController{
         case Constants.Keyword.Item:
             if self.note.itemName.isEmpty {
                 itemButton.alpha = CGFloat(0.5)
+                note.hasItem = false
             } else {
                 itemButton.alpha = CGFloat(1.0)
                 note.hasItem = true
@@ -189,6 +191,7 @@ class WriteNoteViewController: UIViewController{
         case Constants.Keyword.Anniversary:
             if self.note.anniversaryName.isEmpty {
                 anniversaryButton.alpha = CGFloat(0.5)
+                note.hasAnniversary = false
             } else {
                 anniversaryButton.alpha = CGFloat(1.0)
                 note.hasAnniversary = true
@@ -196,6 +199,7 @@ class WriteNoteViewController: UIViewController{
         case Constants.Keyword.Person:
             if self.note.personName.isEmpty {
                 personButton.alpha = CGFloat(0.5)
+                note.hasPerson = false
             } else {
                 personButton.alpha = CGFloat(1.0)
                 note.hasPerson = true
@@ -203,6 +207,7 @@ class WriteNoteViewController: UIViewController{
         case Constants.Keyword.Place:
             if self.note.placeName.isEmpty {
                 placeButton.alpha = CGFloat(0.5)
+                note.hasPlace = false
             } else {
                 placeButton.alpha = CGFloat(1.0)
                 note.hasPlace = true
@@ -385,6 +390,7 @@ extension WriteNoteViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        setPreviouslyFocusedKeywordState()
         isFocusKeywordTexField = false
         return true
     }

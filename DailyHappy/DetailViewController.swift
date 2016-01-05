@@ -80,6 +80,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet var scrollView: UIScrollView!
+    
     private var itemLabels:[UILabel]=[]
     private var itemIcons:[UIImageView]=[]
     
@@ -96,9 +98,6 @@ class DetailViewController: UIViewController {
     func getNoteId() ->(Int) {
         return id
     }
-
-  
-    
     
     func initBackground() {
         let backimg = UIImage(named: "BackgroundImage")
@@ -112,30 +111,24 @@ class DetailViewController: UIViewController {
 
 
     }
-
-    @IBOutlet var scrollView: UIScrollView!
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
-        
         initBackground()
         inititemLabels()
         inititemIcons()
         
-        updateAllViews()
     }
     
     func updateAllViews() {
         note = realm.objectForPrimaryKey(Note.self, key: getNoteId())
-        
         
         setTitleLabel()
         setTopView()
         setMiddleView()
         setBottomView()
     }
+    
     func setTitleLabel() {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM월 dd일"
@@ -147,9 +140,11 @@ class DetailViewController: UIViewController {
         setDateLabel()
         setEmotionLayer()
     }
+    
     func setMiddleView() {
          setDetailItems(note!)
     }
+    
     func setBottomView() {
         memoLabel.text = note!.memo
         if memoLabel.text?.characters.count > 20  {
@@ -167,6 +162,7 @@ class DetailViewController: UIViewController {
         topView.backgroundColor = emotionMaker.getEmotionColor(emotionType).colorWithAlphaComponent(1)
         emoticonMentLabel.text = emotionMaker.getDetailMent(emotionType)
     }
+    
     func setDateLabel() {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy년 MM월dd일   hh:mm a"
@@ -290,7 +286,7 @@ class DetailViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        //print(scrollView)
+        updateAllViews()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
