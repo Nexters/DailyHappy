@@ -102,19 +102,31 @@ class DetailViewController: UIViewController {
     func initBackground() {
         let backimg = UIImage(named: "BackgroundImage")
         self.view.backgroundColor = UIColor(patternImage: backimg!)
-
+    }
+    
+    func initTopView() {
         topView.layer.masksToBounds = true
         topView.layer.cornerRadius = 3
-        
+    }
+    func initBottomView() {
         bottomView.layer.masksToBounds = true
         bottomView.layer.cornerRadius = 3
-
-
     }
-   
+
+    func initMiddleView() {
+        let border = CALayer()
+        border.backgroundColor =  UIColor(colorLiteralRed: 194.0/255.0, green: 194.0/255.0, blue: 194.0/255.0, alpha: 1.0).CGColor
+        border.frame = CGRectMake(0, middleView.frame.size.height - 1, middleView.frame.size.width, 1)
+        middleView.layer.addSublayer(border)
+        middleView.layer.zPosition = 1
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initBackground()
+        initTopView()
+        initBottomView()
+        initMiddleView()
         inititemLabels()
         inititemIcons()
         
@@ -159,7 +171,7 @@ class DetailViewController: UIViewController {
     func setEmotionLayer() {
         let emotionType = self.emotionMaker.getEmotionType((note!.emotion))
         setemoticonImage(emotionMaker.getDetailImagename(emotionType))
-        topView.backgroundColor = emotionMaker.getEmotionColor(emotionType).colorWithAlphaComponent(1)
+        topView.backgroundColor = emotionMaker.getEmotionColor(emotionType)
         emoticonMentLabel.text = emotionMaker.getDetailMent(emotionType)
     }
     
@@ -176,7 +188,6 @@ class DetailViewController: UIViewController {
         
         var cardItemindex = 0
         if(note.hasPerson) {
-            
             addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Person, itemText: getItemString(note.personName), itemIndex: cardItemindex))
             cardItemindex++
         }
