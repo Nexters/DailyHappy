@@ -985,7 +985,7 @@
                                         <rect key="frame" x="0.0" y="1" width="600" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1M-mY-Mdf" id="HXi-IF-lND">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="176"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="175.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-ET-XCi" customClass="MainItemView" customModule="DailyHappy" customModuleProvider="target">
