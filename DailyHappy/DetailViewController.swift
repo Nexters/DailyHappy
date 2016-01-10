@@ -115,10 +115,11 @@ class DetailViewController: UIViewController {
 
     func initMiddleView() {
         let border = CALayer()
-        border.backgroundColor =  UIColor(colorLiteralRed: 194.0/255.0, green: 194.0/255.0, blue: 194.0/255.0, alpha: 1.0).CGColor
+        border.backgroundColor =  UIColor(colorLiteralRed: 219.0/255.0, green: 219.0/255.0, blue: 219.0/255.0, alpha: 1.0).CGColor
         border.frame = CGRectMake(0, middleView.frame.size.height - 1,   UIScreen.mainScreen().bounds.size.width - (scrollView.frame.size.width - middleView.frame.size.width), 1)
         middleView.layer.addSublayer(border)
         middleView.layer.zPosition = 1
+        middleView.backgroundColor =  UIColor(colorLiteralRed: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0)
     }
 
     override func viewDidLoad() {
@@ -174,7 +175,7 @@ class DetailViewController: UIViewController {
     
     func setDateLabel() {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy년 MM월dd일"
+        dateFormatter.dateFormat = "yyyy년 M월dd일"
         let dateString = dateFormatter.stringFromDate(note!.date)
         noteDateLabel.text = dateString
     }
@@ -184,32 +185,46 @@ class DetailViewController: UIViewController {
         var cardItemindex = 0
         if(note.hasPerson) {
             addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Person, itemText: getItemString(note.personName), itemIndex: cardItemindex))
-            cardItemindex++
+        } else {
+             addBlankitem(Detailtag(itemType: Detailtag.Tagtype.Person, itemText: "", itemIndex: cardItemindex))
         }
+        cardItemindex++
         if(note.hasItem) {
             addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Item, itemText: getItemString(note.itemName), itemIndex: cardItemindex))
-            cardItemindex++
+            
+        } else {
+            addBlankitem(Detailtag(itemType: Detailtag.Tagtype.Item, itemText: "", itemIndex: cardItemindex))
         }
+
+        cardItemindex++
+        
         if(note.hasActivity) {
             addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Activity, itemText: getItemString(note.activityName), itemIndex: cardItemindex))
-            cardItemindex++
-        }
-        if(note.hasAnniversary) {
-            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Anniversary, itemText: getItemString(note.anniversaryName), itemIndex: cardItemindex))
-            cardItemindex++
-        }
-        if(note.hasPlace) {
-            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Place, itemText: getItemString(note.placeName), itemIndex: cardItemindex))
-            cardItemindex++
+        } else {
+             addBlankitem(Detailtag(itemType: Detailtag.Tagtype.Activity, itemText: "", itemIndex: cardItemindex))
         }
         
+         cardItemindex++
+        
+        if(note.hasAnniversary) {
+            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Anniversary, itemText: getItemString(note.anniversaryName), itemIndex: cardItemindex))
+        } else {
+            addBlankitem(Detailtag(itemType: Detailtag.Tagtype.Anniversary, itemText: "", itemIndex: cardItemindex))
+
+        }
+        cardItemindex++
+        if(note.hasPlace) {
+            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Place, itemText: getItemString(note.placeName), itemIndex: cardItemindex))
+           
+        } else {
+              addBlankitem(Detailtag(itemType: Detailtag.Tagtype.Place, itemText: "", itemIndex: cardItemindex))
+        }
+         cardItemindex++
         
         while cardItemindex < 5 {
             clearDetailitem(cardItemindex)
             cardItemindex++
         }
-        
-        
     }
     
     func getItemString(data:String) ->(String){
@@ -235,6 +250,31 @@ class DetailViewController: UIViewController {
         if (tag.index < itemIcons.count) {
             itemIcons[tag.index].image = UIImage(named: tag.getIconimageName())
         }
+    }
+    
+    func addBlankitem(tag: Detailtag){
+        if (tag.index < itemIcons.count) {
+            itemLabels[tag.index].text = tag.content
+            itemIcons[tag.index].image = alpha(UIImage(named: tag.getIconimageName())!, value: 0.4)
+        }
+    }
+    
+    func alpha(img:UIImage, value:CGFloat)->UIImage{
+        UIGraphicsBeginImageContextWithOptions(img.size, false, 0.0)
+        
+        var ctx = UIGraphicsGetCurrentContext();
+        let area = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height);
+        
+        CGContextScaleCTM(ctx, 1, -1);
+        CGContextTranslateCTM(ctx, 0, -area.size.height);
+        CGContextSetBlendMode(ctx, .Multiply);
+        CGContextSetAlpha(ctx, value);
+        CGContextDrawImage(ctx, area, img.CGImage);
+        
+        var newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return newImage;
     }
 
     func inititemLabels() {
