@@ -187,7 +187,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func setEmptyMemolabel() {
         if(noteResults.count < 1) {
-            emptyMemoLabel.text = "글이 없습니다.\n작성해 주세요."
+            emptyMemoLabel.text = "무엇이 당신을 행복하게\n만드는 지 찾아보세요!"
             emptyMemoLabel.hidden = false
         } else {
             emptyMemoLabel.hidden = true
