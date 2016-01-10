@@ -332,8 +332,9 @@ class WriteNoteViewController: UIViewController{
     func bindNoteData(note: Note) {
         setDateButtonTitle(note.date)
         
-        selectedIndex = emotionMaker.getEmotionIndex(note.emotion)
-        doneButton.backgroundColor = emotionMaker.getEmotionColor(selectedIndex)
+        let selectedIndex = NSIndexPath(forItem: emotionMaker.getEmotionIndex(note.emotion), inSection: 0)
+        emotionCollectionView.delegate?.collectionView!(emotionCollectionView, didSelectItemAtIndexPath: selectedIndex)
+        emotionCollectionView.scrollToItemAtIndexPath(selectedIndex, atScrollPosition: UICollectionViewScrollPosition.None, animated: true)
         
         activityButton.alpha = note.hasActivity ? 1.0 : 0.5
         itemButton.alpha = note.hasItem ? 1.0 : 0.5
@@ -342,14 +343,19 @@ class WriteNoteViewController: UIViewController{
         placeButton.alpha = note.hasPlace ? 1.0 : 0.5
         
         if note.hasActivity {
+            currentKeyword = Constants.Keyword.Activity
             keywordTextField.text = note.activityName
         } else if note.hasItem {
+            currentKeyword = Constants.Keyword.Item
             keywordTextField.text = note.itemName
         } else if note.hasAnniversary {
+            currentKeyword = Constants.Keyword.Anniversary
             keywordTextField.text = note.anniversaryName
         } else if note.hasPerson {
+            currentKeyword = Constants.Keyword.Person
             keywordTextField.text = note.personName
         } else if note.hasPlace {
+            currentKeyword = Constants.Keyword.Place
             keywordTextField.text = note.placeName
         }
         
@@ -366,8 +372,8 @@ extension WriteNoteViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("emotionCell", forIndexPath: indexPath) as! EmotionImageCell
         let imageName = emotionMaker.getIcImagename(indexPath.row)
-        
         cell.bind(selectedIndex == indexPath.row, imageName: imageName)
+        
         return cell
     }
 }
@@ -375,10 +381,9 @@ extension WriteNoteViewController: UICollectionViewDataSource {
 extension WriteNoteViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedIndex = indexPath.row
+        collectionView.reloadItemsAtIndexPaths([indexPath])
         note.emotion = emotionMaker.getEmotionName(selectedIndex)
         doneButton.backgroundColor = emotionMaker.getEmotionColor(selectedIndex)
-        
-        collectionView.reloadData()
     }
 }
 
