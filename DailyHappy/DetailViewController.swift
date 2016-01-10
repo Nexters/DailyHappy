@@ -142,10 +142,7 @@ class DetailViewController: UIViewController {
     }
     
     func setTitleLabel() {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM월 dd일"
-        let dateString = dateFormatter.stringFromDate(note!.date)
-        titleLabel.text = dateString
+        titleLabel.text = "상세보기"
     }
     
     func setTopView() {
@@ -177,9 +174,7 @@ class DetailViewController: UIViewController {
     
     func setDateLabel() {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy년 MM월dd일   hh:mm a"
-        dateFormatter.AMSymbol = "오전"
-        dateFormatter.PMSymbol = "오후"
+        dateFormatter.dateFormat = "yyyy년 MM월dd일"
         let dateString = dateFormatter.stringFromDate(note!.date)
         noteDateLabel.text = dateString
     }
