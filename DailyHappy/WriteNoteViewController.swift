@@ -27,6 +27,7 @@ class WriteNoteViewController: UIViewController{
     @IBOutlet weak var placeButton: UIButton!
     @IBOutlet weak var dateButton: UIButton!
     
+    @IBOutlet weak var emotionNameText: UILabel!
     let realm = try! Realm()
     let disposeBag = DisposeBag()
     
@@ -57,9 +58,10 @@ class WriteNoteViewController: UIViewController{
                 bindNoteData(note)
             }
         } else {
-            note.emotion = "angry"
+            note.emotion = "happy"
             selectedIndex = 0
-            doneButton.backgroundColor = emotionMaker.getEmotionColor("angry")
+            doneButton.backgroundColor = emotionMaker.getEmotionColor("happy")
+            emotionNameText.text = emotionMaker.getDetailMent(emotionMaker.getEmotionType("happy"))
             setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
             memoTextView.text = Constants.Placeholder.MemoPlaceholder
             activityButton.alpha = 1.0
@@ -392,6 +394,7 @@ extension WriteNoteViewController: UICollectionViewDelegate {
         
         note.emotion = emotionMaker.getEmotionName(selectedIndex)
         doneButton.backgroundColor = emotionMaker.getEmotionColor(selectedIndex)
+        emotionNameText.text = emotionMaker.getDetailMent(selectedIndex)
     }
 }
 

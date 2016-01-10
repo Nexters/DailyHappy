@@ -1581,11 +1581,19 @@
                                             <action selector="createNote:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="gmE-QN-ZJ2"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5M-Cf-JjU">
+                                        <rect key="frame" x="88" y="103" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Krx-Nh-dnh" firstAttribute="leading" secondItem="Mm1-kt-Flg" secondAttribute="leading" id="0D7-P9-QKS"/>
                                     <constraint firstItem="Krx-Nh-dnh" firstAttribute="width" secondItem="Mm1-kt-Flg" secondAttribute="width" id="12I-Mc-MGo"/>
                                     <constraint firstItem="eSg-tD-4Cf" firstAttribute="leading" secondItem="Mm1-kt-Flg" secondAttribute="leading" id="1kv-J0-Vnv"/>
+                                    <constraint firstItem="z5M-Cf-JjU" firstAttribute="centerY" secondItem="EDC-ng-jKe" secondAttribute="centerY" id="2vJ-FE-5Wu"/>
+                                    <constraint firstItem="z5M-Cf-JjU" firstAttribute="leading" secondItem="EDC-ng-jKe" secondAttribute="trailing" constant="9" id="59n-Uo-3bM"/>
                                     <constraint firstItem="EG2-8t-Yp2" firstAttribute="top" secondItem="eSg-tD-4Cf" secondAttribute="bottom" id="7on-k5-SFD"/>
                                     <constraint firstItem="sP9-3L-Usv" firstAttribute="top" secondItem="4wE-9l-AK8" secondAttribute="bottom" constant="6" id="AhJ-6m-FOp"/>
                                     <constraint firstItem="Krx-Nh-dnh" firstAttribute="top" secondItem="Mm1-kt-Flg" secondAttribute="top" constant="14" id="BxS-cJ-hfE"/>
@@ -1610,12 +1618,14 @@
                                     <constraint firstItem="eSg-tD-4Cf" firstAttribute="top" secondItem="nLd-Ct-zCZ" secondAttribute="bottom" constant="8" id="mLH-58-bDM"/>
                                     <constraint firstAttribute="trailing" secondItem="Krx-Nh-dnh" secondAttribute="trailing" id="oV3-sZ-rHe"/>
                                     <constraint firstAttribute="trailing" secondItem="sP9-3L-Usv" secondAttribute="trailing" id="onN-Ac-Ybn"/>
+                                    <constraint firstAttribute="trailing" secondItem="z5M-Cf-JjU" secondAttribute="trailing" constant="16" id="pwy-1c-JbM"/>
                                     <constraint firstItem="4wE-9l-AK8" firstAttribute="top" secondItem="cCp-vK-egr" secondAttribute="bottom" constant="24" id="vcd-Nv-Q6J"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="BxS-cJ-hfE"/>
                                         <exclude reference="auf-Xb-sAC"/>
+                                        <exclude reference="59n-Uo-3bM"/>
                                         <exclude reference="FDO-WW-zLR"/>
                                         <exclude reference="gCu-OB-4o2"/>
                                         <exclude reference="gpu-ea-pQg"/>
@@ -1668,6 +1678,7 @@
                         <outlet property="dateButton" destination="pvD-Ho-Ja9" id="uzv-5J-skJ"/>
                         <outlet property="doneButton" destination="EG2-8t-Yp2" id="emc-UO-eLP"/>
                         <outlet property="emotionCollectionView" destination="3Po-ut-iT8" id="7e5-H1-Hoi"/>
+                        <outlet property="emotionNameText" destination="z5M-Cf-JjU" id="4hg-DY-JXc"/>
                         <outlet property="itemButton" destination="VH7-U5-Zvy" id="PI7-Uz-mYj"/>
                         <outlet property="keywordTextField" destination="ezn-W5-er5" id="ouo-HH-TwS"/>
                         <outlet property="memoTextView" destination="hcb-aq-oxr" id="gvW-Dw-bPG"/>
