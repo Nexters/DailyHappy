@@ -175,7 +175,7 @@ class DetailViewController: UIViewController {
     
     func setDateLabel() {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy년 M월dd일"
+        dateFormatter.dateFormat = "yyyy년 M월 dd일"
         let dateString = dateFormatter.stringFromDate(note!.date)
         noteDateLabel.text = dateString
     }
