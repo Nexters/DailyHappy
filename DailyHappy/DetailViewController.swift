@@ -116,7 +116,7 @@ class DetailViewController: UIViewController {
     func initMiddleView() {
         let border = CALayer()
         border.backgroundColor =  UIColor(colorLiteralRed: 194.0/255.0, green: 194.0/255.0, blue: 194.0/255.0, alpha: 1.0).CGColor
-        border.frame = CGRectMake(0, middleView.frame.size.height - 1, middleView.frame.size.width, 1)
+        border.frame = CGRectMake(0, middleView.frame.size.height - 1,   UIScreen.mainScreen().bounds.size.width - (scrollView.frame.size.width - middleView.frame.size.width), 1)
         middleView.layer.addSublayer(border)
         middleView.layer.zPosition = 1
     }
