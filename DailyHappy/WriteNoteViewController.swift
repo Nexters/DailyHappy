@@ -380,8 +380,16 @@ extension WriteNoteViewController: UICollectionViewDataSource {
 
 extension WriteNoteViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if selectedIndex == indexPath.row {
+            return
+        }
+        
+        let previousSelectedIndex = NSIndexPath(forItem: selectedIndex, inSection: 0)
         selectedIndex = indexPath.row
+        
+        collectionView.reloadItemsAtIndexPaths([previousSelectedIndex])
         collectionView.reloadItemsAtIndexPaths([indexPath])
+        
         note.emotion = emotionMaker.getEmotionName(selectedIndex)
         doneButton.backgroundColor = emotionMaker.getEmotionColor(selectedIndex)
     }
