@@ -99,7 +99,7 @@ class MainViewController: UIViewController {
     private func setNoteResultsFromRealm() {
         let startDate = String(year) + "-" + String(month)
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM"
+        dateFormatter.dateFormat = "yyyy-M"
         let startNSDate = dateFormatter.dateFromString(startDate)!
         
         let components: NSDateComponents = NSDateComponents()
