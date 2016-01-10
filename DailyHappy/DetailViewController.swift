@@ -309,12 +309,23 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func deleteNote(sender: UIButton) {
-        if let object = note {
-            try! realm.write {
-                realm.delete(object)
-                dismissViewControllerAnimated(true, completion: nil)
-            }
-        }
+        let alertController = UIAlertController(title: nil, message: "지금 보고 계신 내용을 지우시겠습니까?", preferredStyle: .ActionSheet)
+        
+        let deleteAction = UIAlertAction(title: "삭제", style: .Default, handler: {
+            action in
+                if let object = self.note {
+                    try! self.realm.write {
+                        self.realm.delete(object)
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                }
+        })
+        let cancelAction = UIAlertAction(title: "취소", style: .Cancel, handler: nil)
+        
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
