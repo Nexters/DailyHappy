@@ -16,12 +16,14 @@ class DatePickerViewController: UIViewController {
     weak var previousViewController: WriteNoteViewController?
     
     override func viewDidAppear(animated: Bool) {
-        datePicker.backgroundColor = UIColor.darkGrayColor()
-        datePicker.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
-        datePicker.setValue(0.8, forKey: "alpha")
-        datePicker.maximumDate = NSDate() // Cant select tomorrow
+        
+    }
+    
+    override func viewDidLoad() {
+        datePicker.backgroundColor = UIColor.whiteColor()
         datePicker.datePickerMode = UIDatePickerMode.Date
         datePicker.locale = NSLocale(localeIdentifier: "ko_KR")
+        datePicker.setValue(0.8, forKey: "alpha")
     }
     
     override func viewWillAppear(animated: Bool) {

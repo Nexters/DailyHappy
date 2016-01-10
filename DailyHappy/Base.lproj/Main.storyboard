@@ -1702,7 +1702,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZw-mB-aje">
                                         <rect key="frame" x="20" y="12" width="30" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="닫기"/>
+                                        <state key="normal" title="닫기">
+                                            <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="goBack:" destination="6RR-CH-UsO" eventType="touchUpInside" id="SXD-wv-qAL"/>
                                         </connections>
@@ -1710,13 +1712,15 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLu-j3-D1g">
                                         <rect key="frame" x="550" y="12" width="30" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="확인"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="selectDate:" destination="6RR-CH-UsO" eventType="touchUpInside" id="i8J-7Q-zK6"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="lLu-j3-D1g" firstAttribute="centerY" secondItem="2Pz-kJ-Ife" secondAttribute="centerY" id="7T5-Jr-k99"/>
                                     <constraint firstAttribute="height" constant="56" id="SVT-Dd-ftD"/>
@@ -1725,9 +1729,9 @@
                                     <constraint firstItem="IZw-mB-aje" firstAttribute="centerY" secondItem="2Pz-kJ-Ife" secondAttribute="centerY" id="x3F-fb-IYV"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AAh-bz-gNR">
+                            <datePicker opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AAh-bz-gNR">
                                 <rect key="frame" x="0.0" y="384" width="600" height="216"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="T3I-Cd-HKS"/>
                                     <constraint firstAttribute="height" constant="216" id="gT8-V6-3d6"/>
