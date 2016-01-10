@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,18 +18,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ4-jp-ZeB">
-                                <rect key="frame" x="260" y="116" width="61" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashbg" translatesAutoresizingMaskIntoConstraints="NO" id="YHv-Hr-hqY">
+                                <rect key="frame" x="4" y="-34" width="592" height="668"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashicon" translatesAutoresizingMaskIntoConstraints="NO" id="bPR-IF-WI3">
+                                <rect key="frame" x="247" y="239" width="107" height="122"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rJ4-jp-ZeB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="daQ-Ob-qi2"/>
-                            <constraint firstItem="rJ4-jp-ZeB" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="96" id="ehR-GJ-aBh"/>
+                            <constraint firstItem="YHv-Hr-hqY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-16" id="0pA-fl-QV6"/>
+                            <constraint firstItem="YHv-Hr-hqY" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="72x-GM-sbx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YHv-Hr-hqY" secondAttribute="trailing" constant="-16" id="F9Z-PK-PKX"/>
+                            <constraint firstItem="bPR-IF-WI3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HcE-A8-ZSO"/>
+                            <constraint firstItem="YHv-Hr-hqY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NId-A2-KM7"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="YHv-Hr-hqY" secondAttribute="bottom" id="OPO-xn-c2W"/>
+                            <constraint firstItem="bPR-IF-WI3" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="VT7-cj-AeN"/>
+                            <constraint firstItem="YHv-Hr-hqY" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gbM-7m-9VK"/>
+                            <constraint firstItem="YHv-Hr-hqY" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="z8v-FG-jKZ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="72x-GM-sbx"/>
+                                <exclude reference="z8v-FG-jKZ"/>
+                                <exclude reference="OPO-xn-c2W"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -36,4 +51,8 @@
             <point key="canvasLocation" x="265" y="347"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splashbg" width="375" height="667"/>
+        <image name="splashicon" width="107" height="122"/>
+    </resources>
 </document>

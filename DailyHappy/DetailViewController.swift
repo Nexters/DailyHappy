@@ -262,7 +262,7 @@ class DetailViewController: UIViewController {
     func alpha(img:UIImage, value:CGFloat)->UIImage{
         UIGraphicsBeginImageContextWithOptions(img.size, false, 0.0)
         
-        var ctx = UIGraphicsGetCurrentContext();
+        let ctx = UIGraphicsGetCurrentContext();
         let area = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height);
         
         CGContextScaleCTM(ctx, 1, -1);
@@ -271,7 +271,7 @@ class DetailViewController: UIViewController {
         CGContextSetAlpha(ctx, value);
         CGContextDrawImage(ctx, area, img.CGImage);
         
-        var newImage = UIGraphicsGetImageFromCurrentImageContext();
+        let newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
         return newImage;
