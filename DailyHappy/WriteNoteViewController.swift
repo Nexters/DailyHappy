@@ -334,7 +334,7 @@ class WriteNoteViewController: UIViewController{
         
         let selectedIndex = NSIndexPath(forItem: emotionMaker.getEmotionIndex(note.emotion), inSection: 0)
         emotionCollectionView.delegate?.collectionView!(emotionCollectionView, didSelectItemAtIndexPath: selectedIndex)
-        emotionCollectionView.scrollToItemAtIndexPath(selectedIndex, atScrollPosition: UICollectionViewScrollPosition.None, animated: true)
+        emotionCollectionView.scrollToItemAtIndexPath(selectedIndex, atScrollPosition: UICollectionViewScrollPosition.Left, animated: true)
         
         activityButton.alpha = note.hasActivity ? 1.0 : 0.5
         itemButton.alpha = note.hasItem ? 1.0 : 0.5
