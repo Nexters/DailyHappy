@@ -62,9 +62,10 @@ class WriteNoteViewController: UIViewController{
             selectedIndex = 0
             doneButton.backgroundColor = emotionMaker.getEmotionColor("happy")
             emotionNameText.text = emotionMaker.getDetailMent(emotionMaker.getEmotionType("happy"))
-            setKeywordTextFieldPlaceholder(Constants.Placeholder.Activity)
+            setKeywordTextFieldPlaceholder(Constants.Placeholder.Person)
             memoTextView.text = Constants.Placeholder.MemoPlaceholder
-            activityButton.alpha = 1.0
+            personButton.alpha = 1.0
+            currentKeyword = Constants.Keyword.Person
             setDateButtonTitle(note.date)
         }
         
