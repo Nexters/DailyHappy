@@ -1160,7 +1160,7 @@
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8w-Im-0ab">
                                 <rect key="frame" x="157" y="285" width="286" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1418,14 +1418,14 @@
                                                             <action selector="clickPerson:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="UOF-mn-z6J"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH7-U5-Zvy">
+                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH7-U5-Zvy">
                                                         <rect key="frame" x="148" y="16" width="47" height="47"/>
                                                         <state key="normal" image="item"/>
                                                         <connections>
                                                             <action selector="clickItem:" destination="Q2e-Vb-JMM" eventType="touchUpInside" id="S7A-Zh-3NE"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" alpha="0.5" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-Jb-GqI">
+                                                    <button opaque="NO" alpha="0.5" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-Jb-GqI">
                                                         <rect key="frame" x="277" y="16" width="47" height="47"/>
                                                         <state key="normal" image="activity"/>
                                                         <connections>
