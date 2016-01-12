@@ -44,6 +44,7 @@ class WriteNoteViewController: UIViewController{
     var updateNoteId = 0
     
     var onDataAvailable : ((year:String, month:String)->())?
+    weak var previousViewController: MainViewController?
     
     override func viewWillAppear(animated: Bool) {
         subscribeToKeyboardWillShowNotifications()
@@ -163,6 +164,9 @@ class WriteNoteViewController: UIViewController{
     }
   
     func sendData(date: NSDate) {
+        if let main = previousViewController {
+            main.isCreatedNote = true
+        }
         let calendar = NSCalendar.currentCalendar()
         let dateComponents = calendar.components([NSCalendarUnit.Month, NSCalendarUnit.Year], fromDate: date)
         
