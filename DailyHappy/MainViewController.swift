@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
     private var allNoteResults:[Note]=[]
     private var year = 1100
     private var month = 1
+    var isCreatedNote = false
     @IBOutlet weak var selectMonthButton: UIButton!
     
     
@@ -31,6 +32,9 @@ class MainViewController: UIViewController {
         setSelectMonthButtonText()
         updateDataFromRealm()
         tableView.reloadData()
+        if isCreatedNote {
+            tableViewScrollToBottom(true)
+        }
     }
     
     override func viewDidLoad() {
@@ -62,6 +66,7 @@ class MainViewController: UIViewController {
                 }
             }
         } else if let writeNote = segue.destinationViewController as? WriteNoteViewController {
+            writeNote.previousViewController = self
             writeNote.onDataAvailable = {[weak self](year, month) in
                 if let weakSelf = self {
                     weakSelf.setYearUsingString(year)
@@ -108,7 +113,7 @@ class MainViewController: UIViewController {
         
         
         let predicate = NSPredicate(format: "date >= %@ AND date < %@", startNSDate, endNSDate!)
-        let results = realm!.objects(Note).filter(predicate)
+        let results = realm!.objects(Note).filter(predicate).sorted("date", ascending: true)
         noteResults.removeAll()
         for result in results {
             noteResults.append(result)
@@ -167,6 +172,24 @@ class MainViewController: UIViewController {
         */
         DetailVC.setNoteId(id)
         self.presentViewController(DetailVC, animated: false, completion: nil)
+    }
+    
+    func tableViewScrollToBottom(animated: Bool) {
+        
+        let delay = 0.1 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        
+        dispatch_after(time, dispatch_get_main_queue(), {
+            
+            let numberOfSections = self.tableView.numberOfSections
+            let numberOfRows = self.tableView.numberOfRowsInSection(numberOfSections-1)
+            
+            if numberOfRows > 0 {
+                let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
+                self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
+            }
+            
+        })
     }
 }
 
