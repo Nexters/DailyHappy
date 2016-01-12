@@ -5,25 +5,25 @@ use_frameworks!
 
 target 'DailyHappy' do
   pod 'RealmSwift'
-  pod 'RxSwift', '~> 2.0.0-beta'
-  pod 'RxCocoa', '~> 2.0.0-beta'
-  pod 'RxBlocking', '~> 2.0.0-beta'
+  pod 'RxSwift', '~> 2.0'
+  pod 'RxCocoa', '~> 2.0'
+  pod 'RxBlocking', '~> 2.0'
   pod 'MaterialKit', :head
 end
 
 target 'DailyHappyTests' do
   pod 'RealmSwift'
-  pod 'RxSwift', '~> 2.0.0-beta'
-  pod 'RxCocoa', '~> 2.0.0-beta'
-  pod 'RxBlocking', '~> 2.0.0-beta'
+  pod 'RxSwift', '~> 2.0'
+  pod 'RxCocoa', '~> 2.0'
+  pod 'RxBlocking', '~> 2.0'
   pod 'MaterialKit', :head
 end
 
 target 'DailyHappyUITests' do
   pod 'RealmSwift'
-  pod 'RxSwift', '~> 2.0.0-beta'
-  pod 'RxCocoa', '~> 2.0.0-beta'
-  pod 'RxBlocking', '~> 2.0.0-beta'
+  pod 'RxSwift', '~> 2.0'
+  pod 'RxCocoa', '~> 2.0'
+  pod 'RxBlocking', '~> 2.0'
   pod 'MaterialKit', :head
 end
 
