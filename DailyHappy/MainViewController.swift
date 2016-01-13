@@ -33,6 +33,7 @@ class MainViewController: UIViewController {
         updateDataFromRealm()
         tableView.reloadData()
         if isCreatedNote {
+            isCreatedNote = false
             tableViewScrollToBottom(true)
         }
     }
