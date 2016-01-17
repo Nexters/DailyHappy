@@ -195,12 +195,8 @@ class MainViewController: UIViewController {
 }
 
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
-        setTableviewStyle(tableView)
-        setEmptyMemolabel()
-        return noteResults.count
-    }
+extension MainViewController: UITableViewDelegate {
+    
     
     func setTableviewStyle(tableView:UITableView) {
         tableView.allowsSelection = true
@@ -222,6 +218,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
 
+}
+
+extension MainViewController: UITableViewDataSource { 
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
+        setTableviewStyle(tableView)
+        setEmptyMemolabel()
+        return noteResults.count
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell") as! MainTableViewCell
@@ -245,5 +250,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+ 
 }
 
