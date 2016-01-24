@@ -13,6 +13,11 @@ import RxCocoa
 import RxSwift
 
 class WriteNoteViewController: UIViewController{
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var pickMoodLabel: UILabel!
+    @IBOutlet weak var keywordLabel: UILabel!
+    @IBOutlet weak var memoLabel: UILabel!
+    
     @IBOutlet weak var emotionCollectionView: UICollectionView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var keywordTextField: UITextField!
@@ -52,6 +57,7 @@ class WriteNoteViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLabelTexts()
         
         if updateNoteId > 0 {
             if let updateNote = realm.objectForPrimaryKey(Note.self, key: updateNoteId) {
@@ -64,7 +70,7 @@ class WriteNoteViewController: UIViewController{
             doneButton.backgroundColor = emotionMaker.getEmotionColor("happy")
             emotionNameText.text = emotionMaker.getDetailMent(emotionMaker.getEmotionType("happy"))
             setKeywordTextFieldPlaceholder(Constants.Placeholder.Person)
-            memoTextView.text = Constants.Placeholder.MemoPlaceholder
+            memoTextView.text = NSLocalizedString("memo_hint", comment: "hint text of memoTextView")
             personButton.alpha = 1.0
             currentKeyword = Constants.Keyword.Person
             setDateButtonTitle(note.date)
@@ -161,6 +167,13 @@ class WriteNoteViewController: UIViewController{
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    func setLabelTexts() {
+        titleLabel.text = NSLocalizedString("write_title", comment: "A title of write page")
+        pickMoodLabel.text = NSLocalizedString("pick_mood", comment: "A label of collection view for emotions")
+        keywordLabel.text = NSLocalizedString("keyword_label", comment: "A label of keyword Stack view")
+        memoLabel.text = NSLocalizedString("memo_label", comment: "A label of memoTextView")
     }
   
     func sendData(date: NSDate) {
@@ -331,7 +344,6 @@ class WriteNoteViewController: UIViewController{
     
     func setDateButtonTitle(date: NSDate) {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR")
         dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
         dateButton.setTitle(dateFormatter.stringFromDate(date), forState: UIControlState.Normal)
     }

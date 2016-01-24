@@ -140,8 +140,7 @@ class MainTableViewCell: UITableViewCell {
     }
     func getCardDateFormat(date:NSDate) ->(String){
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd EEE요일"
-        dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR")
+        dateFormatter.dateFormat = "dd EEEE"
         let createDate = dateFormatter.stringFromDate(date)
         return createDate
     }

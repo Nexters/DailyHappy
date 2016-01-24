@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  DailyHappy
+
+  Created by MunkyuShin on 1/24/16.
+  Copyright © 2016 TeamNexters. All rights reserved.
+*/
+"timeline_empty_text" = "무엇이 당신을 행복하게\n만드는 지 찾아보세요!";
+"write_title" = "작성하기";
+"pick_mood" = "어떤 감정을 느꼈나요?";
+"keyword_label" = "하루를 키워드로 표현해보세요.";
+"memo_label" = "메모";
+"memo_hint" = "짦은 문장으로 표현하세요.";
+"happy" = "행복해요.";
+"joy" = "즐거운 시간을 보냈어요.";
+"in_love" = "꺅 사랑에 빠졌어요.";
+"awesome" = "기억에 남을 멋진하루.";
+"looking_forward" = "두근두근 설레이네요.";
+"peaceful" = "평온한 일상.";
+"sad" = "슬프네요.";
+"worried" = "후우 걱정이 있어요.";
+"confused" = "어떡해야 할까요?";
+"angry" = "부들부들 화났어요.";
+"activity_hint" = "어떤 활동을 했었나요?";
+"item_hint" = "어떤 물건이 떠오르나요?";
+"anniversary_hint" = "무슨 날이었나요?";
+"person_hint" = "누가 떠오르나요?";
+"place_hint" = "어디에 있었나요?";
+"detail_view_title" = "상세 보기";
+"edit" = "수정";
+"delete" = "삭제";
+"%d_card" = "%d개의 카드";
+"%d_cards" = "%d개의 카드";
+"delete_message" = "지금 보고 계신 내용을 지우시겠습니까?";
+"cancel" = "취소";

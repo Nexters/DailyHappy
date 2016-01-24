@@ -156,7 +156,12 @@ class SelectMonthViewController: UIViewController {
     func setMonthLabels() {
         var count = 0
         for label in monthLabels {
-            label.text = String(numPostOfMonth[count])+"개의 카드"
+            let numberOfPosts = numPostOfMonth[count]
+            if numberOfPosts <= 1 {
+                label.text = String.localizedStringWithFormat(NSLocalizedString("%d_card", comment: "number of card"), numberOfPosts)
+            } else {
+                label.text = String.localizedStringWithFormat(NSLocalizedString("%d_cards", comment: "number of card"), numberOfPosts)
+            }
             count++
         }
     }

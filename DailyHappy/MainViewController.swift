@@ -134,7 +134,6 @@ class MainViewController: UIViewController {
         let date = NSDate()
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM"
-        dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR")
         let monthStr = dateFormatter.stringFromDate(date)
         dateFormatter.dateFormat = "yyyy"
         let yearStr = dateFormatter.stringFromDate(date)
@@ -207,7 +206,7 @@ extension MainViewController: UITableViewDelegate {
     }
     func setEmptyMemolabel() {
         if(noteResults.count < 1) {
-            emptyMemoLabel.text = "무엇이 당신을 행복하게\n만드는 지 찾아보세요!"
+            emptyMemoLabel.text = NSLocalizedString("timeline_empty_text", comment: "instruction for starter")
             emptyMemoLabel.hidden = false
         } else {
             emptyMemoLabel.hidden = true

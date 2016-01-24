@@ -36,11 +36,11 @@ struct Constants {
     
     struct Placeholder {
         static let MemoPlaceholder = "메모를 남겨주세요."
-        static let Activity = "어떤 활동을 했었나요?"
-        static let Item = "무엇과 관련이 있나요?"
-        static let Anniversary = "무슨 날이었나요?"
-        static let Person = "누가 떠오르나요?"
-        static let Place = "어디에 있었나요?"
+        static let Activity = NSLocalizedString("activity_hint", comment: "A hint message for activity keyword.")
+        static let Item = NSLocalizedString("item_hint", comment: "A hint message for item keyword.")
+        static let Anniversary = NSLocalizedString("anniversary_hint", comment: "A hint message for anniversary keyword.")
+        static let Person = NSLocalizedString("person_hint", comment: "A hint message for person keyword")
+        static let Place = NSLocalizedString("place_hint", comment: "A hint message for place keyword.")
     }
     
 }

@@ -79,6 +79,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var fifthitemLabel: UILabel!
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     @IBOutlet var scrollView: UIScrollView!
     
@@ -136,14 +138,16 @@ class DetailViewController: UIViewController {
     func updateAllViews() {
         note = realm.objectForPrimaryKey(Note.self, key: getNoteId())
         
-        setTitleLabel()
+        setLabelTexts()
         setTopView()
         setMiddleView()
         setBottomView()
     }
     
-    func setTitleLabel() {
-        titleLabel.text = "상세보기"
+    func setLabelTexts() {
+        titleLabel.text = NSLocalizedString("detail_view_title", comment: "a title for DetailViewController")
+        editButton.setTitle(NSLocalizedString("edit", comment: "title of edit button."), forState: UIControlState.Normal)
+        deleteButton.setTitle(NSLocalizedString("delete", comment: "title of delete button."), forState: UIControlState.Normal)
     }
     
     func setTopView() {
@@ -175,7 +179,8 @@ class DetailViewController: UIViewController {
     
     func setDateLabel() {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy년 M월 dd일"
+        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+//        dateFormatter.dateFormat = "yyyy년 M월 dd일"
         let dateString = dateFormatter.stringFromDate(note!.date)
         noteDateLabel.text = dateString
     }
@@ -344,9 +349,9 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func deleteNote(sender: UIButton) {
-        let alertController = UIAlertController(title: nil, message: "지금 보고 계신 내용을 지우시겠습니까?", preferredStyle: .ActionSheet)
+        let alertController = UIAlertController(title: nil, message: NSLocalizedString("delete_message", comment: "message of alert view"), preferredStyle: .ActionSheet)
         
-        let deleteAction = UIAlertAction(title: "삭제", style: .Default, handler: {
+        let deleteAction = UIAlertAction(title: NSLocalizedString("delete", comment: "name of deleteButton"), style: .Default, handler: {
             action in
                 if let object = self.note {
                     try! self.realm.write {
@@ -355,7 +360,7 @@ class DetailViewController: UIViewController {
                     }
                 }
         })
-        let cancelAction = UIAlertAction(title: "취소", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: "name of cancelButton"), style: .Cancel, handler: nil)
         
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)

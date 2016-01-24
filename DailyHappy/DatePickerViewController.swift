@@ -22,7 +22,6 @@ class DatePickerViewController: UIViewController {
     override func viewDidLoad() {
         datePicker.backgroundColor = UIColor.whiteColor()
         datePicker.datePickerMode = UIDatePickerMode.Date
-        datePicker.locale = NSLocale(localeIdentifier: "ko_KR")
         datePicker.setValue(0.8, forKey: "alpha")
     }
     
@@ -43,7 +42,6 @@ class DatePickerViewController: UIViewController {
         previousViewController!.note.date = selectedDate
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR")
         dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
         
         previousViewController?.dateButton.setTitle(dateFormatter.stringFromDate(selectedDate), forState: .Normal)
