@@ -5,3 +5,31 @@
   Created by MunkyuShin on 1/24/16.
   Copyright © 2016 TeamNexters. All rights reserved.
 */
+"timeline_empty_text" = "Discover your recipe\nfor happiness!";
+"write_title" = "Write";
+"pick_mood" = "How are you feeling?";
+"keyword_label" = "Your day in keywords.";
+"memo_label" = "Memo";
+"memo_hint" = "Write anything.";
+"happy" = "Happy!";
+"joy" = "Joyful.";
+"in_love" = "I'm in love.";
+"awesome" = "Awesome!";
+"looking_forward" = "Looking forward.";
+"peaceful" = "Peaceful.";
+"sad" = "Sad.";
+"worried" = "I'm worried.";
+"confused" = "Confused.";
+"angry" = "Angry.";
+"activity_hint" = "What did you do?";
+"item_hint" = "What item was related to?";
+"anniversary_hint" = "Any special day?";
+"person_hint" = "Who were you with?";
+"place_hint" = "Where were you?";
+"detail_view_title" = "View all";
+"edit" = "Edit";
+"delete" = "Delete";
+"%d_card" = "%d card";
+"%d_cards" = "%d cards";
+"delete_message" = "Would you delete these contents?";
+"cancel" = "Cancel";
