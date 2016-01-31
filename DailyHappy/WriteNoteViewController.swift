@@ -236,7 +236,7 @@ class WriteNoteViewController: UIViewController{
     }
     
     func subscribeKeywordTextField() {
-        let subscription = keywordTextField.rx_text
+        keywordTextField.rx_text
             .subscribeNext{ keyword in
                 switch self.currentKeyword {
                 case .Activity:
@@ -251,19 +251,21 @@ class WriteNoteViewController: UIViewController{
                     self.note.placeName = keyword
                 }
         }
-        disposeBag.addDisposable(subscription)
+        .addDisposableTo(disposeBag)
     }
     
     func subscribeMemoTextView() {
-        let subscription = memoTextView.rx_text
-        .subscribeNext { (memo) -> Void in
-            if memo == Constants.Placeholder.MemoPlaceholder {
-                return
-            }
-            
-            self.note.memo = memo
-        }
-        disposeBag.addDisposable(subscription)
+        memoTextView.rx_text
+            .subscribe(onNext: { memo in
+                if memo == Constants.Placeholder.MemoPlaceholder {
+                    return
+                }
+                
+                self.note.memo = memo
+                }, onError: {error in
+                    
+                })
+        .addDisposableTo(disposeBag)
     }
     
     func subscribeToKeyboardWillShowNotifications() {

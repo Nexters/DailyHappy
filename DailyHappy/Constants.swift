@@ -35,7 +35,7 @@ struct Constants {
     }
     
     struct Placeholder {
-        static let MemoPlaceholder = "메모를 남겨주세요."
+        static let MemoPlaceholder = NSLocalizedString("memo_hint", comment: "A hint message for memo")
         static let Activity = NSLocalizedString("activity_hint", comment: "A hint message for activity keyword.")
         static let Item = NSLocalizedString("item_hint", comment: "A hint message for item keyword.")
         static let Anniversary = NSLocalizedString("anniversary_hint", comment: "A hint message for anniversary keyword.")
