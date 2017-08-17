@@ -10,14 +10,14 @@ import UIKit
 
 struct Cardtag {
     enum Tagtype{
-        case Person
-        case Place
-        case Item
-        case Activity
-        case Anniversary
+        case person
+        case place
+        case item
+        case activity
+        case anniversary
         
         init() {
-            self = .Person
+            self = .person
         }
     }
     var itemtype : Tagtype
@@ -27,15 +27,15 @@ struct Cardtag {
     func getIconimageName () ->(String) {
         var result = ""
         switch itemtype {
-        case .Person:
+        case .person:
             result = "CarditemPersonImage"
-        case .Place:
+        case .place:
             result = "CarditemPlaceImage"
-        case .Item:
+        case .item:
             result = "CarditemItemImage"
-        case .Activity:
+        case .activity:
             result = "CarditemActivityImage"
-        case .Anniversary:
+        case .anniversary:
             result = "CarditemAnniversaryImage"
         }
         return result
@@ -67,8 +67,8 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var emoticonImage: UIImageView!
     @IBOutlet weak var cardMemoImage: UIImageView!
 
-    private var itemLabels:[UILabel]=[]
-    private var itemIcons:[UIImageView]=[]
+    fileprivate var itemLabels:[UILabel]=[]
+    fileprivate var itemIcons:[UIImageView]=[]
     
     var onButtonSelected: (() -> Void)? = nil
     
@@ -98,7 +98,7 @@ class MainTableViewCell: UITableViewCell {
  
 
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
         if(selected) {
@@ -110,7 +110,7 @@ class MainTableViewCell: UITableViewCell {
     
     
     
-    func addCarditem(tag: Cardtag){
+    func addCarditem(_ tag: Cardtag){
         if (tag.index < itemLabels.count) {
             itemLabels[tag.index].text = tag.content
         }
@@ -118,7 +118,7 @@ class MainTableViewCell: UITableViewCell {
             itemIcons[tag.index].image = UIImage(named: tag.getIconimageName())
         }
     }
-    func clearCarditem(index: Int) {
+    func clearCarditem(_ index: Int) {
         if (index < itemLabels.count) {
             itemLabels[index].text = ""
         }
@@ -127,71 +127,71 @@ class MainTableViewCell: UITableViewCell {
         }
     }
     
-    func setDatetimeText(date: NSDate ) {
+    func setDatetimeText(_ date: Date ) {
         datetimeLabel.text = getCardDateFormat(date)
     }
-    func setemoticonImage(imgName: String ) {
+    func setemoticonImage(_ imgName: String ) {
         emoticonImage.image = UIImage(named: imgName)
     }
     
-    func setCellStyle(color:UIColor) {
-        backgroundColor = UIColor.clearColor()
+    func setCellStyle(_ color:UIColor) {
+        backgroundColor = UIColor.clear
         ItemView.setBackgorundColor(color)
     }
-    func getCardDateFormat(date:NSDate) ->(String){
-        let dateFormatter = NSDateFormatter()
+    func getCardDateFormat(_ date:Date) ->(String){
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd EEEE"
-        let createDate = dateFormatter.stringFromDate(date)
+        let createDate = dateFormatter.string(from: date)
         return createDate
     }
 
     
-    func getItemString(data:String) ->(String){
+    func getItemString(_ data:String) ->(String){
         let endIndex = data.characters.count
         if(endIndex <= 5) {
             return data
         }
-        return data.substringWithRange(Range<String.Index>(start: data.startIndex.advancedBy(0), end: data.endIndex.advancedBy(5-endIndex))) + "..."
+        return data.substring(with: (data.characters.index(data.startIndex, offsetBy: 0) ..< data.characters.index(data.endIndex, offsetBy: 5-endIndex))) + "..."
 
     }
-    func setCellItems(note:Note) {
+    func setCellItems(_ note:Note) {
         
         var cardItemindex = 0
         if(note.hasPerson) {
             
-            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Person, itemText: getItemString(note.personName), itemIndex: cardItemindex))
-            cardItemindex++
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.person, itemText: getItemString(note.personName), itemIndex: cardItemindex))
+            cardItemindex += 1
         }
         if(note.hasItem) {
-            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Item, itemText: getItemString(note.itemName), itemIndex: cardItemindex))
-            cardItemindex++
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.item, itemText: getItemString(note.itemName), itemIndex: cardItemindex))
+            cardItemindex += 1
         }
         if(note.hasActivity) {
-            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Activity, itemText: getItemString(note.activityName), itemIndex: cardItemindex))
-            cardItemindex++
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.activity, itemText: getItemString(note.activityName), itemIndex: cardItemindex))
+            cardItemindex += 1
         }
         if(note.hasAnniversary) {
-            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Anniversary, itemText: getItemString(note.anniversaryName), itemIndex: cardItemindex))
-            cardItemindex++
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.anniversary, itemText: getItemString(note.anniversaryName), itemIndex: cardItemindex))
+            cardItemindex += 1
         }
         if(note.hasPlace) {
-            addCarditem(Cardtag(itemType: Cardtag.Tagtype.Place, itemText: getItemString(note.placeName), itemIndex: cardItemindex))
-            cardItemindex++
+            addCarditem(Cardtag(itemType: Cardtag.Tagtype.place, itemText: getItemString(note.placeName), itemIndex: cardItemindex))
+            cardItemindex += 1
         }
         
         
         while cardItemindex < 5 {
             clearCarditem(cardItemindex)
-            cardItemindex++
+            cardItemindex += 1
         }
 
         
     }
-    func setNoteMemoImage(data:String) {
+    func setNoteMemoImage(_ data:String) {
         if(data != "") {
-            cardMemoImage.hidden = false
+            cardMemoImage.isHidden = false
         } else {
-            cardMemoImage.hidden = true
+            cardMemoImage.isHidden = true
         }
     }
 

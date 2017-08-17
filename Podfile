@@ -5,25 +5,20 @@ use_frameworks!
 
 target 'DailyHappy' do
   pod 'RealmSwift'
-  pod 'RxSwift', '~> 2.0'
-  pod 'RxCocoa', '~> 2.0'
-  pod 'RxBlocking', '~> 2.0'
-  pod 'MaterialKit', :head
+  pod 'RxSwift', '~> 3.0'
+  pod 'RxCocoa', '~> 3.0'
+  pod 'MaterialKit', :git => 'https://github.com/faresbh/MaterialKit', :branch => "swift3"
 end
 
 target 'DailyHappyTests' do
   pod 'RealmSwift'
-  pod 'RxSwift', '~> 2.0'
-  pod 'RxCocoa', '~> 2.0'
-  pod 'RxBlocking', '~> 2.0'
-  pod 'MaterialKit', :head
+  pod 'RxBlocking', '~> 3.0'
+  pod 'MaterialKit', :git => 'https://github.com/faresbh/MaterialKit', :branch => "swift3"
 end
 
 target 'DailyHappyUITests' do
   pod 'RealmSwift'
-  pod 'RxSwift', '~> 2.0'
-  pod 'RxCocoa', '~> 2.0'
-  pod 'RxBlocking', '~> 2.0'
-  pod 'MaterialKit', :head
+  pod 'RxBlocking', '~> 3.0'
+  pod 'MaterialKit', :git => 'https://github.com/faresbh/MaterialKit', :branch => "swift3"
 end
 

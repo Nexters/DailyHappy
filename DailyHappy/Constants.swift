@@ -23,11 +23,11 @@ struct Constants {
     }
     
     enum Keyword {
-        case Activity
-        case Item
-        case Anniversary
-        case Person
-        case Place
+        case activity
+        case item
+        case anniversary
+        case person
+        case place
     }
     
     struct Color {

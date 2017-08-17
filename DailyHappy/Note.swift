@@ -17,9 +17,9 @@ class Note: Object {
 //    return []
 //  }
     dynamic var id = 0
-    dynamic var createdAt = NSDate()
-    dynamic var updatedAt = NSDate()
-    dynamic var date = NSDate()
+    dynamic var createdAt = Date()
+    dynamic var updatedAt = Date()
+    dynamic var date = Date()
     dynamic var emotion = ""
     dynamic var hasPerson = false
     dynamic var hasItem = false
@@ -40,7 +40,7 @@ class Note: Object {
     //Incremente ID
     static func incrementeID() -> Int{
         let realm = try! Realm()
-        let notes = realm.objects(Note)
+        let notes = realm.objects(Note.self)
         let lastNote = notes.last
         if notes.count > 0 {
             let lastId = lastNote?.id
@@ -50,7 +50,7 @@ class Note: Object {
         }
     }
     
-    override func copy(sender: AnyObject?) {
+    func copy(_ sender: AnyObject?) {
         let note = sender as! Note
         id = note.id
         createdAt = note.createdAt

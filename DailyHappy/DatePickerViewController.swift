@@ -12,40 +12,40 @@ import UIKit
 class DatePickerViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
    
-    var date:NSDate?
+    var date:Date?
     weak var previousViewController: WriteNoteViewController?
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
     }
     
     override func viewDidLoad() {
-        datePicker.backgroundColor = UIColor.whiteColor()
-        datePicker.datePickerMode = UIDatePickerMode.Date
+        datePicker.backgroundColor = UIColor.white
+        datePicker.datePickerMode = UIDatePickerMode.date
         datePicker.setValue(0.8, forKey: "alpha")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         datePicker.date = self.date! 
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    @IBAction func goBack(sender:UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func goBack(_ sender:UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func selectDate(sender:UIButton) {
+    @IBAction func selectDate(_ sender:UIButton) {
         let selectedDate = datePicker.date
         previousViewController!.note.date = selectedDate
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.long
         
-        previousViewController?.dateButton.setTitle(dateFormatter.stringFromDate(selectedDate), forState: .Normal)
+        previousViewController?.dateButton.setTitle(dateFormatter.string(from: selectedDate), for: UIControlState())
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

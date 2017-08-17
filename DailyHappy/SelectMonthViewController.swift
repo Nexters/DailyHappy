@@ -47,28 +47,28 @@ class SelectMonthViewController: UIViewController {
     @IBOutlet weak var SepLabel: UILabel!
     @IBOutlet weak var DecLabel: UILabel!
     
-    private var selectYear = 2015
-    private var selectMonth = 1
+    fileprivate var selectYear = 2015
+    fileprivate var selectMonth = 1
     
     let emotionMaker:EmotionMaker = EmotionMaker()
-    private var monthButtons:[MKButton]=[]
-    private var monthLabels:[UILabel]=[]
-    private var allNoteResults:[Note]=[]
-    private var numPostOfMonth: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0]
-    private var numEmotionOfMonth = [[Int]](count: 12, repeatedValue:[Int](count:10, repeatedValue:0))
+    fileprivate var monthButtons:[MKButton]=[]
+    fileprivate var monthLabels:[UILabel]=[]
+    fileprivate var allNoteResults:[Note]=[]
+    fileprivate var numPostOfMonth: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0]
+    fileprivate var numEmotionOfMonth = [[Int]](repeating: [Int](repeating: 0, count: 10), count: 12)
     
     @IBOutlet weak var yearLabel: UILabel!
     
-    var onDataAvailable : ((year:String, month:String)->())?
+    var onDataAvailable : ((_ year:String, _ month:String)->())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initBackground()
         // Do any additional setup after loading the view.
-        selectMonthStackView.backgroundColor = UIColor.clearColor()
-        leftView.backgroundColor = UIColor.clearColor()
-        centerView.backgroundColor = UIColor.clearColor()
-        rightView.backgroundColor = UIColor.clearColor()
+        selectMonthStackView.backgroundColor = UIColor.clear
+        leftView.backgroundColor = UIColor.clear
+        centerView.backgroundColor = UIColor.clear
+        rightView.backgroundColor = UIColor.clear
         yearLabel.text  = String(selectYear)
         
         setPostCount()
@@ -79,22 +79,22 @@ class SelectMonthViewController: UIViewController {
         setMonthLabels()
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
-    func sendData(year:String, month:String) {
-        self.onDataAvailable?(year: year, month: month)
+    func sendData(_ year:String, month:String) {
+        self.onDataAvailable?(year, month)
     }
     
-    func setSelectYear(year:Int) {
+    func setSelectYear(_ year:Int) {
         self.selectYear = year
     }
-    func setSelectMonth(month:Int) {
+    func setSelectMonth(_ month:Int) {
         self.selectMonth = month
     }
     
-    func setAllNotes(dataArray:[Note]) {
+    func setAllNotes(_ dataArray:[Note]) {
         allNoteResults.removeAll()
         for data in dataArray {
             allNoteResults.append(data)
@@ -144,12 +144,12 @@ class SelectMonthViewController: UIViewController {
                 }
             }
             if max == 0 {
-                 mkbutton.backgroundColor = UIColor.clearColor().colorWithAlphaComponent(0.2)
+                 mkbutton.backgroundColor = UIColor.clear.withAlphaComponent(0.2)
             } else {
-                let color = emotionMaker.getEmotionColor(EmotionMaker.Emotiontype(rawValue: maxIndex)!).colorWithAlphaComponent(0.2)
+                let color = emotionMaker.getEmotionColor(EmotionMaker.Emotiontype(rawValue: maxIndex)!).withAlphaComponent(0.2)
                 mkbutton.backgroundColor = color
             }
-            count++
+            count += 1
         }
     }
     
@@ -162,7 +162,7 @@ class SelectMonthViewController: UIViewController {
             } else {
                 label.text = String.localizedStringWithFormat(NSLocalizedString("%d_cards", comment: "number of card"), numberOfPosts)
             }
-            count++
+            count += 1
         }
     }
     
@@ -175,10 +175,10 @@ class SelectMonthViewController: UIViewController {
         }
         
         for note in allNoteResults {
-           let comp = NSCalendar.currentCalendar().components([.Month, .Year], fromDate: note.date)
-           if(selectYear == Int(comp.year)) {
-                numPostOfMonth[comp.month-1]++
-                numEmotionOfMonth[comp.month-1][emotionMaker.getEmotionType(note.emotion).rawValue]++
+           let comp = (Calendar.current as NSCalendar).components([.month, .year], from: note.date as Date)
+           if(selectYear == Int(comp.year!)) {
+                numPostOfMonth[comp.month!-1] += 1
+                numEmotionOfMonth[comp.month!-1][emotionMaker.getEmotionType(note.emotion).rawValue] += 1
             }
         }
     }
@@ -188,71 +188,71 @@ class SelectMonthViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: backimg!)
     }
    
-    @IBAction func OnJanButton(sender: AnyObject) {        
+    @IBAction func OnJanButton(_ sender: AnyObject) {        
         setSelectMonth(1)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
     }
-    @IBAction func OnAprButton(sender: AnyObject) {
+    @IBAction func OnAprButton(_ sender: AnyObject) {
         setSelectMonth(4)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    @IBAction func OnJulButton(sender: AnyObject) {
+    @IBAction func OnJulButton(_ sender: AnyObject) {
         setSelectMonth(7)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    @IBAction func OnOctButton(sender: AnyObject) {
+    @IBAction func OnOctButton(_ sender: AnyObject) {
         setSelectMonth(10)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func OnFebButton(sender: AnyObject) {
+    @IBAction func OnFebButton(_ sender: AnyObject) {
         setSelectMonth(2)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    @IBAction func OnMayButton(sender: AnyObject) {
+    @IBAction func OnMayButton(_ sender: AnyObject) {
         setSelectMonth(5)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    @IBAction func OnAugButton(sender: AnyObject) {
+    @IBAction func OnAugButton(_ sender: AnyObject) {
         setSelectMonth(8)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    @IBAction func OnNovButton(sender: AnyObject) {
+    @IBAction func OnNovButton(_ sender: AnyObject) {
         setSelectMonth(11)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func OnMarButton(sender: AnyObject) {
+    @IBAction func OnMarButton(_ sender: AnyObject) {
         setSelectMonth(3)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    @IBAction func OnJubButton(sender: AnyObject) {
+    @IBAction func OnJubButton(_ sender: AnyObject) {
         setSelectMonth(6)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    @IBAction func OnSepButton(sender: AnyObject) {
+    @IBAction func OnSepButton(_ sender: AnyObject) {
         setSelectMonth(9)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    @IBAction func OnDecButton(sender: AnyObject) {
+    @IBAction func OnDecButton(_ sender: AnyObject) {
         setSelectMonth(12)
         sendData(String(selectYear), month: String(selectMonth))
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func OnBackYearButton(sender: AnyObject) {
+    @IBAction func OnBackYearButton(_ sender: AnyObject) {
         setSelectYear(selectYear-1)
         yearLabel.text  = String(selectYear)
         setPostCount()
@@ -260,7 +260,7 @@ class SelectMonthViewController: UIViewController {
         setMonthButtons()
         
     }
-    @IBAction func OnForwardYearButton(sender: AnyObject) {
+    @IBAction func OnForwardYearButton(_ sender: AnyObject) {
         setSelectYear(selectYear+1)
         yearLabel.text  = String(selectYear)
         setPostCount()

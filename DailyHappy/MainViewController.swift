@@ -18,15 +18,15 @@ class MainViewController: UIViewController {
     
     var realm:Realm?
     let emotionMaker:EmotionMaker = EmotionMaker()
-    private var noteResults:[Note]=[]
-    private var allNoteResults:[Note]=[]
-    private var year = 1100
-    private var month = 1
+    fileprivate var noteResults:[Note]=[]
+    fileprivate var allNoteResults:[Note]=[]
+    fileprivate var year = 1100
+    fileprivate var month = 1
     var isCreatedNote = false
     @IBOutlet weak var selectMonthButton: UIButton!
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         setSelectMonthButtonText()
@@ -42,7 +42,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         realm = try! Realm()
-        print(realm!.path)
         
         if( year == 1100) {
             setCurrentDate()
@@ -51,12 +50,12 @@ class MainViewController: UIViewController {
         initButtons()
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let SelectVC = segue.destinationViewController as? SelectMonthViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let SelectVC = segue.destination as? SelectMonthViewController {
             SelectVC.setSelectYear(year)
             SelectVC.setAllNotes(allNoteResults)
             SelectVC.onDataAvailable = {[weak self](year, month) in
@@ -66,7 +65,7 @@ class MainViewController: UIViewController {
                     weakSelf.setSelectMonthButtonText()
                 }
             }
-        } else if let writeNote = segue.destinationViewController as? WriteNoteViewController {
+        } else if let writeNote = segue.destination as? WriteNoteViewController {
             writeNote.previousViewController = self
             writeNote.onDataAvailable = {[weak self](year, month) in
                 if let weakSelf = self {
@@ -78,51 +77,51 @@ class MainViewController: UIViewController {
         }
     }
 
-    func setYear(year:Int) {
+    func setYear(_ year:Int) {
         self.year = year
     }
-    func setMonth(month:Int) {
+    func setMonth(_ month:Int) {
         self.month = month
     }
 
     
     func setSelectMonthButtonText() {
-        selectMonthButton.setTitle(String(year) + ". " + String(month), forState: .Normal)
+        selectMonthButton.setTitle(String(year) + ". " + String(month), for: UIControlState())
     }
     
-    func setMonthUsingString(data: String) {
+    func setMonthUsingString(_ data: String) {
         setMonth(Int(data)!)
     }
-    func setYearUsingString(data: String) {
+    func setYearUsingString(_ data: String) {
         setYear(Int(data)!)
     }
     
-    private func updateDataFromRealm() {
+    fileprivate func updateDataFromRealm() {
         setNoteResultsFromRealm()
         setAllNoteResultsFromRealm()
     }
     
-    private func setNoteResultsFromRealm() {
+    fileprivate func setNoteResultsFromRealm() {
         let startDate = String(year) + "-" + String(month)
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-M"
-        let startNSDate = dateFormatter.dateFromString(startDate)!
+        let startNSDate = dateFormatter.date(from: startDate)!
         
-        let components: NSDateComponents = NSDateComponents()
-        components.setValue(1, forComponent: NSCalendarUnit.Month);
-        let endNSDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startNSDate, options: NSCalendarOptions(rawValue: 0))
+        let components: DateComponents = DateComponents()
+        (components as NSDateComponents).setValue(1, forComponent: NSCalendar.Unit.month);
+        let endNSDate = (Calendar.current as NSCalendar).date(byAdding: components, to: startNSDate, options: NSCalendar.Options(rawValue: 0))
         
         
-        let predicate = NSPredicate(format: "date >= %@ AND date < %@", startNSDate, endNSDate!)
-        let results = realm!.objects(Note).filter(predicate).sorted("date", ascending: true)
+        let predicate = NSPredicate(format: "date >= %@ AND date < %@", startNSDate as CVarArg, endNSDate! as CVarArg)
+        let results = realm!.objects(Note.self).filter(predicate).sorted(byKeyPath: "date", ascending: true)
         noteResults.removeAll()
         for result in results {
             noteResults.append(result)
         }
     }
     
-    private func setAllNoteResultsFromRealm() {
-        let results = realm!.objects(Note)
+    fileprivate func setAllNoteResultsFromRealm() {
+        let results = realm!.objects(Note.self)
         allNoteResults.removeAll()
         for result in results {
             allNoteResults.append(result)
@@ -131,12 +130,12 @@ class MainViewController: UIViewController {
     }
     
     func setCurrentDate() {
-        let date = NSDate()
-        let dateFormatter = NSDateFormatter()
+        let date = Date()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM"
-        let monthStr = dateFormatter.stringFromDate(date)
+        let monthStr = dateFormatter.string(from: date)
         dateFormatter.dateFormat = "yyyy"
-        let yearStr = dateFormatter.stringFromDate(date)
+        let yearStr = dateFormatter.string(from: date)
         
         setMonth(Int(monthStr)!)
         setYear(Int(yearStr)!)
@@ -153,16 +152,16 @@ class MainViewController: UIViewController {
         WriteButton.backgroundLayerCornerRadius = 10.0
         WriteButton.maskEnabled = false
         WriteButton.ripplePercent = 1.75
-        WriteButton.rippleLocation = .Center
+        WriteButton.rippleLocation = .center
         
         WriteButton.layer.shadowOpacity = 0.75
         WriteButton.layer.shadowRadius = 3.5
-        WriteButton.layer.shadowColor = UIColor.blackColor().CGColor
+        WriteButton.layer.shadowColor = UIColor.black.cgColor
         WriteButton.layer.shadowOffset = CGSize(width: 1.0, height: 5.5)
     }
 
-    func OnShowDetailView(id:Int) {
-        let DetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as! DetailViewController
+    func OnShowDetailView(_ id:Int) {
+        let DetailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailViewController
         /*
         let transition = CATransition()
         transition.duration = 0.3
@@ -171,22 +170,22 @@ class MainViewController: UIViewController {
         self.view.window!.layer.addAnimation( transition, forKey: nil)
         */
         DetailVC.setNoteId(id)
-        self.presentViewController(DetailVC, animated: false, completion: nil)
+        self.present(DetailVC, animated: false, completion: nil)
     }
     
-    func tableViewScrollToBottom(animated: Bool) {
+    func tableViewScrollToBottom(_ animated: Bool) {
         
         let delay = 0.1 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
         
-        dispatch_after(time, dispatch_get_main_queue(), {
+        DispatchQueue.main.asyncAfter(deadline: time, execute: {
             
             let numberOfSections = self.tableView.numberOfSections
-            let numberOfRows = self.tableView.numberOfRowsInSection(numberOfSections-1)
+            let numberOfRows = self.tableView.numberOfRows(inSection: numberOfSections-1)
             
             if numberOfRows > 0 {
-                let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
-                self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
+                let indexPath = IndexPath(row: numberOfRows-1, section: (numberOfSections-1))
+                self.tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: animated)
             }
             
         })
@@ -197,38 +196,38 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDelegate {
     
     
-    func setTableviewStyle(tableView:UITableView) {
+    func setTableviewStyle(_ tableView:UITableView) {
         tableView.allowsSelection = true
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        tableView.backgroundColor = UIColor.clearColor()
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.backgroundColor = UIColor.clear
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
     }
     func setEmptyMemolabel() {
         if(noteResults.count < 1) {
             emptyMemoLabel.text = NSLocalizedString("timeline_empty_text", comment: "instruction for starter")
-            emptyMemoLabel.hidden = false
+            emptyMemoLabel.isHidden = false
         } else {
-            emptyMemoLabel.hidden = true
+            emptyMemoLabel.isHidden = true
         }
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
 }
 
 extension MainViewController: UITableViewDataSource { 
-    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
         setTableviewStyle(tableView)
         setEmptyMemolabel()
         return noteResults.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell") as! MainTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell") as! MainTableViewCell
         if(noteResults.count <= indexPath.row) {
             return cell
         }
@@ -240,7 +239,7 @@ extension MainViewController: UITableViewDataSource {
         cell.setemoticonImage(self.emotionMaker.getCardicImagename(emotionType))
         cell.setCellItems(note)
         cell.setNoteMemoImage(note.memo)
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         
         cell.onButtonSelected = {

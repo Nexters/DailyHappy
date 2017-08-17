@@ -30,7 +30,7 @@ class MainItemView: UIView {
         
     }
     
-    func setBackgorundColor(backcolor: UIColor) {
+    func setBackgorundColor(_ backcolor: UIColor) {
         self.backgroundColor = backcolor
     }
 

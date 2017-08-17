@@ -14,7 +14,7 @@ class EmotionImageCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     var emotion:Emotion?
     
-    func bind(selected: Bool, imageName: String) {
+    func bind(_ selected: Bool, imageName: String) {
         if selected {
             imageView?.image = UIImage(named: (imageName + "_selected"))
         } else {

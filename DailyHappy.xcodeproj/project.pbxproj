@@ -21,9 +21,9 @@
 		036992241C32BFBA00F73047 /* WriteNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992231C32BFBA00F73047 /* WriteNoteViewController.swift */; };
 		036992271C32CD6000F73047 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992261C32CD6000F73047 /* Constants.swift */; };
 		0369922A1C33E24F00F73047 /* EmotionImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036992291C33E24F00F73047 /* EmotionImageCell.swift */; };
-		1BB30902320B8E2BC5D4903C /* Pods_DailyHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD05F159DDA11EF28E7860C /* Pods_DailyHappy.framework */; };
-		5DA81D0BAE8353E1949E549C /* Pods_DailyHappyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */; };
-		7618772EA19360599281384B /* Pods_DailyHappyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */; };
+		37CDA2FB482843D2D686FF19 /* Pods_DailyHappyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF8F1F8C34E3CAF26D85FB0 /* Pods_DailyHappyUITests.framework */; };
+		A77FE98C64D3DF36F0438FCF /* Pods_DailyHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6376123B6900498D76A06C70 /* Pods_DailyHappy.framework */; };
+		B75FFDD1D2805A23A8173A25 /* Pods_DailyHappyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECEB1C75B2C0534AFA884E3 /* Pods_DailyHappyTests.framework */; };
 		CE1C9C011C33C64A00D8B1A2 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFA1C33C64A00D8B1A2 /* MKButton.swift */; };
 		CE1C9C021C33C64A00D8B1A2 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFB1C33C64A00D8B1A2 /* MKColor.swift */; };
 		CE1C9C031C33C64A00D8B1A2 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C9BFC1C33C64A00D8B1A2 /* MKImageView.swift */; };
@@ -58,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0048A65DA7AEAD9222D214F4 /* Pods-DailyHappyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyUITests/Pods-DailyHappyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		033C89571C54C8F9007ECB56 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0341B3A51C369390005C0842 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		036991EC1C3279B000F73047 /* DailyHappy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyHappy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,13 +82,11 @@
 		038A29FA1C5C2BA100A58D4B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		038A29FB1C5C2BB000A58D4B /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ko; path = ko.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		038A29FC1C5C2BB000A58D4B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0AF1DDBC91E4116A9584A94E /* Pods-DailyHappyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EF94BA394388CD554F70D80 /* Pods-DailyHappyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests.release.xcconfig"; sourceTree = "<group>"; };
-		836D2BCBDACCA954356A5BA8 /* Pods-DailyHappy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappy.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy.release.xcconfig"; sourceTree = "<group>"; };
-		8782615530926B8D6BD7C8B9 /* Pods-DailyHappyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyUITests/Pods-DailyHappyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		AAD05F159DDA11EF28E7860C /* Pods_DailyHappy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5A89EA5BF4068003653E90D /* Pods-DailyHappyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyUITests/Pods-DailyHappyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		10DCA3130237941560F7E589 /* Pods-DailyHappyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyUITests/Pods-DailyHappyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		19C4B188C5BEA2623FD74A62 /* Pods-DailyHappyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6376123B6900498D76A06C70 /* Pods_DailyHappy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64D5676500FD14CBE7751C6E /* Pods-DailyHappy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappy.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy.release.xcconfig"; sourceTree = "<group>"; };
+		A87C30D85ABF6E7FD8E724B3 /* Pods-DailyHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy.debug.xcconfig"; sourceTree = "<group>"; };
 		CE1C9BFA1C33C64A00D8B1A2 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKButton.swift; path = MaterialKit/MKButton.swift; sourceTree = "<group>"; };
 		CE1C9BFB1C33C64A00D8B1A2 /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = MaterialKit/MKColor.swift; sourceTree = "<group>"; };
 		CE1C9BFC1C33C64A00D8B1A2 /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKImageView.swift; path = MaterialKit/MKImageView.swift; sourceTree = "<group>"; };
@@ -102,8 +101,9 @@
 		CE378CB41C3682AD00C7170D /* SelectMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMonthViewController.swift; sourceTree = "<group>"; };
 		CE378CB71C36CDDF00C7170D /* SelectMonthStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMonthStackView.swift; sourceTree = "<group>"; };
 		CEC458471C38C56600DD89D1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		E148360D4B76C96AE03C7C02 /* Pods-DailyHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy.debug.xcconfig"; sourceTree = "<group>"; };
-		E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECEB1C75B2C0534AFA884E3 /* Pods_DailyHappyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E72EE81E926E09E189202B2C /* Pods-DailyHappyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHappyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests.release.xcconfig"; sourceTree = "<group>"; };
+		FBF8F1F8C34E3CAF26D85FB0 /* Pods_DailyHappyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHappyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BB30902320B8E2BC5D4903C /* Pods_DailyHappy.framework in Frameworks */,
+				A77FE98C64D3DF36F0438FCF /* Pods_DailyHappy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7618772EA19360599281384B /* Pods_DailyHappyTests.framework in Frameworks */,
+				B75FFDD1D2805A23A8173A25 /* Pods_DailyHappyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DA81D0BAE8353E1949E549C /* Pods_DailyHappyUITests.framework in Frameworks */,
+				37CDA2FB482843D2D686FF19 /* Pods_DailyHappyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +141,8 @@
 				036992031C3279B000F73047 /* DailyHappyTests */,
 				0369920E1C3279B000F73047 /* DailyHappyUITests */,
 				036991ED1C3279B000F73047 /* Products */,
-				1EF70886D853E61FBE544FD3 /* Pods */,
-				76377A8F659FBC4B6272D333 /* Frameworks */,
+				8C5BB914BCEB8FD4303DDE07 /* Pods */,
+				AD0893B617D8FA3E9B87DC14 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,25 +233,25 @@
 			name = widget;
 			sourceTree = "<group>";
 		};
-		1EF70886D853E61FBE544FD3 /* Pods */ = {
+		8C5BB914BCEB8FD4303DDE07 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E148360D4B76C96AE03C7C02 /* Pods-DailyHappy.debug.xcconfig */,
-				836D2BCBDACCA954356A5BA8 /* Pods-DailyHappy.release.xcconfig */,
-				0AF1DDBC91E4116A9584A94E /* Pods-DailyHappyTests.debug.xcconfig */,
-				3EF94BA394388CD554F70D80 /* Pods-DailyHappyTests.release.xcconfig */,
-				B5A89EA5BF4068003653E90D /* Pods-DailyHappyUITests.debug.xcconfig */,
-				8782615530926B8D6BD7C8B9 /* Pods-DailyHappyUITests.release.xcconfig */,
+				A87C30D85ABF6E7FD8E724B3 /* Pods-DailyHappy.debug.xcconfig */,
+				64D5676500FD14CBE7751C6E /* Pods-DailyHappy.release.xcconfig */,
+				19C4B188C5BEA2623FD74A62 /* Pods-DailyHappyTests.debug.xcconfig */,
+				E72EE81E926E09E189202B2C /* Pods-DailyHappyTests.release.xcconfig */,
+				0048A65DA7AEAD9222D214F4 /* Pods-DailyHappyUITests.debug.xcconfig */,
+				10DCA3130237941560F7E589 /* Pods-DailyHappyUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		76377A8F659FBC4B6272D333 /* Frameworks */ = {
+		AD0893B617D8FA3E9B87DC14 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AAD05F159DDA11EF28E7860C /* Pods_DailyHappy.framework */,
-				E8B21B94AA6712FF703F8393 /* Pods_DailyHappyTests.framework */,
-				1DA2833CDBCC95DF209E982F /* Pods_DailyHappyUITests.framework */,
+				6376123B6900498D76A06C70 /* Pods_DailyHappy.framework */,
+				CECEB1C75B2C0534AFA884E3 /* Pods_DailyHappyTests.framework */,
+				FBF8F1F8C34E3CAF26D85FB0 /* Pods_DailyHappyUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -302,12 +302,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 036992141C3279B000F73047 /* Build configuration list for PBXNativeTarget "DailyHappy" */;
 			buildPhases = (
-				D822442AA40678874A96E48B /* Check Pods Manifest.lock */,
+				E52A32C7BA434E8B3C656400 /* [CP] Check Pods Manifest.lock */,
 				036991E81C3279B000F73047 /* Sources */,
 				036991E91C3279B000F73047 /* Frameworks */,
 				036991EA1C3279B000F73047 /* Resources */,
-				CF2C93B518423E031E37371C /* Embed Pods Frameworks */,
-				D27A9EE702323671B8620B43 /* Copy Pods Resources */,
+				EFCA8025F94A9002FD9DC773 /* [CP] Embed Pods Frameworks */,
+				C14B6270767CD1040780F31D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,12 +322,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 036992171C3279B000F73047 /* Build configuration list for PBXNativeTarget "DailyHappyTests" */;
 			buildPhases = (
-				A9356CD6A5B87CEE051C09B0 /* Check Pods Manifest.lock */,
+				AACD08CA50C6D283B5B90D3D /* [CP] Check Pods Manifest.lock */,
 				036991FC1C3279B000F73047 /* Sources */,
 				036991FD1C3279B000F73047 /* Frameworks */,
 				036991FE1C3279B000F73047 /* Resources */,
-				A7E8EA4688C46EBDB04C462E /* Embed Pods Frameworks */,
-				13924654B5A6199086BA0F10 /* Copy Pods Resources */,
+				997E4621A03DACA8A5B607A9 /* [CP] Embed Pods Frameworks */,
+				B938C21C123FC783F136720E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -343,11 +343,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0369921A1C3279B000F73047 /* Build configuration list for PBXNativeTarget "DailyHappyUITests" */;
 			buildPhases = (
-				0A4455D406051883595DD4DE /* Check Pods Manifest.lock */,
+				42FB52D6FD0261424EADE7FF /* [CP] Check Pods Manifest.lock */,
 				036992071C3279B000F73047 /* Sources */,
 				036992081C3279B000F73047 /* Frameworks */,
 				036992091C3279B000F73047 /* Resources */,
-				5C87362329F18F43F6EC50D0 /* Copy Pods Resources */,
+				81C73F9FA382F2BEE9891AF5 /* [CP] Embed Pods Frameworks */,
+				469B977B41287E34578975BC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -372,13 +373,16 @@
 					036991EB1C3279B000F73047 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 69BRTRDZYY;
+						LastSwiftMigration = 0830;
 					};
 					036991FF1C3279B000F73047 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0830;
 						TestTargetID = 036991EB1C3279B000F73047;
 					};
 					0369920A1C3279B000F73047 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0830;
 						TestTargetID = 036991EB1C3279B000F73047;
 					};
 				};
@@ -433,44 +437,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A4455D406051883595DD4DE /* Check Pods Manifest.lock */ = {
+		42FB52D6FD0261424EADE7FF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyHappyUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		13924654B5A6199086BA0F10 /* Copy Pods Resources */ = {
+		469B977B41287E34578975BC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5C87362329F18F43F6EC50D0 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,59 +470,99 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappyUITests/Pods-DailyHappyUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A7E8EA4688C46EBDB04C462E /* Embed Pods Frameworks */ = {
+		81C73F9FA382F2BEE9891AF5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappyUITests/Pods-DailyHappyUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MaterialKit/MaterialKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappyUITests/Pods-DailyHappyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		997E4621A03DACA8A5B607A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MaterialKit/MaterialKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A9356CD6A5B87CEE051C09B0 /* Check Pods Manifest.lock */ = {
+		AACD08CA50C6D283B5B90D3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyHappyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B938C21C123FC783F136720E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappyTests/Pods-DailyHappyTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF2C93B518423E031E37371C /* Embed Pods Frameworks */ = {
+		C14B6270767CD1040780F31D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D27A9EE702323671B8620B43 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,19 +570,48 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D822442AA40678874A96E48B /* Check Pods Manifest.lock */ = {
+		E52A32C7BA434E8B3C656400 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyHappy-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFCA8025F94A9002FD9DC773 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MaterialKit/MaterialKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyHappy/Pods-DailyHappy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -730,7 +791,7 @@
 		};
 		036992151C3279B000F73047 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E148360D4B76C96AE03C7C02 /* Pods-DailyHappy.debug.xcconfig */;
+			baseConfigurationReference = A87C30D85ABF6E7FD8E724B3 /* Pods-DailyHappy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -740,12 +801,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamnexters.DailyHappy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		036992161C3279B000F73047 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 836D2BCBDACCA954356A5BA8 /* Pods-DailyHappy.release.xcconfig */;
+			baseConfigurationReference = 64D5676500FD14CBE7751C6E /* Pods-DailyHappy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -755,43 +817,47 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamnexters.DailyHappy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		036992181C3279B000F73047 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AF1DDBC91E4116A9584A94E /* Pods-DailyHappyTests.debug.xcconfig */;
+			baseConfigurationReference = 19C4B188C5BEA2623FD74A62 /* Pods-DailyHappyTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = DailyHappyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamnexters.DailyHappyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyHappy.app/DailyHappy";
 			};
 			name = Debug;
 		};
 		036992191C3279B000F73047 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EF94BA394388CD554F70D80 /* Pods-DailyHappyTests.release.xcconfig */;
+			baseConfigurationReference = E72EE81E926E09E189202B2C /* Pods-DailyHappyTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = DailyHappyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamnexters.DailyHappyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyHappy.app/DailyHappy";
 			};
 			name = Release;
 		};
 		0369921B1C3279B000F73047 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5A89EA5BF4068003653E90D /* Pods-DailyHappyUITests.debug.xcconfig */;
+			baseConfigurationReference = 0048A65DA7AEAD9222D214F4 /* Pods-DailyHappyUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = DailyHappyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamnexters.DailyHappyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = DailyHappy;
 				USES_XCTRUNNER = YES;
 			};
@@ -799,12 +865,13 @@
 		};
 		0369921C1C3279B000F73047 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8782615530926B8D6BD7C8B9 /* Pods-DailyHappyUITests.release.xcconfig */;
+			baseConfigurationReference = 10DCA3130237941560F7E589 /* Pods-DailyHappyUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = DailyHappyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamnexters.DailyHappyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = DailyHappy;
 				USES_XCTRUNNER = YES;
 			};

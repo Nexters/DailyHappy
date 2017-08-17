@@ -8,18 +8,42 @@
 
 import UIKit
 import RealmSwift
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 
 struct Detailtag {
     enum Tagtype{
-        case Person
-        case Place
-        case Item
-        case Activity
-        case Anniversary
+        case person
+        case place
+        case item
+        case activity
+        case anniversary
         
         init() {
-            self = .Person
+            self = .person
         }
     }
     var itemtype : Tagtype
@@ -29,15 +53,15 @@ struct Detailtag {
     func getIconimageName () ->(String) {
         var result = ""
         switch itemtype {
-        case .Person:
+        case .person:
             result = "DetailPerson"
-        case .Place:
+        case .place:
             result = "DetailPlace"
-        case .Item:
+        case .item:
             result = "DetailItem"
-        case .Activity:
+        case .activity:
             result = "DetailActivity"
-        case .Anniversary:
+        case .anniversary:
             result = "DetailAnniversary"
         }
         return result
@@ -84,8 +108,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var scrollView: UIScrollView!
     
-    private var itemLabels:[UILabel]=[]
-    private var itemIcons:[UIImageView]=[]
+    fileprivate var itemLabels:[UILabel]=[]
+    fileprivate var itemIcons:[UIImageView]=[]
     
 
     let realm = try! Realm()
@@ -93,7 +117,7 @@ class DetailViewController: UIViewController {
     var note: Note?
     let emotionMaker:EmotionMaker = EmotionMaker()
     let MaxMemoHeight = CGFloat(91)
-    func setNoteId(id:Int) {
+    func setNoteId(_ id:Int) {
         self.id = id
     }
     
@@ -117,8 +141,8 @@ class DetailViewController: UIViewController {
 
     func initMiddleView() {
         let border = CALayer()
-        border.backgroundColor =  UIColor(colorLiteralRed: 219.0/255.0, green: 219.0/255.0, blue: 219.0/255.0, alpha: 1.0).CGColor
-        border.frame = CGRectMake(0, middleView.frame.size.height - 1,   UIScreen.mainScreen().bounds.size.width - (scrollView.frame.size.width - middleView.frame.size.width), 1)
+        border.backgroundColor =  UIColor(colorLiteralRed: 219.0/255.0, green: 219.0/255.0, blue: 219.0/255.0, alpha: 1.0).cgColor
+        border.frame = CGRect(x: 0, y: middleView.frame.size.height - 1,   width: UIScreen.main.bounds.size.width - (scrollView.frame.size.width - middleView.frame.size.width), height: 1)
         middleView.layer.addSublayer(border)
         middleView.layer.zPosition = 1
         middleView.backgroundColor =  UIColor(colorLiteralRed: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0)
@@ -136,7 +160,7 @@ class DetailViewController: UIViewController {
     }
     
     func updateAllViews() {
-        note = realm.objectForPrimaryKey(Note.self, key: getNoteId())
+        note = realm.object(ofType: Note.self, forPrimaryKey: getNoteId() as AnyObject)
         
         setLabelTexts()
         setTopView()
@@ -146,8 +170,8 @@ class DetailViewController: UIViewController {
     
     func setLabelTexts() {
         titleLabel.text = NSLocalizedString("detail_view_title", comment: "a title for DetailViewController")
-        editButton.setTitle(NSLocalizedString("edit", comment: "title of edit button."), forState: UIControlState.Normal)
-        deleteButton.setTitle(NSLocalizedString("delete", comment: "title of delete button."), forState: UIControlState.Normal)
+        editButton.setTitle(NSLocalizedString("edit", comment: "title of edit button."), for: UIControlState())
+        deleteButton.setTitle(NSLocalizedString("delete", comment: "title of delete button."), for: UIControlState())
     }
     
     func setTopView() {
@@ -178,68 +202,68 @@ class DetailViewController: UIViewController {
     }
     
     func setDateLabel() {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.long
 //        dateFormatter.dateFormat = "yyyy년 M월 dd일"
-        let dateString = dateFormatter.stringFromDate(note!.date)
+        let dateString = dateFormatter.string(from: note!.date as Date)
         noteDateLabel.text = dateString
     }
     
-    func setDetailItems(note:Note) {
+    func setDetailItems(_ note:Note) {
         
         var cardItemindex = 0
         if(note.hasPerson) {
-            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Person, itemText: getItemString(note.personName), itemIndex: cardItemindex))
+            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.person, itemText: getItemString(note.personName), itemIndex: cardItemindex))
         } else {
-             addBlankitem(Detailtag(itemType: Detailtag.Tagtype.Person, itemText: "", itemIndex: cardItemindex))
+             addBlankitem(Detailtag(itemType: Detailtag.Tagtype.person, itemText: "", itemIndex: cardItemindex))
         }
-        cardItemindex++
+        cardItemindex += 1
         if(note.hasItem) {
-            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Item, itemText: getItemString(note.itemName), itemIndex: cardItemindex))
+            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.item, itemText: getItemString(note.itemName), itemIndex: cardItemindex))
             
         } else {
-            addBlankitem(Detailtag(itemType: Detailtag.Tagtype.Item, itemText: "", itemIndex: cardItemindex))
+            addBlankitem(Detailtag(itemType: Detailtag.Tagtype.item, itemText: "", itemIndex: cardItemindex))
         }
 
-        cardItemindex++
+        cardItemindex += 1
         
         if(note.hasActivity) {
-            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Activity, itemText: getItemString(note.activityName), itemIndex: cardItemindex))
+            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.activity, itemText: getItemString(note.activityName), itemIndex: cardItemindex))
         } else {
-             addBlankitem(Detailtag(itemType: Detailtag.Tagtype.Activity, itemText: "", itemIndex: cardItemindex))
+             addBlankitem(Detailtag(itemType: Detailtag.Tagtype.activity, itemText: "", itemIndex: cardItemindex))
         }
         
-         cardItemindex++
+         cardItemindex += 1
         
         if(note.hasAnniversary) {
-            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Anniversary, itemText: getItemString(note.anniversaryName), itemIndex: cardItemindex))
+            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.anniversary, itemText: getItemString(note.anniversaryName), itemIndex: cardItemindex))
         } else {
-            addBlankitem(Detailtag(itemType: Detailtag.Tagtype.Anniversary, itemText: "", itemIndex: cardItemindex))
+            addBlankitem(Detailtag(itemType: Detailtag.Tagtype.anniversary, itemText: "", itemIndex: cardItemindex))
 
         }
-        cardItemindex++
+        cardItemindex += 1
         if(note.hasPlace) {
-            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.Place, itemText: getItemString(note.placeName), itemIndex: cardItemindex))
+            addDetailitem(Detailtag(itemType: Detailtag.Tagtype.place, itemText: getItemString(note.placeName), itemIndex: cardItemindex))
            
         } else {
-              addBlankitem(Detailtag(itemType: Detailtag.Tagtype.Place, itemText: "", itemIndex: cardItemindex))
+              addBlankitem(Detailtag(itemType: Detailtag.Tagtype.place, itemText: "", itemIndex: cardItemindex))
         }
-         cardItemindex++
+         cardItemindex += 1
         
         while cardItemindex < 5 {
             clearDetailitem(cardItemindex)
-            cardItemindex++
+            cardItemindex += 1
         }
     }
     
-    func getItemString(data:String) ->(String){
+    func getItemString(_ data:String) ->(String){
         let endIndex = data.characters.count
         if(endIndex <= 30) {
             return data
         }
-        return data.substringWithRange(Range<String.Index>(start: data.startIndex.advancedBy(0), end: data.endIndex.advancedBy(30-endIndex))) + "..."
+        return data.substring(with: (data.characters.index(data.startIndex, offsetBy: 0) ..< data.characters.index(data.endIndex, offsetBy: 30-endIndex))) + "..."
     }
-    func clearDetailitem(index: Int) {
+    func clearDetailitem(_ index: Int) {
         if (index < itemLabels.count) {
             itemLabels[index].text = ""
         }
@@ -248,7 +272,7 @@ class DetailViewController: UIViewController {
         }
     }
 
-    func addDetailitem(tag: Detailtag){
+    func addDetailitem(_ tag: Detailtag){
         if (tag.index < itemLabels.count) {
             itemLabels[tag.index].text = tag.content
         }
@@ -257,29 +281,29 @@ class DetailViewController: UIViewController {
         }
     }
     
-    func addBlankitem(tag: Detailtag){
+    func addBlankitem(_ tag: Detailtag){
         if (tag.index < itemIcons.count) {
             itemLabels[tag.index].text = tag.content
             itemIcons[tag.index].image = alpha(UIImage(named: tag.getIconimageName())!, value: 0.4)
         }
     }
     
-    func alpha(img:UIImage, value:CGFloat)->UIImage{
+    func alpha(_ img:UIImage, value:CGFloat)->UIImage{
         UIGraphicsBeginImageContextWithOptions(img.size, false, 0.0)
         
         let ctx = UIGraphicsGetCurrentContext();
         let area = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height);
         
-        CGContextScaleCTM(ctx, 1, -1);
-        CGContextTranslateCTM(ctx, 0, -area.size.height);
-        CGContextSetBlendMode(ctx, .Multiply);
-        CGContextSetAlpha(ctx, value);
-        CGContextDrawImage(ctx, area, img.CGImage);
+        ctx?.scaleBy(x: 1, y: -1);
+        ctx?.translateBy(x: 0, y: -area.size.height);
+        ctx?.setBlendMode(.multiply);
+        ctx?.setAlpha(value);
+        ctx?.draw(img.cgImage!, in: area);
         
         let newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
-        return newImage;
+        return newImage!;
     }
 
     func inititemLabels() {
@@ -299,10 +323,10 @@ class DetailViewController: UIViewController {
     }
 
     
-    func heightForView(text:String, font:UIFont, width:CGFloat, lineSpacing:CGFloat) -> CGFloat{
-        var label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
+    func heightForView(_ text:String, font:UIFont, width:CGFloat, lineSpacing:CGFloat) -> CGFloat{
+        var label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
         label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.font = font
         label.text = text
         
@@ -313,7 +337,7 @@ class DetailViewController: UIViewController {
     }
 
     
-    func setTextWithLineSpacing(label:UILabel,text:String,lineSpacing:CGFloat) ->(UILabel){
+    func setTextWithLineSpacing(_ label:UILabel,text:String,lineSpacing:CGFloat) ->(UILabel){
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineSpacing
         
@@ -326,50 +350,50 @@ class DetailViewController: UIViewController {
     
     
     
-    func setemoticonImage(imgName: String ) {
+    func setemoticonImage(_ imgName: String ) {
         emoticonImage.image = UIImage(named: imgName)
     }
 
     
-    func addBottomSpace(addValue :CGFloat) {
+    func addBottomSpace(_ addValue :CGFloat) {
         self.scrollchildViewHeight.constant += addValue
         self.bottomStackViewHeight.constant += addValue
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         updateAllViews()
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
-    @IBAction func OnCloseButton(sender: AnyObject) {
-         dismissViewControllerAnimated(false, completion: nil)
+    @IBAction func OnCloseButton(_ sender: AnyObject) {
+         dismiss(animated: false, completion: nil)
     }
 
-    @IBAction func deleteNote(sender: UIButton) {
-        let alertController = UIAlertController(title: nil, message: NSLocalizedString("delete_message", comment: "message of alert view"), preferredStyle: .ActionSheet)
+    @IBAction func deleteNote(_ sender: UIButton) {
+        let alertController = UIAlertController(title: nil, message: NSLocalizedString("delete_message", comment: "message of alert view"), preferredStyle: .actionSheet)
         
-        let deleteAction = UIAlertAction(title: NSLocalizedString("delete", comment: "name of deleteButton"), style: .Default, handler: {
+        let deleteAction = UIAlertAction(title: NSLocalizedString("delete", comment: "name of deleteButton"), style: .default, handler: {
             action in
                 if let object = self.note {
                     try! self.realm.write {
                         self.realm.delete(object)
-                        self.dismissViewControllerAnimated(true, completion: nil)
+                        self.dismiss(animated: true, completion: nil)
                     }
                 }
         })
-        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: "name of cancelButton"), style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: "name of cancelButton"), style: .cancel, handler: nil)
         
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
         
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let writeNote = segue.destinationViewController as? WriteNoteViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let writeNote = segue.destination as? WriteNoteViewController {
             writeNote.updateNoteId = getNoteId()
         }
     }
